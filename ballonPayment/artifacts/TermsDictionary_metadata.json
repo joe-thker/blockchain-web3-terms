@@ -1,0 +1,134 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "term",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "definition",
+						"type": "string"
+					}
+				],
+				"name": "TermAddedOrUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_term",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_definition",
+						"type": "string"
+					}
+				],
+				"name": "addOrUpdateTerm",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_term",
+						"type": "string"
+					}
+				],
+				"name": "getDefinition",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addOrUpdateTerm(string,string)": {
+					"params": {
+						"_definition": "The definition of the term.",
+						"_term": "The term to add or update."
+					}
+				},
+				"getDefinition(string)": {
+					"params": {
+						"_term": "The term to retrieve the definition for."
+					},
+					"returns": {
+						"_0": "The definition associated with the term."
+					}
+				}
+			},
+			"title": "TermsDictionary",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addOrUpdateTerm(string,string)": {
+					"notice": "Adds or updates a term with its definition."
+				},
+				"constructor": {
+					"notice": "Constructor to initialize some common terms."
+				},
+				"getDefinition(string)": {
+					"notice": "Retrieves the definition of a given term."
+				}
+			},
+			"notice": "A contract to store and retrieve various financial, technical, and economic terms along with their definitions.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ballonPayment/ballonPayment.sol": "TermsDictionary"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ballonPayment/ballonPayment.sol": {
+			"keccak256": "0xe90d28f3a366821a4e00a0b49e577f326dd389fdf55f3469a10c9b0b89e2a210",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eb80e32a6795f31a5f65f49c13e83256ca6c8685d04e02c80fc959319c36addd",
+				"dweb:/ipfs/QmX9oNGQND8vTQBg5w79ygtHZ5Mj9RN6qKpjWFkwVdWKxo"
+			]
+		}
+	},
+	"version": 1
+}
