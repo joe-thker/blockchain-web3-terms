@@ -1,0 +1,134 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "term",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "definition",
+						"type": "string"
+					}
+				],
+				"name": "TermAddedOrUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_term",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_definition",
+						"type": "string"
+					}
+				],
+				"name": "addOrUpdateTerm",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_term",
+						"type": "string"
+					}
+				],
+				"name": "getDefinition",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addOrUpdateTerm(string,string)": {
+					"params": {
+						"_definition": "The definition of the term.",
+						"_term": "The term to add or update."
+					}
+				},
+				"getDefinition(string)": {
+					"params": {
+						"_term": "The term to retrieve the definition for."
+					},
+					"returns": {
+						"_0": "The definition associated with the term."
+					}
+				}
+			},
+			"title": "TermsDictionary",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addOrUpdateTerm(string,string)": {
+					"notice": "Adds or updates a term with its definition."
+				},
+				"constructor": {
+					"notice": "Constructor to initialize some common terms."
+				},
+				"getDefinition(string)": {
+					"notice": "Retrieves the definition of a given term."
+				}
+			},
+			"notice": "A contract to store and retrieve various technical, financial, and data visualization terms along with their definitions.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"bar chart/bar chart.sol": "TermsDictionary"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"bar chart/bar chart.sol": {
+			"keccak256": "0xdf4438f04862d468a96106f23104b72d185daace0feacd40a2a8077409cba307",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e19597e23b5d53f732d0132ade2e062f0942a429ee05f70b4c93683ef38f264",
+				"dweb:/ipfs/Qmcax955oXDsDPYwao5exwHz4Zj9187rQUoBYLGPiMNRXi"
+			]
+		}
+	},
+	"version": 1
+}
