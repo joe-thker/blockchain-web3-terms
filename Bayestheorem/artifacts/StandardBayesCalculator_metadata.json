@@ -1,0 +1,103 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "SCALE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "pBgivenA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pB",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateBayes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "pAgivenB",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateBayes(uint256,uint256,uint256)": {
+					"params": {
+						"pA": "Probability P(A), scaled by 1e18",
+						"pB": "Probability P(B), scaled by 1e18",
+						"pBgivenA": "Probability P(B|A), scaled by 1e18"
+					},
+					"returns": {
+						"pAgivenB": "The posterior probability P(A|B), scaled by 1e18"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateBayes(uint256,uint256,uint256)": {
+					"notice": "Calculates P(A|B) = (P(B|A) * P(A)) / P(B)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Bayestheorem/basic.sol": "StandardBayesCalculator"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Bayestheorem/basic.sol": {
+			"keccak256": "0xba37266a47e3ef3461eaf109326f5049e4cba267958da24ab4c4ec49e612564a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://674e4aa7b09eb366678d53f7936e4bb0ff0997b4168f5734eadbf921d9d27126",
+				"dweb:/ipfs/QmR4LNKnaREfQ4mcrRNWmtQTdFdmDu5Y6KECbS47cuxUbf"
+			]
+		}
+	},
+	"version": 1
+}

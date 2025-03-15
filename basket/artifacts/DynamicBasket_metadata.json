@@ -1,0 +1,158 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "TokenAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "TokenRemoved",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "addToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTokens",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "removeToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tokens",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addToken(address)": {
+					"params": {
+						"token": "The token address to add."
+					}
+				},
+				"getTokens()": {
+					"returns": {
+						"_0": "An array of token addresses."
+					}
+				},
+				"removeToken(uint256)": {
+					"params": {
+						"index": "The index of the token to remove."
+					}
+				}
+			},
+			"title": "DynamicBasket",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addToken(address)": {
+					"notice": "Adds a token address to the basket."
+				},
+				"getTokens()": {
+					"notice": "Retrieves the list of tokens in the basket."
+				},
+				"removeToken(uint256)": {
+					"notice": "Removes a token address from the basket by index."
+				}
+			},
+			"notice": "A contract that represents a dynamic basket of assets where tokens can be added or removed.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"basket/dynamicBasket.sol": "DynamicBasket"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"basket/dynamicBasket.sol": {
+			"keccak256": "0x33030a58992b16fe89eaf029633eb469782b36f7b8a0b51bf6dc99a2f5acb2d6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b8c4ff1840df374063740687696fd29027500f07a3aef88f219b88a807c308f8",
+				"dweb:/ipfs/Qmey5Wn6wg6u4H7y1r3onwZPKDy1UBSJaZom8RqT2jiJRx"
+			]
+		}
+	},
+	"version": 1
+}

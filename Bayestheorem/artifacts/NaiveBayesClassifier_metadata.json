@@ -1,0 +1,115 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "SCALE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "pC",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pF1givenC",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pF2givenC",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pF1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pF2",
+						"type": "uint256"
+					}
+				],
+				"name": "classify",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "posterior",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"classify(uint256,uint256,uint256,uint256,uint256)": {
+					"params": {
+						"pC": "Prior probability of class C, scaled by 1e18.",
+						"pF1": "Marginal probability of feature 1, scaled by 1e18.",
+						"pF1givenC": "Likelihood of feature 1 given C, scaled by 1e18.",
+						"pF2": "Marginal probability of feature 2, scaled by 1e18.",
+						"pF2givenC": "Likelihood of feature 2 given C, scaled by 1e18."
+					},
+					"returns": {
+						"posterior": "The computed posterior probability for class C, scaled by 1e18."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"classify(uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "Classifies based on two features using Naïve Bayes."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Bayestheorem/Naïve Bayes Classifier.sol": "NaiveBayesClassifier"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Bayestheorem/Naïve Bayes Classifier.sol": {
+			"keccak256": "0xfc4a9983a115e99dc1054bb3846c4ad2a4595f91fff55d074f0dc8edd2a75563",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://130d4ab0b0e08131fd8b72a957b2f7b57445c1ed268548d32b3990a2c852f3e4",
+				"dweb:/ipfs/QmQUBNJXxnPscjz9DYjWm4jZe2Fy3Nkdeyiq7kzjXuzJyV"
+			]
+		}
+	},
+	"version": 1
+}

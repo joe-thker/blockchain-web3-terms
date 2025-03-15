@@ -1,0 +1,113 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "validator",
+						"type": "address"
+					}
+				],
+				"name": "ValidatorRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getValidatorCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registerValidator",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "validators",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getValidatorCount()": {
+					"returns": {
+						"_0": "The number of validators."
+					}
+				}
+			},
+			"title": "SimpleBeaconChain",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getValidatorCount()": {
+					"notice": "Returns the total number of registered validators."
+				},
+				"registerValidator()": {
+					"notice": "Allows a validator to register."
+				}
+			},
+			"notice": "A simplified simulation of a Beacon Chain that tracks registered validators.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"beaconChain/SimpleBeaconChain.sol": "SimpleBeaconChain"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"beaconChain/SimpleBeaconChain.sol": {
+			"keccak256": "0x3d1d19ad08364160a4a2728814e6ec56ba2d39efb8fca9e292cea0c36c92a0dc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://81a1ccc411d973306940aa60f5696b014a08d74609b0846b97aea0bba152c600",
+				"dweb:/ipfs/QmXTt4sELtm63tjEQjt1TtmLcmGVT75nEf322FxTVcvgKA"
+			]
+		}
+	},
+	"version": 1
+}

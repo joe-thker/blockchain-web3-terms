@@ -1,0 +1,184 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newEpoch",
+						"type": "uint256"
+					}
+				],
+				"name": "EpochAdvanced",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "validator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "deposit",
+						"type": "uint256"
+					}
+				],
+				"name": "ValidatorRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "EPOCH_DURATION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "advanceEpoch",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentEpoch",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getValidatorCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registerValidator",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "validators",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "validator",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deposit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getValidatorCount()": {
+					"returns": {
+						"_0": "The number of validators."
+					}
+				},
+				"registerValidator()": {
+					"details": "The deposit is sent as part of the transaction."
+				}
+			},
+			"title": "AdvancedBeaconChain",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"advanceEpoch()": {
+					"notice": "Advances the epoch based on the current block number."
+				},
+				"constructor": {
+					"notice": "Constructor initializes the current epoch based on the current block number."
+				},
+				"getValidatorCount()": {
+					"notice": "Returns the total number of registered validators."
+				},
+				"registerValidator()": {
+					"notice": "Allows a validator to register with a deposit."
+				}
+			},
+			"notice": "A simplified simulation of a Beacon Chain that tracks validators with deposits and epochs.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"beaconChain/AdvancedBeaconChain.sol": "AdvancedBeaconChain"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"beaconChain/AdvancedBeaconChain.sol": {
+			"keccak256": "0x7de9f82c6c167bf25faf293222c6591cfc7abce85208f15b8502c161c4b86d87",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4222544085ad57726cf681f8dd4fb2b3d17d26d3c80525e2efff8a5c60d7d0e4",
+				"dweb:/ipfs/QmQnxz7eteNojo6sKkf7TtKPwRZY1c2xgA7cHkRGqDNgZW"
+			]
+		}
+	},
+	"version": 1
+}
