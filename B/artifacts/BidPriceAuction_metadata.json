@@ -1,0 +1,126 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "bidder",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "bid",
+						"type": "uint256"
+					}
+				],
+				"name": "NewHighestBid",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getBidPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "highestBid",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "highestBidder",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "placeBid",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getBidPrice()": {
+					"returns": {
+						"_0": "The highest bid value in wei."
+					}
+				}
+			},
+			"title": "BidPriceAuction",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getBidPrice()": {
+					"notice": "Returns the current bid price (highest bid)."
+				},
+				"placeBid()": {
+					"notice": "Allows users to place a bid. The bid must be higher than the current highest bid."
+				}
+			},
+			"notice": "A simple bidding contract where the highest bid represents the bid price.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bidPrice.sol": "BidPriceAuction"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bidPrice.sol": {
+			"keccak256": "0xaae6a67ae13774e3e5245dc650915d4ec3b4f05b3c7f1697af1c4da35261ebb4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0800b514fcfca94d4734a2acf7fd55819503facadf31d16b03ac00909b8e1ab0",
+				"dweb:/ipfs/QmQTTrqERMm8H9XFGUwU1Xdcw9sNJFDFMtvUR8YSumSbhr"
+			]
+		}
+	},
+	"version": 1
+}

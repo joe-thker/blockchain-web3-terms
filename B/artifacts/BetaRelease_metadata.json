@@ -1,0 +1,167 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "feedback",
+						"type": "string"
+					}
+				],
+				"name": "FeedbackSubmitted",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "betaFeature",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "feedback",
+						"type": "string"
+					}
+				],
+				"name": "submitFeedback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newVersion",
+						"type": "string"
+					}
+				],
+				"name": "updateVersion",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "version",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Features in this beta release are experimental. Users can test the beta feature and submit feedback.",
+			"kind": "dev",
+			"methods": {
+				"betaFeature()": {
+					"returns": {
+						"_0": "A string message indicating the beta feature."
+					}
+				},
+				"submitFeedback(string)": {
+					"params": {
+						"feedback": "The feedback string provided by the user."
+					}
+				},
+				"updateVersion(string)": {
+					"params": {
+						"newVersion": "The new beta version string."
+					}
+				}
+			},
+			"title": "BetaRelease",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"betaFeature()": {
+					"notice": "An experimental beta feature."
+				},
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner."
+				},
+				"submitFeedback(string)": {
+					"notice": "Allows users to submit feedback on the beta release."
+				},
+				"updateVersion(string)": {
+					"notice": "Updates the beta version. Only callable by the owner."
+				}
+			},
+			"notice": "This contract simulates a beta release version of a decentralized application.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/betaRelease.sol": "BetaRelease"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/betaRelease.sol": {
+			"keccak256": "0x8a48b440efb38f5522678212a038b6df9eafbbc8b455777e3336d100c578b876",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a661cd60a46b1b225898f1a59dbaae2309dbb58a162a11ae6b71e55de7f88f27",
+				"dweb:/ipfs/QmTCuNxknFwvv9aRTp8h3UvsWxR12Fuudx5VvABe4pmvHg"
+			]
+		}
+	},
+	"version": 1
+}

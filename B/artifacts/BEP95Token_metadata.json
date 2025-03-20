@@ -18,13 +18,23 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint8",
-						"name": "_decimals",
-						"type": "uint8"
+						"internalType": "address",
+						"name": "_tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenB",
+						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "totalSupply_",
+						"name": "_ratioA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_ratioB",
 						"type": "uint256"
 					}
 				],
@@ -62,6 +72,44 @@
 					{
 						"indexed": true,
 						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountMinted",
+						"type": "uint256"
+					}
+				],
+				"name": "Mint",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountRedeemed",
+						"type": "uint256"
+					}
+				],
+				"name": "Redeem",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
 						"name": "from",
 						"type": "address"
 					},
@@ -85,12 +133,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "owner",
+						"name": "",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "spender",
+						"name": "",
 						"type": "address"
 					}
 				],
@@ -133,7 +181,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "",
 						"type": "address"
 					}
 				],
@@ -162,6 +210,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountB",
+						"type": "uint256"
+					}
+				],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -176,12 +242,90 @@
 			},
 			{
 				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ratioA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ratioB",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "redeem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "symbol",
 				"outputs": [
 					{
 						"internalType": "string",
 						"name": "",
 						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenA",
+				"outputs": [
+					{
+						"internalType": "contract IBEP20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenB",
+				"outputs": [
+					{
+						"internalType": "contract IBEP20",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -257,80 +401,49 @@
 		"devdoc": {
 			"kind": "dev",
 			"methods": {
-				"allowance(address,address)": {
-					"params": {
-						"owner": "The owner of the tokens.",
-						"spender": "The spender address."
-					}
-				},
-				"approve(address,uint256)": {
-					"params": {
-						"amount": "The amount to approve.",
-						"spender": "The spender address."
-					}
-				},
-				"balanceOf(address)": {
-					"params": {
-						"account": "The account address."
-					}
-				},
 				"constructor": {
 					"params": {
-						"_decimals": "The number of decimals the token uses.",
-						"_name": "The token name.",
-						"_symbol": "The token symbol.",
-						"totalSupply_": "The initial total supply of the token."
-					}
-				},
-				"transfer(address,uint256)": {
-					"params": {
-						"amount": "The amount to transfer.",
-						"recipient": "The recipient address."
-					}
-				},
-				"transferFrom(address,address,uint256)": {
-					"params": {
-						"amount": "The amount to transfer.",
-						"recipient": "The recipient address.",
-						"sender": "The address to transfer tokens from."
+						"_name": "Token name.",
+						"_ratioA": "Required ratio for token A (e.g., 50e18 for 50%).",
+						"_ratioB": "Required ratio for token B (e.g., 50e18 for 50%).",
+						"_symbol": "Token symbol.",
+						"_tokenA": "Address of underlying token A.",
+						"_tokenB": "Address of underlying token B."
 					}
 				}
 			},
-			"title": "BEP20Token",
+			"title": "BEP95Token",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"allowance(address,address)": {
-					"notice": "Returns the amount that spender is allowed to spend on behalf of owner."
-				},
 				"approve(address,uint256)": {
-					"notice": "Approves spender to spend a specified amount of tokens on behalf of the caller."
-				},
-				"balanceOf(address)": {
-					"notice": "Returns the balance of the specified account."
+					"notice": "Approves spender to spend tokens on behalf of caller."
 				},
 				"constructor": {
-					"notice": "Constructor to initialize the token."
+					"notice": "Constructor to initialize the basket token."
 				},
-				"totalSupply()": {
-					"notice": "Returns the total token supply."
+				"deposit(uint256,uint256)": {
+					"notice": "Deposits underlying tokens to mint new BEP95 basket tokens. The deposit amounts must be in the proportion defined by ratioA and ratioB."
+				},
+				"redeem(uint256)": {
+					"notice": "Redeems BEP95 tokens to withdraw underlying tokens in the basket."
 				},
 				"transfer(address,uint256)": {
-					"notice": "Transfers tokens to a specified recipient."
+					"notice": "Transfers BEP95 tokens."
 				},
 				"transferFrom(address,address,uint256)": {
-					"notice": "Transfers tokens from one address to another using the allowance mechanism."
+					"notice": "Transfers tokens from sender to recipient using allowance."
 				}
 			},
-			"notice": "A BEP-20 token implementation on Binance Smart Chain.",
+			"notice": "A simplified BEP‑95 basket token representing a basket of two underlying tokens.",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"B/bep20.sol": "BEP20Token"
+			"B/bep95.sol": "BEP95Token"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -344,12 +457,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"B/bep20.sol": {
-			"keccak256": "0x6eda75c679bfae2f8edb721cecd079a6ab882526b8f27344983b9f8a957ae262",
+		"B/bep95.sol": {
+			"keccak256": "0xa9f3db2cb2a41d979aab1c3496b98e1b0b2a3ce52f787fa6a59113d920de3b14",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d7fa3cfc636840f5d31c8b83d990f9d4176c6fd512d5c677ab2b1e5593dc21a1",
-				"dweb:/ipfs/QmWmW1oqii25Tvzyr8m6p2BsxgXNyPhDjE3LN1wDLJqik5"
+				"bzz-raw://0debb961eea4c5378c5e5b89f888b1d11ac0057c6db527e359d9b5aba03f0129",
+				"dweb:/ipfs/QmTpivfpTX6QPTgo8gc9aPEkZFHmyurYkeRGcnHoaeWjPo"
 			]
 		}
 	},

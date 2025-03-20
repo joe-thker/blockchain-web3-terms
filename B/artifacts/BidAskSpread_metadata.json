@@ -1,0 +1,187 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "asker",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ask",
+						"type": "uint256"
+					}
+				],
+				"name": "AskPlaced",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "bidder",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "bid",
+						"type": "uint256"
+					}
+				],
+				"name": "BidPlaced",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "spread",
+						"type": "uint256"
+					}
+				],
+				"name": "SpreadCalculated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getSpread",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "spread",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "highestBid",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lowestAsk",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "askPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "placeAsk",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "placeBid",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getSpread()": {
+					"returns": {
+						"spread": "The bid-ask spread in wei (lowestAsk - highestBid), or 0 if not available."
+					}
+				},
+				"placeAsk(uint256)": {
+					"params": {
+						"askPrice": "The new ask price in wei."
+					}
+				}
+			},
+			"title": "BidAskSpread",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor initializes the highest bid to 0 and lowest ask to max value."
+				},
+				"getSpread()": {
+					"notice": "Returns the current bid-ask spread."
+				},
+				"placeAsk(uint256)": {
+					"notice": "Allows a seller to set an ask price. The ask price must be lower than the current lowest ask."
+				},
+				"placeBid()": {
+					"notice": "Allows a user to place a bid. The bid must be higher than the current highest bid."
+				}
+			},
+			"notice": "A simple contract to simulate a bid-ask spread mechanism.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/Bid-Ask Spread.sol": "BidAskSpread"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/Bid-Ask Spread.sol": {
+			"keccak256": "0xf68d742602ad3e3d9cc3ea4ace04f29683da2554492366f0861044970b051ec2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b4202cbffbc57afbb8622203d5fd21a94198b3d6d546d30d19ab5fe81708c579",
+				"dweb:/ipfs/QmR8KMz4NUzpqnRxK3XYiDvXyiHWZvJDXhFrtzKZfFUSLR"
+			]
+		}
+	},
+	"version": 1
+}

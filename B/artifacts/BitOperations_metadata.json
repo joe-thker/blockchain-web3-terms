@@ -1,0 +1,224 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "number",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "bitIndex",
+						"type": "uint8"
+					}
+				],
+				"name": "clearBit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "number",
+						"type": "uint256"
+					}
+				],
+				"name": "countSetBits",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "count",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "number",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "bitIndex",
+						"type": "uint8"
+					}
+				],
+				"name": "isBitSet",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "number",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "bitIndex",
+						"type": "uint8"
+					}
+				],
+				"name": "setBit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "number",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "bitIndex",
+						"type": "uint8"
+					}
+				],
+				"name": "toggleBit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"clearBit(uint256,uint8)": {
+					"params": {
+						"bitIndex": "The index of the bit to clear (0-indexed).",
+						"number": "The original number."
+					},
+					"returns": {
+						"_0": "The new number with the bit at bitIndex cleared."
+					}
+				},
+				"countSetBits(uint256)": {
+					"params": {
+						"number": "The number to evaluate."
+					},
+					"returns": {
+						"count": "The count of bits set to 1."
+					}
+				},
+				"isBitSet(uint256,uint8)": {
+					"params": {
+						"bitIndex": "The index of the bit (0-indexed, must be less than 256).",
+						"number": "The number to check."
+					},
+					"returns": {
+						"_0": "True if the bit is set, false otherwise."
+					}
+				},
+				"setBit(uint256,uint8)": {
+					"params": {
+						"bitIndex": "The index of the bit to set (0-indexed).",
+						"number": "The original number."
+					},
+					"returns": {
+						"_0": "The new number with the bit at bitIndex set."
+					}
+				},
+				"toggleBit(uint256,uint8)": {
+					"params": {
+						"bitIndex": "The index of the bit to toggle (0-indexed).",
+						"number": "The original number."
+					},
+					"returns": {
+						"_0": "The new number with the bit at bitIndex toggled."
+					}
+				}
+			},
+			"title": "BitOperations",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"clearBit(uint256,uint8)": {
+					"notice": "Clears the bit at a given index (sets it to 0)."
+				},
+				"countSetBits(uint256)": {
+					"notice": "Counts the number of bits set to 1 in the given number."
+				},
+				"isBitSet(uint256,uint8)": {
+					"notice": "Checks if the bit at a given index is set (1) in the number."
+				},
+				"setBit(uint256,uint8)": {
+					"notice": "Sets the bit at a given index to 1."
+				},
+				"toggleBit(uint256,uint8)": {
+					"notice": "Toggles the bit at a given index."
+				}
+			},
+			"notice": "A contract demonstrating various bitwise operations on a uint256 value.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bit.sol": "BitOperations"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bit.sol": {
+			"keccak256": "0x8a8e0f8a757410aafd0032f48d9a0c75ab5f8d0ef0b9a499aa0eb4f4879ebf12",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef51ce459e4874073c61c347be8b648f4711ac3e42ff54091bc84e9d41fbc9c6",
+				"dweb:/ipfs/QmdjREvuU9xmxRDNMpvLuevyv5e8jsVix1FVy6d6Uaz43f"
+			]
+		}
+	},
+	"version": 1
+}
