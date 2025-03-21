@@ -1,0 +1,306 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "int128",
+						"name": "_initialPrice",
+						"type": "int128"
+					},
+					{
+						"internalType": "int128",
+						"name": "_slope",
+						"type": "int128"
+					},
+					{
+						"internalType": "int128",
+						"name": "_growthFactor",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newTotalSupply",
+						"type": "uint256"
+					}
+				],
+				"name": "TokenBought",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "buyToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentExponentialPrice",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentLinearPrice",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentLogarithmicPrice",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "supply",
+						"type": "uint256"
+					}
+				],
+				"name": "getExponentialPrice",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "price",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "supply",
+						"type": "uint256"
+					}
+				],
+				"name": "getLinearPrice",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "price",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "supply",
+						"type": "uint256"
+					}
+				],
+				"name": "getLogarithmicPrice",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "price",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "growthFactor",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "initialPrice",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "slope",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_growthFactor": "The growth factor for the exponential curve (64x64 fixed point).",
+						"_initialPrice": "The initial price (64x64 fixed point).",
+						"_slope": "The slope for linear and logarithmic curves (64x64 fixed point)."
+					}
+				},
+				"getExponentialPrice(uint256)": {
+					"params": {
+						"supply": "The token supply."
+					},
+					"returns": {
+						"price": "The computed token price (64x64 fixed point)."
+					}
+				},
+				"getLinearPrice(uint256)": {
+					"params": {
+						"supply": "The token supply."
+					},
+					"returns": {
+						"price": "The computed token price (64x64 fixed point)."
+					}
+				},
+				"getLogarithmicPrice(uint256)": {
+					"params": {
+						"supply": "The token supply."
+					},
+					"returns": {
+						"price": "The computed token price (64x64 fixed point)."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"buyToken()": {
+					"notice": "Simulates purchasing one token by incrementing the total supply."
+				},
+				"constructor": {
+					"notice": "Constructor to set the bonding curve parameters."
+				},
+				"currentExponentialPrice()": {
+					"notice": "Returns the current token price based on the exponential bonding curve."
+				},
+				"currentLinearPrice()": {
+					"notice": "Returns the current token price based on the linear bonding curve."
+				},
+				"currentLogarithmicPrice()": {
+					"notice": "Returns the current token price based on the logarithmic bonding curve."
+				},
+				"getExponentialPrice(uint256)": {
+					"notice": "Returns the price using an exponential bonding curve."
+				},
+				"getLinearPrice(uint256)": {
+					"notice": "Returns the price using a linear bonding curve."
+				},
+				"getLogarithmicPrice(uint256)": {
+					"notice": "Returns the price using a logarithmic bonding curve."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/BondingCurveTypes/bondingCurveTypes.sol": "BondingCurves"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/BondingCurveTypes/bondingCurveTypes.sol": {
+			"keccak256": "0xb2153310ccbcdcfa2742e0f40e174472dcdd16baf1aa6ce6d5d9119316d0d979",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6f39fd51d4520cef0d47486a78638313cd43fb9ca03fa153d34dd1d10c3bff76",
+				"dweb:/ipfs/QmYibNx6QHZ7gCgqcebPAH9LreYGhvJfaL8ShQkZwnAUM8"
+			]
+		},
+		"abdk-libraries-solidity/ABDKMath64x64.sol": {
+			"keccak256": "0x1364fdc24192b982f647c7fc68dcb2f6fc1b5e201843e773144bd23a76cb3b97",
+			"license": "BSD-4-Clause",
+			"urls": [
+				"bzz-raw://490712cc07db32f274899b17aade9c975f06010848c21500b8a5ead6898e09c7",
+				"dweb:/ipfs/QmZMPKjDgwCFSGdLWJW6g5E7hDLByA9hNjXzAwJ4GKTZvN"
+			]
+		}
+	},
+	"version": 1
+}
