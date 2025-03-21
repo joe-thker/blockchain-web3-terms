@@ -1,0 +1,171 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "volatility",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fearFactor",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "miseryIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "MetricsUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "fearFactor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMiseryIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_volatility",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_fearFactor",
+						"type": "uint256"
+					}
+				],
+				"name": "updateMetrics",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "volatility",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Both metrics are expected to be provided scaled by 1e18.",
+			"kind": "dev",
+			"methods": {
+				"getMiseryIndex()": {
+					"returns": {
+						"_0": "The misery index, calculated as volatility + fearFactor."
+					}
+				},
+				"updateMetrics(uint256,uint256)": {
+					"params": {
+						"_fearFactor": "The updated fear factor metric (scaled by 1e18).",
+						"_volatility": "The updated volatility metric (scaled by 1e18)."
+					}
+				}
+			},
+			"title": "BitcoinMiseryIndex",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner."
+				},
+				"getMiseryIndex()": {
+					"notice": "Returns the current Bitcoin Misery Index."
+				},
+				"updateMetrics(uint256,uint256)": {
+					"notice": "Updates the volatility and fear metrics."
+				}
+			},
+			"notice": "A simplified contract to simulate a Bitcoin Misery Index by combining volatility and fear metrics.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bitcoinMiseryIndex.sol": "BitcoinMiseryIndex"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bitcoinMiseryIndex.sol": {
+			"keccak256": "0x4a0e0ed880f6b8cf7c73ee882c723648e797204b2359c93fbabb1600e2a8d051",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f0a81e8af83d5550ca35e25a3e7247a5da3a435e0dbd4290ff6693788b8bc7af",
+				"dweb:/ipfs/QmRwdsXKzgCHoCS8X167BbgyFm3abXZ9KLpYr2wy3Hro1K"
+			]
+		}
+	},
+	"version": 1
+}

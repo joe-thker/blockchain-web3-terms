@@ -1,0 +1,103 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "finalStack",
+						"type": "uint256[]"
+					}
+				],
+				"name": "ProgramExecuted",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint8",
+								"name": "opcode",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "operand",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct BitcoinVirtualMachine.Instruction[]",
+						"name": "program",
+						"type": "tuple[]"
+					}
+				],
+				"name": "runProgram",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "finalStack",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"runProgram((uint8,uint256)[])": {
+					"params": {
+						"program": "An array of Instruction structs representing the program."
+					},
+					"returns": {
+						"finalStack": "The final stack state after execution."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"runProgram((uint8,uint256)[])": {
+					"notice": "Executes a program (array of instructions) on the virtual machine."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bitcoinVirtualMachine.sol": "BitcoinVirtualMachine"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bitcoinVirtualMachine.sol": {
+			"keccak256": "0xb228fbc8b1feb79b527a43599baf66925ffddd7709dd59a927a050631c5adef3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://46bca5adbcdcc658dc5bf382f9a39428f114a9d4233981a4ac761f7c0d37088c",
+				"dweb:/ipfs/QmbKK2CCriYQL5AioeKwx4HSX9dBdLhFrcpEueZ2zUjVkn"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,224 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bitstream",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "index",
+						"type": "uint8"
+					}
+				],
+				"name": "clearBit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bitstream",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "length",
+						"type": "uint8"
+					}
+				],
+				"name": "decodeBooleans",
+				"outputs": [
+					{
+						"internalType": "bool[]",
+						"name": "bits",
+						"type": "bool[]"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool[]",
+						"name": "bits",
+						"type": "bool[]"
+					}
+				],
+				"name": "encodeBooleans",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "bitstream",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bitstream",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "index",
+						"type": "uint8"
+					}
+				],
+				"name": "setBit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bitstream",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "index",
+						"type": "uint8"
+					}
+				],
+				"name": "toggleBit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"clearBit(uint256,uint8)": {
+					"params": {
+						"bitstream": "The original bitstream.",
+						"index": "The index of the bit to clear (0-indexed)."
+					},
+					"returns": {
+						"_0": "The new bitstream with the bit at `index` cleared (set to 0)."
+					}
+				},
+				"decodeBooleans(uint256,uint8)": {
+					"params": {
+						"bitstream": "The uint256 bitstream to decode.",
+						"length": "The number of bits to decode."
+					},
+					"returns": {
+						"bits": "An array of booleans representing the decoded bitstream."
+					}
+				},
+				"encodeBooleans(bool[])": {
+					"params": {
+						"bits": "An array of booleans to encode."
+					},
+					"returns": {
+						"bitstream": "A uint256 representing the encoded bitstream."
+					}
+				},
+				"setBit(uint256,uint8)": {
+					"params": {
+						"bitstream": "The original bitstream.",
+						"index": "The index of the bit to set (0-indexed)."
+					},
+					"returns": {
+						"_0": "The new bitstream with the bit at `index` set to 1."
+					}
+				},
+				"toggleBit(uint256,uint8)": {
+					"params": {
+						"bitstream": "The original bitstream.",
+						"index": "The index of the bit to toggle (0-indexed)."
+					},
+					"returns": {
+						"_0": "The new bitstream with the bit at `index` toggled."
+					}
+				}
+			},
+			"title": "BitstreamOperations",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"clearBit(uint256,uint8)": {
+					"notice": "Clears the bit at a given index in the bitstream."
+				},
+				"decodeBooleans(uint256,uint8)": {
+					"notice": "Decodes a uint256 bitstream back into an array of booleans."
+				},
+				"encodeBooleans(bool[])": {
+					"notice": "Encodes an array of booleans into a single uint256 bitstream."
+				},
+				"setBit(uint256,uint8)": {
+					"notice": "Sets the bit at a given index in the bitstream."
+				},
+				"toggleBit(uint256,uint8)": {
+					"notice": "Toggles the bit at a given index in the bitstream."
+				}
+			},
+			"notice": "This contract demonstrates basic bitstream operations such as encoding and decoding booleans, and performing bitwise operations like setting, clearing, and toggling bits.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bitstreams.sol": "BitstreamOperations"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bitstreams.sol": {
+			"keccak256": "0xeebee11046b15acc1fe047728f184fe6ccd224c5380e69039ec5f478425ab0fb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dbd6f0a25ead2db918d6bcd43bc8e2282a082d7f8a082506a21b3329e48865dc",
+				"dweb:/ipfs/Qmd8TAMmhp3Dz9Atu9cvBHMbm4wNj5uCFzJ5qhcXHTRy9Y"
+			]
+		}
+	},
+	"version": 1
+}

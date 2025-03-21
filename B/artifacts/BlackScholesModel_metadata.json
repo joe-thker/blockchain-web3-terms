@@ -1,0 +1,110 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "int128",
+						"name": "S",
+						"type": "int128"
+					},
+					{
+						"internalType": "int128",
+						"name": "K",
+						"type": "int128"
+					},
+					{
+						"internalType": "int128",
+						"name": "T",
+						"type": "int128"
+					},
+					{
+						"internalType": "int128",
+						"name": "r",
+						"type": "int128"
+					},
+					{
+						"internalType": "int128",
+						"name": "sigma",
+						"type": "int128"
+					}
+				],
+				"name": "blackScholesCallPrice",
+				"outputs": [
+					{
+						"internalType": "int128",
+						"name": "callPrice",
+						"type": "int128"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"blackScholesCallPrice(int128,int128,int128,int128,int128)": {
+					"params": {
+						"K": "Strike price (as a 64x64 fixed point number)",
+						"S": "Underlying asset price (as a 64x64 fixed point number)",
+						"T": "Time to expiration in years (as a 64x64 fixed point number)",
+						"r": "Risk-free rate (as a 64x64 fixed point number)",
+						"sigma": "Volatility (as a 64x64 fixed point number)"
+					},
+					"returns": {
+						"callPrice": "The call option price (as a 64x64 fixed point number)"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"blackScholesCallPrice(int128,int128,int128,int128,int128)": {
+					"notice": "Computes the Black-Scholes call option price."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/black Scholes model.sol": "BlackScholesModel"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/black Scholes model.sol": {
+			"keccak256": "0x8de5f733f336758aaae44c4008ab18c3f264a4f13404f3193dbe33960d347f6a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://78dc99d74c0ab0db6682566fda3dc71a18ad8bb9d31d091f73fc7134fadbb7df",
+				"dweb:/ipfs/QmPPq1xGa2G9Pfn2vrrWmTdrACF3LiZVq1P29VEZCBcpyy"
+			]
+		},
+		"abdk-libraries-solidity/ABDKMath64x64.sol": {
+			"keccak256": "0x1364fdc24192b982f647c7fc68dcb2f6fc1b5e201843e773144bd23a76cb3b97",
+			"license": "BSD-4-Clause",
+			"urls": [
+				"bzz-raw://490712cc07db32f274899b17aade9c975f06010848c21500b8a5ead6898e09c7",
+				"dweb:/ipfs/QmZMPKjDgwCFSGdLWJW6g5E7hDLByA9hNjXzAwJ4GKTZvN"
+			]
+		}
+	},
+	"version": 1
+}

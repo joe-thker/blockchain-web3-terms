@@ -1,0 +1,125 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_blockNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "getBlockHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBlockInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockDifficulty",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "coinbase",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "gasLimit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getBlockHash(uint256)": {
+					"params": {
+						"_blockNumber": "The block number to get the hash for. Must be within the last 256 blocks."
+					},
+					"returns": {
+						"blockHash": "The block hash."
+					}
+				},
+				"getBlockInfo()": {
+					"returns": {
+						"blockDifficulty": "The difficulty of the current block.",
+						"blockNumber": "The current block number.",
+						"blockTimestamp": "The timestamp of the current block.",
+						"coinbase": "The address of the miner (coinbase) for the current block.",
+						"gasLimit": "The gas limit of the current block."
+					}
+				}
+			},
+			"title": "BlockExplorer",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getBlockHash(uint256)": {
+					"notice": "Returns the block hash for a given block number."
+				},
+				"getBlockInfo()": {
+					"notice": "Returns key details about the current block."
+				}
+			},
+			"notice": "A simple contract to retrieve block information.  This can serve as a building block for a blockchain explorer application.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/blockExplorer.sol": "BlockExplorer"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/blockExplorer.sol": {
+			"keccak256": "0x5ab44926abe2e6b715aa3275e50b9f56894acf18616a0a6855dd430e98f78e0d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e1fc0aae23bf720ffc66819c568208a6cde2f5b8deab370e6f5d5fa17d98ed2",
+				"dweb:/ipfs/QmS2NAvRvvzUUaSsaUPCq1bPUwJvE81FGZ95qEJH9aB2Ms"
+			]
+		}
+	},
+	"version": 1
+}

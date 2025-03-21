@@ -1,0 +1,148 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "initialDominance",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newDominance",
+						"type": "uint256"
+					}
+				],
+				"name": "DominanceUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "dominance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDominance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newDominance",
+						"type": "uint256"
+					}
+				],
+				"name": "updateDominance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"initialDominance": "The initial Bitcoin dominance (e.g., 5023 for 50.23%)."
+					}
+				},
+				"getDominance()": {
+					"returns": {
+						"_0": "The Bitcoin dominance (with 2 decimals of precision)."
+					}
+				},
+				"updateDominance(uint256)": {
+					"params": {
+						"newDominance": "The new Bitcoin dominance value (with 2 decimal precision)."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the contract owner and initial Bitcoin dominance."
+				},
+				"getDominance()": {
+					"notice": "Returns the current Bitcoin dominance value."
+				},
+				"updateDominance(uint256)": {
+					"notice": "Updates the Bitcoin dominance value. Only callable by the owner."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bitcoinDominance.sol": "BitcoinDominance"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bitcoinDominance.sol": {
+			"keccak256": "0x89d2dadfb142fac026abf385cae464f7949719f557ac895104373518c28dad79",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6f3dc364e257a9ff2137147fae2c4a4e454fbbc5599a375116a4b1f8c31de85a",
+				"dweb:/ipfs/QmQ5e97sb9mL61RYzpAExEntDoZHYoNjWzWdqQdKcm1Zcu"
+			]
+		}
+	},
+	"version": 1
+}
