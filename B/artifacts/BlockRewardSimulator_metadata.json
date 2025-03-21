@@ -1,0 +1,176 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_rewardPerBlock",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "producer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					}
+				],
+				"name": "BlockProduced",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "producer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardClaimed",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "claimReward",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "produceBlock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardPerBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "rewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_rewardPerBlock": "The reward amount given each time produceBlock() is called."
+					}
+				}
+			},
+			"title": "BlockRewardSimulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"claimReward()": {
+					"notice": "Allows a producer to claim their accumulated rewards."
+				},
+				"constructor": {
+					"notice": "Constructor sets the contract owner and the fixed reward per block."
+				},
+				"produceBlock()": {
+					"notice": "Simulates block production. A producer calls this function to \"produce\" a block, and their reward balance increases by rewardPerBlock."
+				}
+			},
+			"notice": "This contract simulates a block reward mechanism by awarding a fixed reward to an address each time they \"produce\" a block via the produceBlock() function. Users can later claim their accumulated rewards.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/blockReward.sol": "BlockRewardSimulator"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/blockReward.sol": {
+			"keccak256": "0x7f735cb5e33ccd46761068f7ef57916d2d1dfa7c71ebb8fe40ded9ba1396e809",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4033c45be2105655ea2f43193e49c3a45d6cb53c0d2778e79968bb6eb0d9d2be",
+				"dweb:/ipfs/QmPnvd92iy2d8paJrYL6wQHVQbWv8ufCvWYapVqCKwmJif"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,198 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "producer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "BlockProduced",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "producer",
+						"type": "address"
+					}
+				],
+				"name": "ProducerRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getProducedBlockCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "produceBlock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "producedBlocks",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "producer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "registerProducer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "registeredProducers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getProducedBlockCount()": {
+					"returns": {
+						"_0": "The number of produced blocks."
+					}
+				}
+			},
+			"title": "BlockProducerSimulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner."
+				},
+				"getProducedBlockCount()": {
+					"notice": "Returns the total number of produced blocks in this simulation."
+				},
+				"produceBlock()": {
+					"notice": "Allows a registered producer to simulate block production. This function logs an event and stores block production details."
+				},
+				"registerProducer()": {
+					"notice": "Allows an address to register as a producer."
+				}
+			},
+			"notice": "This contract simulates a simple producer system where addresses can register as producers and then produce blocks (record block production events).",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/blockProducer.sol": "BlockProducerSimulator"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/blockProducer.sol": {
+			"keccak256": "0x2ee12204fe4b5b1750770268102b30cb284d08cad9d5ecb5241dc02a74b06b71",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c4039191bca54870bc037335b56650ed0d9c15dfb75b8646b33d625913774311",
+				"dweb:/ipfs/QmVjpaPGBHMQfW8p9vg2fKgeZTeymzgcNnwodj8KaiWsxe"
+			]
+		}
+	},
+	"version": 1
+}
