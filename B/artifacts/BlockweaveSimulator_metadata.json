@@ -1,0 +1,205 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "prevHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "BlockCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "blocks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "prevHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					}
+				],
+				"name": "createBlock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "prevHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalBlocks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"createBlock(string)": {
+					"params": {
+						"data": "The data to store in the block."
+					}
+				},
+				"getBlock(uint256)": {
+					"params": {
+						"id": "The ID of the block to retrieve."
+					},
+					"returns": {
+						"data": "The data stored in the block.",
+						"id_": "The block's ID.",
+						"prevHash": "The previous block hash referenced.",
+						"timestamp": "The block's timestamp."
+					}
+				},
+				"totalBlocks()": {
+					"returns": {
+						"_0": "The total block count."
+					}
+				}
+			},
+			"title": "BlockweaveSimulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"createBlock(string)": {
+					"notice": "Creates a new block in the blockweave."
+				},
+				"getBlock(uint256)": {
+					"notice": "Retrieves a block by its ID."
+				},
+				"totalBlocks()": {
+					"notice": "Returns the total number of blocks in the blockweave."
+				}
+			},
+			"notice": "A simplified simulation of a blockweave where each new block references a randomly chosen previous block.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/blockWeave.sol": "BlockweaveSimulator"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/blockWeave.sol": {
+			"keccak256": "0xc8816b771191ea8e7ff9f6ad601b72161ed8245969472752a62e59dbdf626a9a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://003a562ccf53b776a1d6340b4bbc5b4df8f00e347b712ba816ff5edca93599ba",
+				"dweb:/ipfs/QmcUSNiZ4qQcGYnBpmi4WZUqyFof8TNW5GfDyWHKPQcwUh"
+			]
+		}
+	},
+	"version": 1
+}

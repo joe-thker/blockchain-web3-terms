@@ -1,0 +1,225 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "AccessGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "AccessRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "locked",
+						"type": "bool"
+					}
+				],
+				"name": "LockStatusChanged",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorizedUsers",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLockStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "grantAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "locked",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "revokeAccess",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unlock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getLockStatus()": {
+					"returns": {
+						"_0": "True if the lock is locked, false if unlocked."
+					}
+				},
+				"grantAccess(address)": {
+					"params": {
+						"user": "The address to grant access."
+					}
+				},
+				"revokeAccess(address)": {
+					"params": {
+						"user": "The address to revoke access."
+					}
+				}
+			},
+			"title": "BlockchainEnabledSmartLock",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner and initializes the lock as locked."
+				},
+				"getLockStatus()": {
+					"notice": "Retrieves the current status of the lock."
+				},
+				"grantAccess(address)": {
+					"notice": "Allows the owner to grant access to an address."
+				},
+				"lock()": {
+					"notice": "Allows an authorized user to lock the smart lock."
+				},
+				"revokeAccess(address)": {
+					"notice": "Allows the owner to revoke access from an address."
+				},
+				"unlock()": {
+					"notice": "Allows an authorized user to unlock the smart lock."
+				}
+			},
+			"notice": "A simple smart contract that simulates a blockchain-enabled smart lock.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/blockchainenabledSmartLock.sol": "BlockchainEnabledSmartLock"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/blockchainenabledSmartLock.sol": {
+			"keccak256": "0x0eba8999ffd040646381ff3e8e177b28d7216c485a5f9e37b4e49940d8ed66e9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://842c7ba41a478fc8971bab33bf5cb2317abb87a3e52b016253f253dcf908fd51",
+				"dweb:/ipfs/QmcNZ3eVwnnh9sMwdo2rFrw9vY3RLrCjQvJJepgrp2KPgN"
+			]
+		}
+	},
+	"version": 1
+}
