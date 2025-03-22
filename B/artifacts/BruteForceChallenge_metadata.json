@@ -1,0 +1,133 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "secret",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getSecretHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_guess",
+						"type": "uint256"
+					}
+				],
+				"name": "guess",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "winner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"secret": "The secret number to be guessed."
+					}
+				},
+				"getSecretHash()": {
+					"returns": {
+						"_0": "The hash of the secret."
+					}
+				},
+				"guess(uint256)": {
+					"params": {
+						"_guess": "The guess provided by the user."
+					},
+					"returns": {
+						"_0": "True if the guess is correct, false otherwise."
+					}
+				}
+			},
+			"title": "BruteForceChallenge",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "The constructor initializes the challenge with a secret."
+				},
+				"getSecretHash()": {
+					"notice": "(For testing only) Returns the stored hash of the secret."
+				},
+				"guess(uint256)": {
+					"notice": "Allows a user to submit a guess."
+				}
+			},
+			"notice": "This contract holds a secret (as a hash) and allows users to guess it. If a correct guess is provided, the contract records the winner.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/brueforce attack.sol": "BruteForceChallenge"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/brueforce attack.sol": {
+			"keccak256": "0x73b80183117beff8adf511b8229a422825cc539b1c730ee6fdf2a212613572f5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://635a77d0daf47a9dcb9fc246039dbef2104af0b75a5ff337cefd0807a07788bb",
+				"dweb:/ipfs/QmYB8T6EgxoirP64eWJg86GVaayC1UexEUSiA6vJtdtS57"
+			]
+		}
+	},
+	"version": 1
+}

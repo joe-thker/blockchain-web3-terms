@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.20+commit.a1b79de6"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -9,12 +9,36 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "from",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "recipient",
 						"type": "address"
 					},
 					{
@@ -38,19 +62,21 @@
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
+			"title": "IERC20 Interface",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
+			"notice": "Minimal interface for interacting with an ERC-20 token.",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"B/bearhug.sol": "IERC20"
+			"B/bridges.sol": "IERC20"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -62,12 +88,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"B/bearhug.sol": {
-			"keccak256": "0x0d2318e14ef4039213605324022227f2cc7fbee48c6ecef57a1959f456fa5bc8",
+		"B/bridges.sol": {
+			"keccak256": "0x7f12074806463f92d55d96a9661f6575970e7e1f4bfdcd1f702d274339d4d714",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://39163931203f1e23d6a79f4a8ec938bbad1ea01bb8b96ba55d687284a6062416",
-				"dweb:/ipfs/QmXK7QWVDVK2Upm1cpthkwoTgaBovnUn6CyDRxEgTZJ99A"
+				"bzz-raw://2272582acf9a023df00db067c2802f34aaf9deae5b8547131ef93aedf79f109b",
+				"dweb:/ipfs/QmYjLH2vtANH1Fa1zmW7ZHD7xtAvKA7rJCuy6gtMK1qGfD"
 			]
 		}
 	},

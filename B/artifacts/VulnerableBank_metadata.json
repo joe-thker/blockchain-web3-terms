@@ -1,0 +1,99 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "This contract is intentionally vulnerable for educational purposes.",
+			"kind": "dev",
+			"methods": {
+				"withdraw(uint256)": {
+					"details": "Vulnerable to reentrancy because the state update occurs after transferring Ether."
+				}
+			},
+			"title": "VulnerableBank",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"deposit()": {
+					"notice": "Deposit Ether into the bank."
+				},
+				"withdraw(uint256)": {
+					"notice": "Withdraw a specified amount of Ether."
+				}
+			},
+			"notice": "A simple bank contract with a reentrancy vulnerability.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bugexploit.sol": "VulnerableBank"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bugexploit.sol": {
+			"keccak256": "0x3abf75b22c0784b5a337ce51a6e1f66cc6539c6fca00160014985cf00ecbfcae",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0a07754b5ffff807a6855a9fa003c743acd206fb8e4e66f6bb26c8438979e371",
+				"dweb:/ipfs/QmbYsju3BtA47jbsTQWMX1hWyXYWjCm4zJaSq3MXnLqkoM"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,152 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newDefinition",
+						"type": "string"
+					}
+				],
+				"name": "DefinitionUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "definition",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDefinition",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "term",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newDefinition",
+						"type": "string"
+					}
+				],
+				"name": "updateDefinition",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getDefinition()": {
+					"returns": {
+						"_0": "The definition as a string."
+					}
+				},
+				"updateDefinition(string)": {
+					"params": {
+						"newDefinition": "The new definition string."
+					}
+				}
+			},
+			"title": "BullMarketDictionary",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner and initializes the definition."
+				},
+				"getDefinition()": {
+					"notice": "Retrieves the definition of Bull Market."
+				},
+				"updateDefinition(string)": {
+					"notice": "Allows the owner to update the definition."
+				}
+			},
+			"notice": "This contract stores and retrieves the definition and use cases of a Bull Market.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bull market.sol": "BullMarketDictionary"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bull market.sol": {
+			"keccak256": "0xb283c980dec2cfe34a07c3c86c30bd47885c752abc6bb0963bf51fb4303de083",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9066215fdd2b1838da82bc856d287d87ddacbf8232c28bc155ff8b1f2ad9b84c",
+				"dweb:/ipfs/QmSBD3T5zBH3czDD7rCbpXwFkd5g2ZQjFjf97YwKaiSF4E"
+			]
+		}
+	},
+	"version": 1
+}

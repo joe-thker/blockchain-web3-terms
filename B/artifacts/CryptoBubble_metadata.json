@@ -1,0 +1,238 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_initialPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_priceFactor",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalInvested",
+						"type": "uint256"
+					}
+				],
+				"name": "BubbleBurst",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "investor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newTotalInvested",
+						"type": "uint256"
+					}
+				],
+				"name": "Investment",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "bubbleBurst",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "burstBubble",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "contributions",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "initialPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "invest",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "priceFactor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalInvested",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_initialPrice": "The starting price for tokens (in wei).",
+						"_priceFactor": "The incremental price increase per wei invested."
+					}
+				},
+				"currentPrice()": {
+					"returns": {
+						"_0": "The current price = initialPrice + (priceFactor * totalInvested)."
+					}
+				}
+			},
+			"title": "CryptoBubble",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"burstBubble()": {
+					"notice": "Allows the owner to trigger the bubble burst, halting further investments."
+				},
+				"constructor": {
+					"notice": "Constructor sets the initial parameters for the bubble."
+				},
+				"currentPrice()": {
+					"notice": "Returns the current token price based on the linear bonding curve."
+				},
+				"invest()": {
+					"notice": "Allows investors to contribute Ether to the bubble while it is active."
+				}
+			},
+			"notice": "This contract simulates a crypto market bubble by allowing investors to contribute Ether, which increases the token price linearly. The owner can trigger a bubble burst to stop further investments.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/bubble.sol": "CryptoBubble"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/bubble.sol": {
+			"keccak256": "0x717c3aac4ed310e42e910a22aaa04127affca013f9fb5ccb12953f0136b00b49",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3e6f16201e906d640f995dcee59cc277fda30924913ed0a6a6d604b81cb3018f",
+				"dweb:/ipfs/QmbxAPttiLXoEQ3A8uNsGNUAnAapVzvsUBje54E2ybtNpZ"
+			]
+		}
+	},
+	"version": 1
+}
