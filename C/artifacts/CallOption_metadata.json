@@ -1,0 +1,292 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "strikePrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "premium",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "expiry",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "underlyingAsset",
+						"type": "uint256"
+					}
+				],
+				"name": "OptionCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "strikePrice",
+						"type": "uint256"
+					}
+				],
+				"name": "OptionExercised",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					}
+				],
+				"name": "OptionExpired",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "premium",
+						"type": "uint256"
+					}
+				],
+				"name": "OptionPurchased",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "buyOption",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "buyer",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_strikePrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_premium",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_expiry",
+						"type": "uint256"
+					}
+				],
+				"name": "createOption",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "exerciseOption",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "expireOption",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "expiry",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "premium",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "seller",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "state",
+				"outputs": [
+					{
+						"internalType": "enum CallOption.OptionState",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "strikePrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "underlyingAsset",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"createOption(uint256,uint256,uint256)": {
+					"params": {
+						"_expiry": "The expiration timestamp of the option.",
+						"_premium": "The premium that the buyer must pay to purchase the option (in wei).",
+						"_strikePrice": "The price at which the buyer can purchase the asset (in wei)."
+					}
+				}
+			},
+			"title": "CallOption",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"buyOption()": {
+					"notice": "Buyer purchases the option by paying the exact premium."
+				},
+				"createOption(uint256,uint256,uint256)": {
+					"notice": "Seller creates an option by depositing Ether and specifying parameters."
+				},
+				"exerciseOption()": {
+					"notice": "Buyer exercises the option by paying the strike price before expiry."
+				},
+				"expireOption()": {
+					"notice": "After expiry, if the option is not exercised, seller can reclaim the underlying asset."
+				}
+			},
+			"notice": "A simple call option contract that allows a seller to create an option by depositing Ether as the underlying asset, and a buyer to purchase and exercise the option.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/callOption.sol": "CallOption"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/callOption.sol": {
+			"keccak256": "0xba78583da5630eb62f477ff50b102687378db03b296173c3917863d3a3916fb4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9d8d1628c002cc83447349963e39b6274412df8cf597750eee302ca6328c9492",
+				"dweb:/ipfs/QmRhciD6mM7Tkpryxv2pBnAiy4HTGNLo4GgULu74PmW23F"
+			]
+		}
+	},
+	"version": 1
+}
