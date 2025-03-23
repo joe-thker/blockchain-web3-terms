@@ -1,0 +1,334 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "_generals",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "decision",
+						"type": "bool"
+					}
+				],
+				"name": "ProposalFinalized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "ProposalSubmitted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "general",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "vote",
+						"type": "bool"
+					}
+				],
+				"name": "VoteCast",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "THRESHOLD_PERCENT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "generals",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					}
+				],
+				"name": "getProposal",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "trueVotes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "falseVotes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalVotes",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "finalized",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "decision",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proposalCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "requiredVotes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					}
+				],
+				"name": "submitProposal",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "voteValue",
+						"type": "bool"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_generals": "Array of validator addresses representing the generals."
+					}
+				},
+				"getProposal(uint256)": {
+					"params": {
+						"proposalId": "The ID of the proposal."
+					},
+					"returns": {
+						"decision": "The final decision (true if \"attack\" was chosen, false if \"retreat\").",
+						"description": "The proposal description.",
+						"falseVotes": "Number of votes for \"retreat\".",
+						"finalized": "Whether the proposal is finalized.",
+						"id": "The proposal ID.",
+						"totalVotes": "Total votes cast.",
+						"trueVotes": "Number of votes for \"attack\"."
+					}
+				},
+				"requiredVotes()": {
+					"returns": {
+						"_0": "The required number of votes."
+					}
+				},
+				"submitProposal(string)": {
+					"params": {
+						"_description": "A description of the proposal."
+					},
+					"returns": {
+						"proposalId": "The unique ID of the submitted proposal."
+					}
+				},
+				"vote(uint256,bool)": {
+					"params": {
+						"proposalId": "The ID of the proposal.",
+						"voteValue": "True for \"attack\", false for \"retreat\"."
+					}
+				}
+			},
+			"title": "ByzantineGenerals",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the owner and the list of generals."
+				},
+				"getProposal(uint256)": {
+					"notice": "Retrieves details of a proposal."
+				},
+				"requiredVotes()": {
+					"notice": "Calculates the minimum number of votes required to finalize a proposal."
+				},
+				"submitProposal(string)": {
+					"notice": "Allows a general to submit a new proposal."
+				},
+				"vote(uint256,bool)": {
+					"notice": "Allows a general to vote on an existing proposal."
+				}
+			},
+			"notice": "This contract simulates a Byzantine Generals' Problem scenario where a group of validators cast votes on a proposal and a consensus is reached when a required threshold of votes is met.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"B/byzantineGeneralsProblem.sol": "ByzantineGenerals"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"B/byzantineGeneralsProblem.sol": {
+			"keccak256": "0x226d8b3bb09ca400125844cf864f29f43d3c638fa43d3852aa0d58b0a1233b51",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://277170fc58d0df13e36da8556a7c170ca66e0d2336724466b9092c1a767c38e3",
+				"dweb:/ipfs/QmVbYwSECFn4puuTtnp14zf6h5PH6WH4QTtg1C1vXtdhpQ"
+			]
+		}
+	},
+	"version": 1
+}
