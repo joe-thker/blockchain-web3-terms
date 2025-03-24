@@ -1,0 +1,449 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "BlockAddedToBranchA",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "BlockAddedToBranchB",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "BlockAddedToMain",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "mainChainLength",
+						"type": "uint256"
+					}
+				],
+				"name": "ChainSplit",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "addBlockToBranchA",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "addBlockToBranchB",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "addBlockToMain",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "branchA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "branchB",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getBranchABlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBranchALength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getBranchBBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBranchBLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMainChainLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "mainChain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "splitChain",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "splitOccurred",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addBlockToBranchA(uint256,bytes32)": {
+					"params": {
+						"_blockHash": "The block hash.",
+						"_blockNumber": "The block number."
+					}
+				},
+				"addBlockToBranchB(uint256,bytes32)": {
+					"params": {
+						"_blockHash": "The block hash.",
+						"_blockNumber": "The block number."
+					}
+				},
+				"addBlockToMain(uint256,bytes32)": {
+					"params": {
+						"_blockHash": "The block hash.",
+						"_blockNumber": "The block number."
+					}
+				},
+				"getBranchABlock(uint256)": {
+					"params": {
+						"index": "The index of the block in Branch A."
+					},
+					"returns": {
+						"blockHash": "The block's hash.",
+						"blockNumber": "The block's number."
+					}
+				},
+				"getBranchALength()": {
+					"returns": {
+						"_0": "The number of blocks in Branch A."
+					}
+				},
+				"getBranchBBlock(uint256)": {
+					"params": {
+						"index": "The index of the block in Branch B."
+					},
+					"returns": {
+						"blockHash": "The block's hash.",
+						"blockNumber": "The block's number."
+					}
+				},
+				"getBranchBLength()": {
+					"returns": {
+						"_0": "The number of blocks in Branch B."
+					}
+				},
+				"getMainChainLength()": {
+					"returns": {
+						"_0": "The number of blocks in the main chain."
+					}
+				}
+			},
+			"title": "ChainSplitSimulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addBlockToBranchA(uint256,bytes32)": {
+					"notice": "Adds a block to Branch A after the split."
+				},
+				"addBlockToBranchB(uint256,bytes32)": {
+					"notice": "Adds a block to Branch B after the split."
+				},
+				"addBlockToMain(uint256,bytes32)": {
+					"notice": "Adds a block to the main chain before the split."
+				},
+				"getBranchABlock(uint256)": {
+					"notice": "Retrieves a block header from Branch A."
+				},
+				"getBranchALength()": {
+					"notice": "Returns the length of Branch A."
+				},
+				"getBranchBBlock(uint256)": {
+					"notice": "Retrieves a block header from Branch B."
+				},
+				"getBranchBLength()": {
+					"notice": "Returns the length of Branch B."
+				},
+				"getMainChainLength()": {
+					"notice": "Returns the length of the main chain."
+				},
+				"splitChain()": {
+					"notice": "Triggers a chain split by copying the main chain to two separate branches."
+				}
+			},
+			"notice": "This contract simulates a chain split by maintaining a main chain and two forked branches. The owner can add blocks to the main chain before a split. Once a split is triggered, the main chain is copied to Branch A and Branch B, and new blocks can be added to each branch independently.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/chainSplit.sol": "ChainSplitSimulator"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/chainSplit.sol": {
+			"keccak256": "0x46b35ff847b5cd48bc2282dd9f13af79ed32f6734e55f47604e021409dddaa48",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5ce269b2614b19b8575f4e3da30f493497a9be5df69ec5137d33ff80caa76d02",
+				"dweb:/ipfs/QmVPs7sCBwsGhEqbcpZQrjcrSSVfjA8gQxPVTDjetAZNAe"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,441 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newAccidentalForkLength",
+						"type": "uint256"
+					}
+				],
+				"name": "AccidentalForkTriggered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "BlockAddedToMain",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "divergenceIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newHardForkLength",
+						"type": "uint256"
+					}
+				],
+				"name": "HardForkTriggered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "mainChainLength",
+						"type": "uint256"
+					}
+				],
+				"name": "SoftForkTriggered",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "accidentalForkChain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "addBlockToMain",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getAccidentalForkBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAccidentalForkLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getHardForkBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getHardForkLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getMainChainBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMainChainLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getSoftForkLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "hardForkChain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "mainChain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "softForkChain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "triggerAccidentalFork",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "divergenceIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "triggerHardFork",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "triggerSoftFork",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addBlockToMain(uint256,bytes32)": {
+					"params": {
+						"_blockHash": "The block hash.",
+						"_blockNumber": "The block number."
+					}
+				},
+				"triggerHardFork(uint256)": {
+					"params": {
+						"divergenceIndex": "The index at which the hard fork diverges."
+					}
+				}
+			},
+			"title": "ChainSplitTypesSimulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addBlockToMain(uint256,bytes32)": {
+					"notice": "Adds a new block to the main chain."
+				},
+				"getAccidentalForkBlock(uint256)": {
+					"notice": "Retrieves a block header from the accidental fork chain by index."
+				},
+				"getAccidentalForkLength()": {
+					"notice": "Returns the length of the accidental fork chain."
+				},
+				"getHardForkBlock(uint256)": {
+					"notice": "Retrieves a block header from the hard fork chain by index."
+				},
+				"getHardForkLength()": {
+					"notice": "Returns the length of the hard fork chain."
+				},
+				"getMainChainBlock(uint256)": {
+					"notice": "Retrieves a block header from the main chain by index."
+				},
+				"getMainChainLength()": {
+					"notice": "Returns the length of the main chain."
+				},
+				"getSoftForkLength()": {
+					"notice": "Returns the length of the soft fork chain."
+				},
+				"triggerAccidentalFork()": {
+					"notice": "Triggers an accidental fork by copying the main chain and appending one extra block."
+				},
+				"triggerHardFork(uint256)": {
+					"notice": "Triggers a hard fork starting from a divergence point. The main chain is copied up to (and including) the divergence index, then new blocks are appended to simulate a new chain history."
+				},
+				"triggerSoftFork()": {
+					"notice": "Triggers a soft fork by copying the entire main chain to softForkChain."
+				}
+			},
+			"notice": "This contract simulates three types of chain splits: Soft Fork, Hard Fork, and Accidental Fork. The owner can add blocks to the main chain, then trigger different fork types.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/chainSplittypes.sol": "ChainSplitTypesSimulator"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/chainSplittypes.sol": {
+			"keccak256": "0x9925e62bd5a44491d3112bae56dfc9a855c7e70c5d18123ef5a9836204e38045",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fd8850bb1752471ef92d5ce38f57b2945b71b14bbd3898cfdffb0e9ce65b9931",
+				"dweb:/ipfs/QmVdWMZq3pjivykTx3UPCWsypMEWbYx7TBKMSMjRZGgzcT"
+			]
+		}
+	},
+	"version": 1
+}

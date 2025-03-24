@@ -1,0 +1,338 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "depositIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lockDuration",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "interestRate",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposited",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "depositIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "interest",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawn",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MIN_LOCK_DURATION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "interestRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateInterest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "interest",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "lockDuration",
+						"type": "uint256"
+					}
+				],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "deposits",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "depositTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lockDuration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "interestRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "withdrawn",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getDeposits",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "depositTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lockDuration",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "interestRate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "withdrawn",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct CertificateOfDeepDeposit.Deposit[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "depositIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateInterest(uint256,uint256,uint256)": {
+					"params": {
+						"duration": "The duration in seconds the funds have been locked.",
+						"interestRate": "The interest rate in basis points.",
+						"principal": "The deposit amount."
+					},
+					"returns": {
+						"interest": "The calculated interest amount."
+					}
+				},
+				"deposit(uint256)": {
+					"details": "For simplicity, the interest rate is fixed at 5% per annum (500 basis points).",
+					"params": {
+						"lockDuration": "The duration for which funds will be locked. Must be at least MIN_LOCK_DURATION."
+					}
+				},
+				"getDeposits(address)": {
+					"params": {
+						"user": "The address of the user."
+					},
+					"returns": {
+						"_0": "An array of Deposit structs."
+					}
+				},
+				"withdraw(uint256)": {
+					"params": {
+						"depositIndex": "The index of the deposit to withdraw."
+					}
+				}
+			},
+			"title": "CertificateOfDeepDeposit",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateInterest(uint256,uint256,uint256)": {
+					"notice": "Calculates simple interest for a deposit."
+				},
+				"constructor": {
+					"notice": "Constructor sets the deployer as the contract owner."
+				},
+				"deposit(uint256)": {
+					"notice": "Allows a user to deposit Ether as a Certificate of Deep Deposit."
+				},
+				"getDeposits(address)": {
+					"notice": "Retrieves all deposits of a given user."
+				},
+				"withdraw(uint256)": {
+					"notice": "Allows a user to withdraw their matured deposit along with accrued interest."
+				}
+			},
+			"notice": "A contract that simulates a certificate of deep deposit where users lock funds for an extended period to earn interest.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/certificateOfDeposit.sol": "CertificateOfDeepDeposit"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/certificateOfDeposit.sol": {
+			"keccak256": "0x32b860ad6d36ccfc3d8a3fadae3f7d62381d6f542218161ef39173f973e164ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2e03af3aeef5cee212abbda5e1119da7234e971740bf70cfb94b49f47fac96d1",
+				"dweb:/ipfs/QmQz6cH6tma1j3EMmb3VEjKKgqET9ZGvYGP4gnNkpoEhHN"
+			]
+		}
+	},
+	"version": 1
+}

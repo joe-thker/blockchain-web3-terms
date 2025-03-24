@@ -1,0 +1,352 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "BlockAddedToFork",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "BlockAddedToMain",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "reorgType",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newMainChainLength",
+						"type": "uint256"
+					}
+				],
+				"name": "ChainReorganized",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "addBlockToFork",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_blockHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "addBlockToMain",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "forkChain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getForkChainLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getMainChainBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMainChainLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "mainChain",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blockHash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reorganizeChainDeep",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "newChainBlockNumbers",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "newChainBlockHashes",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "reorganizeChainIntentional",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reorganizeChainShallow",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addBlockToFork(uint256,bytes32)": {
+					"params": {
+						"_blockHash": "The block hash.",
+						"_blockNumber": "The block number."
+					}
+				},
+				"addBlockToMain(uint256,bytes32)": {
+					"params": {
+						"_blockHash": "The block hash.",
+						"_blockNumber": "The block number."
+					}
+				},
+				"getForkChainLength()": {
+					"returns": {
+						"_0": "The number of blocks in the fork chain."
+					}
+				},
+				"getMainChainBlock(uint256)": {
+					"params": {
+						"index": "The index of the block header."
+					},
+					"returns": {
+						"blockHash": "The block's hash.",
+						"blockNumber": "The block's number."
+					}
+				},
+				"getMainChainLength()": {
+					"returns": {
+						"_0": "The number of blocks in the main chain."
+					}
+				},
+				"reorganizeChainIntentional(uint256[],bytes32[])": {
+					"params": {
+						"newChainBlockHashes": "Array of new block hashes.",
+						"newChainBlockNumbers": "Array of new block numbers."
+					}
+				}
+			},
+			"title": "ChainReorgSimulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addBlockToFork(uint256,bytes32)": {
+					"notice": "Adds a new block to the fork chain."
+				},
+				"addBlockToMain(uint256,bytes32)": {
+					"notice": "Adds a new block to the main chain."
+				},
+				"getForkChainLength()": {
+					"notice": "Returns the length of the fork chain."
+				},
+				"getMainChainBlock(uint256)": {
+					"notice": "Retrieves a block header from the main chain by index."
+				},
+				"getMainChainLength()": {
+					"notice": "Returns the length of the main chain."
+				},
+				"reorganizeChainDeep()": {
+					"notice": "Simulates a deep reorganization. Requires the fork chain to be at least 3 blocks longer than the main chain."
+				},
+				"reorganizeChainIntentional(uint256[],bytes32[])": {
+					"notice": "Simulates an intentional reorganization (e.g., during a protocol upgrade). The owner can set a new main chain by providing a new chain (an array of block headers)."
+				},
+				"reorganizeChainShallow()": {
+					"notice": "Simulates a shallow reorganization. Requires the fork chain to be exactly one block longer than the main chain."
+				}
+			},
+			"notice": "This contract simulates different types of chain reorganizations (shallow, deep, and intentional). It maintains a main chain and a fork chain, and allows the owner to trigger reorgs under specific conditions.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/chainReorganizationTypes.sol": "ChainReorgSimulator"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/chainReorganizationTypes.sol": {
+			"keccak256": "0xc51627a26ed75a02a82172bc6c2f8ad20fee0c1c445f9e3167b7a27165c9fe99",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0da74191456168d5730113a11099852ed104a39e24bd86bb333388e24ff1c885",
+				"dweb:/ipfs/QmYhz8LnddF9rtQCmtwEhiNfcrH7FVvnE3S1p1V1HpwDjt"
+			]
+		}
+	},
+	"version": 1
+}
