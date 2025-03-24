@@ -1,0 +1,203 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalInput",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "sentAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "change",
+						"type": "uint256"
+					}
+				],
+				"name": "Transaction",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "UTXOCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "UTXOSpent",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextUTXOId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "utxoIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "send",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "utxos",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "spent",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"send(uint256[],address,uint256)": {
+					"params": {
+						"amount": "The amount of Ether to send (in wei).",
+						"recipient": "The address of the recipient.",
+						"utxoIds": "An array of UTXO IDs to use as inputs."
+					}
+				}
+			},
+			"title": "UTXOSimulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"deposit()": {
+					"notice": "Allows a user to deposit Ether and create a new UTXO."
+				},
+				"send(uint256[],address,uint256)": {
+					"notice": "Allows a user to send Ether by consuming one or more UTXOs. The function calculates the \"change\" if the total input exceeds the send amount."
+				}
+			},
+			"notice": "This contract simulates a basic UTXO model where users can deposit Ether, spend UTXOs to send funds to a recipient, and receive change if the input exceeds the sent amount.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/change.sol": "UTXOSimulator"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/change.sol": {
+			"keccak256": "0xfc62c39282104c3db2515c75a2ecf2a63f844fbe5482d362011d56cee7328474",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://673dff3414ee104e6966fb5e92f945714468f1fbb2e850a92b8d7138fc097565",
+				"dweb:/ipfs/QmZp7giN8qMh82ATFYc3BHAMk1zEEPTBewqciJBymbtsAp"
+			]
+		}
+	},
+	"version": 1
+}
