@@ -1,0 +1,237 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "commitId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
+				"name": "CommitAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "addCommit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "commits",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getCommit",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "commitHash",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "message",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "author",
+								"type": "address"
+							}
+						],
+						"internalType": "struct PrivateCodeRepository.Commit",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCommitCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addCommit(string,string)": {
+					"params": {
+						"commitHash": "The commit hash.",
+						"message": "The commit message."
+					}
+				},
+				"getCommit(uint256)": {
+					"params": {
+						"index": "The index of the commit."
+					},
+					"returns": {
+						"_0": "The Commit struct."
+					}
+				},
+				"getCommitCount()": {
+					"returns": {
+						"_0": "The commit count."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addCommit(string,string)": {
+					"notice": "Owner adds a new commit to the repository."
+				},
+				"getCommit(uint256)": {
+					"notice": "Retrieves a commit by index."
+				},
+				"getCommitCount()": {
+					"notice": "Returns the total number of commits."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/codeRepoPrivate.sol": "PrivateCodeRepository"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/codeRepoPrivate.sol": {
+			"keccak256": "0x6ee737238989001a7955a6df1d755b8f395b3125a469950b3ad7f56d4c122451",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://65bff259c1179ca488833efdbacd155dba1a067652a5ddec2aed8a42e22cbddc",
+				"dweb:/ipfs/QmVM38VNLPXTty9X4m9JsqLZreYZRGzZAVLxH34Zj6drnL"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,324 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizationGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizationRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "commitId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
+				"name": "CommitAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "addCommit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "commits",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getCommit",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "commitHash",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "message",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "author",
+								"type": "address"
+							}
+						],
+						"internalType": "struct HybridCodeRepository.Commit",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCommitCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "grantAuthorization",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "revokeAuthorization",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addCommit(string,string)": {
+					"params": {
+						"commitHash": "The commit hash.",
+						"message": "The commit message."
+					}
+				},
+				"getCommit(uint256)": {
+					"params": {
+						"index": "The index of the commit."
+					},
+					"returns": {
+						"_0": "The Commit struct."
+					}
+				},
+				"getCommitCount()": {
+					"returns": {
+						"_0": "The commit count."
+					}
+				},
+				"grantAuthorization(address)": {
+					"params": {
+						"addr": "The address to authorize."
+					}
+				},
+				"revokeAuthorization(address)": {
+					"params": {
+						"addr": "The address to revoke."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addCommit(string,string)": {
+					"notice": "Authorized users add a new commit."
+				},
+				"getCommit(uint256)": {
+					"notice": "Retrieves a commit by index."
+				},
+				"getCommitCount()": {
+					"notice": "Returns the total number of commits."
+				},
+				"grantAuthorization(address)": {
+					"notice": "Grants commit access to an address."
+				},
+				"revokeAuthorization(address)": {
+					"notice": "Revokes commit access from an address."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/codeRepoHybrid.sol": "HybridCodeRepository"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/codeRepoHybrid.sol": {
+			"keccak256": "0x364d2ee00601a2d2a25443080b15deeabf6941ef0bf28e644c229450cc8000cb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6d46f8a9a453241aac12fe7a1b73cbe4a2fce92b7f43d5853188237fd7d20d9d",
+				"dweb:/ipfs/QmZ8QKWNNFnfpQT15FYqh3qWVrKLvbN96sL3kLycEkDNPe"
+			]
+		}
+	},
+	"version": 1
+}

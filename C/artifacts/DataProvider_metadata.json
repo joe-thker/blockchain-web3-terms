@@ -1,0 +1,137 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_initialData",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newData",
+						"type": "string"
+					}
+				],
+				"name": "DataSet",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_data",
+						"type": "string"
+					}
+				],
+				"name": "setData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_initialData": "The initial data to store."
+					}
+				},
+				"getData()": {
+					"returns": {
+						"_0": "The stored data as a string."
+					}
+				},
+				"setData(string)": {
+					"params": {
+						"_data": "The new data to store."
+					}
+				}
+			},
+			"title": "DataProvider",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor that sets the initial data and assigns the contract owner."
+				},
+				"getData()": {
+					"notice": "Retrieves the stored data."
+				},
+				"setData(string)": {
+					"notice": "Updates the stored data."
+				}
+			},
+			"notice": "This contract acts as a simple data provider by storing a string value. Only the owner can update the stored data.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/clientTypes.sol": "DataProvider"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/clientTypes.sol": {
+			"keccak256": "0x78eccd32f4ec4cadea9a8d060086727dded86941fe5a09c28bed4c41f1ed3857",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://96fa06077f936bd9e4d8993b947878e77691bdc3fbf89f356f9152ec62f14b40",
+				"dweb:/ipfs/QmWQv12RDYguks4oq1LddxkcHVMsLmfGPX4e3pVK8MaA5Q"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,105 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newMessage",
+						"type": "string"
+					}
+				],
+				"name": "MessageStored",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getMessage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					}
+				],
+				"name": "storeMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getMessage()": {
+					"returns": {
+						"_0": "The current message."
+					}
+				},
+				"storeMessage(string)": {
+					"params": {
+						"_message": "The message to store."
+					}
+				}
+			},
+			"title": "PublicCloud",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getMessage()": {
+					"notice": "Retrieves the stored message."
+				},
+				"storeMessage(string)": {
+					"notice": "Stores a message. Anyone can call this."
+				}
+			},
+			"notice": "A simple contract simulating a public cloud where anyone can store and retrieve a message.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cloud.sol": "PublicCloud"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cloud.sol": {
+			"keccak256": "0xae50c19aea28b9119d1c09a73924f9f436d8a2ecb7996f13f879601b40a766df",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9619137146ec42d58a09c2d60e3d1af2d03c91079499c8401d16a5a53d03c22f",
+				"dweb:/ipfs/QmXbG9pprgufVTL9T7Foqdi45ywMUPpg6StsiQuycqN8vu"
+			]
+		}
+	},
+	"version": 1
+}

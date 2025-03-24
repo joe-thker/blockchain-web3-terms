@@ -1,0 +1,230 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_leaseRewardRate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reward",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "LeaseClaimed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "leaseStart",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "leaseEnd",
+						"type": "uint256"
+					}
+				],
+				"name": "LeaseCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "claimLease",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					}
+				],
+				"name": "leaseMining",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "leaseRewardRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "leases",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "leaseStart",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "leaseEnd",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "claimed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"claimLease(uint256)": {
+					"params": {
+						"index": "The index of the lease."
+					}
+				},
+				"leaseMining(uint256)": {
+					"params": {
+						"duration": "The lease duration in seconds."
+					}
+				}
+			},
+			"title": "LeasedCloudMining",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"claimLease(uint256)": {
+					"notice": "After the lease period, claim your deposit along with accrued rewards."
+				},
+				"leaseMining(uint256)": {
+					"notice": "Lease mining by locking funds for a specified duration."
+				}
+			},
+			"notice": "A simulation of leased cloud mining where users lock funds for a fixed term to earn rewards.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cloudLeasedMining.sol": "LeasedCloudMining"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cloudLeasedMining.sol": {
+			"keccak256": "0x73c03ec9fd591ebaa0fac2bb2e3a1dff1db7adf593cf4268d8553af0b02b54d0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2fa3f8e494280dfac09abde1dbc271714fee9382ad86452d75a03322d8655b2",
+				"dweb:/ipfs/QmXR59YzsXyFbMwbH4hLP7ZempDLecj2oR5EtVrCu4YnTq"
+			]
+		}
+	},
+	"version": 1
+}

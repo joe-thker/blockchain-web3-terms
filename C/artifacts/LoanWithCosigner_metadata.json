@@ -1,0 +1,289 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_borrower",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_loanAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_repaymentAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address[]",
+						"name": "primaryCosigners",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "backupCosigners",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "cosigner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum LoanWithCosigner.CoSignerType",
+						"name": "cosignerType",
+						"type": "uint8"
+					}
+				],
+				"name": "CoSignerSigned",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "borrower",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "loanAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "repaymentAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "LoanCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "borrower",
+						"type": "address"
+					}
+				],
+				"name": "LoanRepaid",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "borrower",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "cosigners",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "cosigner",
+						"type": "address"
+					},
+					{
+						"internalType": "enum LoanWithCosigner.CoSignerType",
+						"name": "cosignerType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bool",
+						"name": "signed",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCoSigners",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "cosigner",
+								"type": "address"
+							},
+							{
+								"internalType": "enum LoanWithCosigner.CoSignerType",
+								"name": "cosignerType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "signed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct LoanWithCosigner.CoSigner[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "loanActive",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "loanAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "repayLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "repaymentAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "signLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_borrower": "The address of the borrower.",
+						"_loanAmount": "The loan amount.",
+						"_repaymentAmount": "The total repayment amount.",
+						"backupCosigners": "An array of addresses for Backup co-signers.",
+						"primaryCosigners": "An array of addresses for Primary co-signers."
+					}
+				},
+				"getCoSigners()": {
+					"returns": {
+						"_0": "An array of CoSigner structs."
+					}
+				}
+			},
+			"title": "LoanWithCosigner",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the borrower, loan details, and initializes co-signers."
+				},
+				"getCoSigners()": {
+					"notice": "Retrieves details of all co-signers."
+				},
+				"repayLoan()": {
+					"notice": "Allows the borrower to repay the loan. (Simplified: no funds handling)"
+				},
+				"signLoan()": {
+					"notice": "Allows a co-signer to sign the loan agreement."
+				}
+			},
+			"notice": "A simple loan contract that requires co-signers to guarantee the loan. The contract distinguishes between Primary and Backup co-signers.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/co-signer.sol": "LoanWithCosigner"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/co-signer.sol": {
+			"keccak256": "0x4fbbc0889e822aa66fbc56bd4f4848b97c2714dba5f1897c9e8a8f79f73f907f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://23216cb967bab9586cd4848488a6ac25f0e8935cc5d639841f479c2ff1653b66",
+				"dweb:/ipfs/QmURUb93LGgtn6H1WXVuDyHf7bX6fKE2AtMG3eEjLGXwjV"
+			]
+		}
+	},
+	"version": 1
+}

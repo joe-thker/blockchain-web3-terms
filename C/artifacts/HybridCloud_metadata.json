@@ -1,0 +1,210 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizationGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizationRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newMessage",
+						"type": "string"
+					}
+				],
+				"name": "MessageStored",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMessage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "grantAuthorization",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "revokeAuthorization",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					}
+				],
+				"name": "storeMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getMessage()": {
+					"returns": {
+						"_0": "The current message."
+					}
+				},
+				"grantAuthorization(address)": {
+					"params": {
+						"addr": "The address to authorize."
+					}
+				},
+				"revokeAuthorization(address)": {
+					"params": {
+						"addr": "The address to revoke."
+					}
+				},
+				"storeMessage(string)": {
+					"params": {
+						"_message": "The message to store."
+					}
+				}
+			},
+			"title": "HybridCloud",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getMessage()": {
+					"notice": "Retrieves the stored message."
+				},
+				"grantAuthorization(address)": {
+					"notice": "Grants authorization to store data."
+				},
+				"revokeAuthorization(address)": {
+					"notice": "Revokes authorization."
+				},
+				"storeMessage(string)": {
+					"notice": "Stores a message. Only authorized addresses can call this."
+				}
+			},
+			"notice": "A simple contract simulating a hybrid cloud where only authorized addresses can store data.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cloudHybrid.sol": "HybridCloud"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cloudHybrid.sol": {
+			"keccak256": "0x5e58e4fc76c50d4ad08fe5a3c813b3c817beeb6d2329f9908ae6d150963c09be",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7cb516736b2008ae934ecd88c4c3b1c75f543449c5bb2a8e5bdfc23c7b87a615",
+				"dweb:/ipfs/QmY8kNggyjSmHJF6dKQxaET2m8K1SbrttiiBywWdK6kVfV"
+			]
+		}
+	},
+	"version": 1
+}

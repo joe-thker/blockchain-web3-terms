@@ -1,0 +1,103 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_dataProviderAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "dataProvider",
+				"outputs": [
+					{
+						"internalType": "contract DataProvider",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fetchData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_dataProviderAddress": "The address of the DataProvider contract."
+					}
+				},
+				"fetchData()": {
+					"returns": {
+						"_0": "The data retrieved from the provider."
+					}
+				}
+			},
+			"title": "LightClient",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the DataProvider address."
+				},
+				"fetchData()": {
+					"notice": "Fetches data from the DataProvider."
+				}
+			},
+			"notice": "A client contract that interacts with DataProvider in a read-only manner.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/clientTypes.sol": "LightClient"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/clientTypes.sol": {
+			"keccak256": "0x78eccd32f4ec4cadea9a8d060086727dded86941fe5a09c28bed4c41f1ed3857",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://96fa06077f936bd9e4d8993b947878e77691bdc3fbf89f356f9152ec62f14b40",
+				"dweb:/ipfs/QmWQv12RDYguks4oq1LddxkcHVMsLmfGPX4e3pVK8MaA5Q"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,219 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "commitId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
+				"name": "CommitAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "addCommit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "commits",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "commitHash",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "author",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getCommit",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "commitHash",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "message",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "author",
+								"type": "address"
+							}
+						],
+						"internalType": "struct PublicCodeRepository.Commit",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCommitCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addCommit(string,string)": {
+					"params": {
+						"commitHash": "The hash representing the commit.",
+						"message": "A commit message describing the changes."
+					}
+				},
+				"getCommit(uint256)": {
+					"params": {
+						"index": "The index of the commit."
+					},
+					"returns": {
+						"_0": "The Commit struct."
+					}
+				},
+				"getCommitCount()": {
+					"returns": {
+						"_0": "The commit count."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addCommit(string,string)": {
+					"notice": "Adds a new commit to the public repository."
+				},
+				"getCommit(uint256)": {
+					"notice": "Retrieves a commit by its index."
+				},
+				"getCommitCount()": {
+					"notice": "Returns the total number of commits."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/codeRepository.sol": "PublicCodeRepository"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/codeRepository.sol": {
+			"keccak256": "0x37eb7e3e4fdea62a64cc047028ee64e293c44e9db105ee8d5773396719f8f808",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4a52e42c6d9ee6897633894f06b175d75abc0b3ea2e12b438feb2a9bac1fd02f",
+				"dweb:/ipfs/QmNX9fqYBuRvUh8JbYVVTuHqvL1qNVDP6Q8UCLcfZut6A6"
+			]
+		}
+	},
+	"version": 1
+}

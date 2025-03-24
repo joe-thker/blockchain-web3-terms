@@ -1,0 +1,250 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "member",
+						"type": "address"
+					}
+				],
+				"name": "MemberAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "member",
+						"type": "address"
+					}
+				],
+				"name": "MemberRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newMessage",
+						"type": "string"
+					}
+				],
+				"name": "MessageStored",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "member",
+						"type": "address"
+					}
+				],
+				"name": "addMember",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMembers",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMessage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "memberList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "members",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "member",
+						"type": "address"
+					}
+				],
+				"name": "removeMember",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					}
+				],
+				"name": "storeMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addMember(address)": {
+					"params": {
+						"member": "The address to add."
+					}
+				},
+				"getMembers()": {
+					"returns": {
+						"_0": "An array of addresses representing the members."
+					}
+				},
+				"getMessage()": {
+					"returns": {
+						"_0": "The current message."
+					}
+				},
+				"removeMember(address)": {
+					"params": {
+						"member": "The address to remove."
+					}
+				},
+				"storeMessage(string)": {
+					"params": {
+						"_message": "The message to store."
+					}
+				}
+			},
+			"title": "CommunityCloud",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addMember(address)": {
+					"notice": "Adds a new member to the community cloud."
+				},
+				"getMembers()": {
+					"notice": "Retrieves the list of community members."
+				},
+				"getMessage()": {
+					"notice": "Retrieves the stored message."
+				},
+				"removeMember(address)": {
+					"notice": "Removes a member from the community cloud."
+				},
+				"storeMessage(string)": {
+					"notice": "Stores a message. Only community members can call this."
+				}
+			},
+			"notice": "A simple contract simulating a community cloud where only consortium members can store data. Membership is managed by the owner.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cloudCommunity.sol": "CommunityCloud"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cloudCommunity.sol": {
+			"keccak256": "0x7b1f5fbce654b9b392014f636a072f5d1ffcd7dddf7acf69a907d9c9fcf485d0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://273ca95739567b3b38f97ccd6f7745989d847a27c4a220e86421566fe38bd822",
+				"dweb:/ipfs/QmR8mRiUyS7X2Gtk7TUi3hxwUykpnPfeZSEmbLFYnHWi6z"
+			]
+		}
+	},
+	"version": 1
+}

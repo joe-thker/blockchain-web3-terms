@@ -1,0 +1,123 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newMessage",
+						"type": "string"
+					}
+				],
+				"name": "MessageStored",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getMessage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					}
+				],
+				"name": "storeMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getMessage()": {
+					"returns": {
+						"_0": "The current message."
+					}
+				},
+				"storeMessage(string)": {
+					"params": {
+						"_message": "The message to store."
+					}
+				}
+			},
+			"title": "PrivateCloud",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getMessage()": {
+					"notice": "Retrieves the stored message."
+				},
+				"storeMessage(string)": {
+					"notice": "Stores a message. Only the owner can call this."
+				}
+			},
+			"notice": "A simple contract simulating a private cloud where only the owner can store data.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cloudPrivate.sol": "PrivateCloud"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cloudPrivate.sol": {
+			"keccak256": "0x4e813ac6e91cd9cadd0f2e2cf22e5bd4a203b4564efb377d42a62eae06308a49",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://116d8fbbfc15d9d5075117e383c12dcca38f8bdac1b2bedc370ada11190ef376",
+				"dweb:/ipfs/QmNpD8ErucPiQ4Y2oLn9xuBBPaQqvu8pZChdWVVGQmdHGj"
+			]
+		}
+	},
+	"version": 1
+}

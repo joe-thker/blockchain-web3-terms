@@ -1,0 +1,150 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_dataProviderAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newData",
+						"type": "string"
+					}
+				],
+				"name": "DataUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "dataProvider",
+				"outputs": [
+					{
+						"internalType": "contract DataProvider",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fetchData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_newData",
+						"type": "string"
+					}
+				],
+				"name": "updateData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_dataProviderAddress": "The address of the DataProvider contract."
+					}
+				},
+				"fetchData()": {
+					"returns": {
+						"_0": "The data retrieved from the provider."
+					}
+				},
+				"updateData(string)": {
+					"params": {
+						"_newData": "The new data to store."
+					}
+				}
+			},
+			"title": "FullClient",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the DataProvider address and assigns the client owner."
+				},
+				"fetchData()": {
+					"notice": "Fetches data from the DataProvider."
+				},
+				"updateData(string)": {
+					"notice": "Updates data on the DataProvider."
+				}
+			},
+			"notice": "A client contract that interacts with DataProvider with full capabilities: both reading and writing data.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/clientTypes.sol": "FullClient"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/clientTypes.sol": {
+			"keccak256": "0x78eccd32f4ec4cadea9a8d060086727dded86941fe5a09c28bed4c41f1ed3857",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://96fa06077f936bd9e4d8993b947878e77691bdc3fbf89f356f9152ec62f14b40",
+				"dweb:/ipfs/QmWQv12RDYguks4oq1LddxkcHVMsLmfGPX4e3pVK8MaA5Q"
+			]
+		}
+	},
+	"version": 1
+}

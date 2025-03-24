@@ -1,0 +1,183 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "enum MultiClosingPrice.PriceType",
+						"name": "priceType",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ClosingPriceUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "closingPrices",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum MultiClosingPrice.PriceType",
+						"name": "priceType",
+						"type": "uint8"
+					}
+				],
+				"name": "getClosingPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum MultiClosingPrice.PriceType",
+						"name": "priceType",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updateClosingPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getClosingPrice(uint8)": {
+					"params": {
+						"priceType": "The type of closing price to retrieve."
+					},
+					"returns": {
+						"price": "The closing price.",
+						"timestamp": "The timestamp when the price was last updated."
+					}
+				},
+				"updateClosingPrice(uint8,uint256)": {
+					"params": {
+						"newPrice": "The new closing price.",
+						"priceType": "The type of closing price (0 = Daily, 1 = Weekly, 2 = Monthly)."
+					}
+				}
+			},
+			"title": "MultiClosingPrice",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner."
+				},
+				"getClosingPrice(uint8)": {
+					"notice": "Retrieves the closing price for a specific type."
+				},
+				"updateClosingPrice(uint8,uint256)": {
+					"notice": "Updates the closing price for a specific type (Daily, Weekly, or Monthly)."
+				}
+			},
+			"notice": "This contract tracks closing prices for different periods: Daily, Weekly, and Monthly. Only the owner can update the closing prices.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/closingTypesMultipleType.sol": "MultiClosingPrice"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/closingTypesMultipleType.sol": {
+			"keccak256": "0x367988375b5847f6c90cec29ee3d43754e03c4f2a32be29a59e151d0db040610",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c465cbcc1d534990863d53e6eaa8a5894e7922adf1c8ee1a7810a58309a8f128",
+				"dweb:/ipfs/QmY1J1aGZxDHPMb2cLiS5NxfPNYq9sndhmnp5TiLiL5xUo"
+			]
+		}
+	},
+	"version": 1
+}

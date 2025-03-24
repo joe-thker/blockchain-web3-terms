@@ -1,0 +1,175 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "initialPrice",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ClosingPriceUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "closingPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getClosingPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastUpdated",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updateClosingPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"initialPrice": "The starting closing price."
+					}
+				},
+				"getClosingPrice()": {
+					"returns": {
+						"price": "The closing price.",
+						"timestamp": "The timestamp when the price was last updated."
+					}
+				},
+				"updateClosingPrice(uint256)": {
+					"params": {
+						"newPrice": "The new closing price."
+					}
+				}
+			},
+			"title": "ClosingPrice",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor initializes the contract with an initial closing price."
+				},
+				"getClosingPrice()": {
+					"notice": "Retrieves the current closing price along with the last update timestamp."
+				},
+				"updateClosingPrice(uint256)": {
+					"notice": "Updates the closing price."
+				}
+			},
+			"notice": "This contract stores the closing price of an asset. Only the owner can update the closing price.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/closingPriceSingle.sol": "ClosingPrice"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/closingPriceSingle.sol": {
+			"keccak256": "0x9809400ea644c48fa450b70da2fa16d2e41bcf8095f6ada7ee1d58fe9891afbc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://759fa30f828f4815429df6a7e88c3d75c07e839187f56b161d887382cee588ef",
+				"dweb:/ipfs/QmUkhx5zE1UFceSxGuTERSZBrF2Xdvn7T9FyMXz5dTUpKK"
+			]
+		}
+	},
+	"version": 1
+}

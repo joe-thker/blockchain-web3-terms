@@ -1,0 +1,137 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_dataProviderAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "newProvider",
+						"type": "address"
+					}
+				],
+				"name": "ProviderUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "dataProvider",
+				"outputs": [
+					{
+						"internalType": "contract DataProvider",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fetchMessage",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newProviderAddress",
+						"type": "address"
+					}
+				],
+				"name": "updateDataProvider",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_dataProviderAddress": "The address of the DataProvider contract."
+					}
+				},
+				"fetchMessage()": {
+					"returns": {
+						"_0": "The message retrieved from the provider."
+					}
+				},
+				"updateDataProvider(address)": {
+					"params": {
+						"_newProviderAddress": "The new DataProvider contract address."
+					}
+				}
+			},
+			"title": "Client",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the initial DataProvider contract address."
+				},
+				"fetchMessage()": {
+					"notice": "Fetches the message from the DataProvider."
+				},
+				"updateDataProvider(address)": {
+					"notice": "Updates the DataProvider contract reference."
+				}
+			},
+			"notice": "This contract simulates a client that interacts with the DataProvider contract. It fetches the stored message from the DataProvider and can also update its reference.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/client.sol": "Client"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/client.sol": {
+			"keccak256": "0xaf98a1ca076ca32481e5aecbe32af76b8e75a6315e85ace4d0faa7b5785e4a9e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cf42d17d448b1f7d0a5bd4b736b5c5034954edd3ed229bcde8d2507abd5fb581",
+				"dweb:/ipfs/QmNiMA9xEriwv6eMR5yJHay28DF7YA5gcrA6SpZWsZ3FwL"
+			]
+		}
+	},
+	"version": 1
+}
