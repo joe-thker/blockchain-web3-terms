@@ -1,0 +1,293 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "open",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "high",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "low",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "close",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "volume",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "CandleAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_open",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_high",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_low",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_close",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_volume",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "addCandle",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "candles",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "open",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "high",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "low",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "close",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "volume",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getCandle",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "open",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "high",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "low",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "close",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "volume",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CandlestickChart.Candle",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCandleCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addCandle(uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"params": {
+						"_close": "Closing price.",
+						"_high": "Highest price.",
+						"_low": "Lowest price.",
+						"_open": "Opening price.",
+						"_timestamp": "Timestamp for the candlestick period.",
+						"_volume": "Trading volume."
+					}
+				},
+				"getCandle(uint256)": {
+					"params": {
+						"index": "The index of the candlestick."
+					},
+					"returns": {
+						"_0": "A Candle struct containing the candlestick data."
+					}
+				},
+				"getCandleCount()": {
+					"returns": {
+						"_0": "The count of candlestick entries."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addCandle(uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "Adds a new candlestick entry. Only the owner can add data."
+				},
+				"getCandle(uint256)": {
+					"notice": "Retrieves the candlestick data at a specific index."
+				},
+				"getCandleCount()": {
+					"notice": "Returns the total number of candlesticks stored."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/candleStick.sol": "CandlestickChart"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/candleStick.sol": {
+			"keccak256": "0xd83cd63f8a1df4559c5de455035c7ebc823227c11f55f7fa85b4ed5e204dfe94",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2f5365e6408c99564f3ac870cc1e6b3633adc72029434ff2d43554db5c206ea8",
+				"dweb:/ipfs/QmeXuDwSC9ouniwfFUUi81zPqPWUWE7gmGr5tmMN7Kgv6k"
+			]
+		}
+	},
+	"version": 1
+}

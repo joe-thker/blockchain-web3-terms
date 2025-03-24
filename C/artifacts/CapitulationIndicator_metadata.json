@@ -1,0 +1,255 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_referencePrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_capitulationThreshold",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "currentPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "referencePrice",
+						"type": "uint256"
+					}
+				],
+				"name": "CapitulationDetected",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "PriceUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "capitulationThreshold",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMarketInfo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "refPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "capThreshold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currPrice",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "referencePrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newThreshold",
+						"type": "uint256"
+					}
+				],
+				"name": "updateCapitulationThreshold",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updatePrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newReferencePrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updateReferencePrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_capitulationThreshold": "The percentage drop to trigger capitulation.",
+						"_referencePrice": "The starting reference price."
+					}
+				},
+				"getMarketInfo()": {
+					"returns": {
+						"capThreshold": "The capitulation threshold percentage.",
+						"currPrice": "The current price.",
+						"refPrice": "The reference price."
+					}
+				},
+				"updateCapitulationThreshold(uint256)": {
+					"params": {
+						"_newThreshold": "The new capitulation threshold percentage."
+					}
+				},
+				"updatePrice(uint256)": {
+					"params": {
+						"_newPrice": "The new market price."
+					}
+				},
+				"updateReferencePrice(uint256)": {
+					"params": {
+						"_newReferencePrice": "The new reference price."
+					}
+				}
+			},
+			"title": "CapitulationIndicator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the owner, reference price, and capitulation threshold."
+				},
+				"getMarketInfo()": {
+					"notice": "Retrieves the current market info."
+				},
+				"updateCapitulationThreshold(uint256)": {
+					"notice": "Updates the capitulation threshold."
+				},
+				"updatePrice(uint256)": {
+					"notice": "Updates the current price and checks if it falls below the capitulation threshold."
+				},
+				"updateReferencePrice(uint256)": {
+					"notice": "Updates the reference price."
+				}
+			},
+			"notice": "This contract tracks price updates and emits an event if the price falls below a set capitulation threshold. The threshold is defined as a percentage drop from a reference price.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/capitulation.sol": "CapitulationIndicator"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/capitulation.sol": {
+			"keccak256": "0xc5da836f24a09b84d4694312d3e6cbcf0809b8a0ed2ec8fb0e01f79175abcd65",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a49514326be98b42410fa7910ccd6e17de19a52b17eec87242c7b91e6b2e6a0",
+				"dweb:/ipfs/QmVojHRoJ7fG1aVJzwBE8oXftb3rvtA3sHFN48tdnbe3B6"
+			]
+		}
+	},
+	"version": 1
+}

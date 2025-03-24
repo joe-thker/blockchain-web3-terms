@@ -1,0 +1,265 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "useCases",
+						"type": "string"
+					}
+				],
+				"name": "CapitalAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "useCases",
+						"type": "string"
+					}
+				],
+				"name": "CapitalUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_useCases",
+						"type": "string"
+					}
+				],
+				"name": "addCapital",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "capitals",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "useCases",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getCapital",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "useCases",
+								"type": "string"
+							}
+						],
+						"internalType": "struct CryptoCapitalDictionary.CapitalInfo",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCapitalCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_useCases",
+						"type": "string"
+					}
+				],
+				"name": "updateCapital",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addCapital(string,string)": {
+					"params": {
+						"_name": "The name of the capital type.",
+						"_useCases": "A description of its use cases."
+					}
+				},
+				"getCapital(uint256)": {
+					"params": {
+						"index": "The index of the capital entry."
+					},
+					"returns": {
+						"_0": "The CapitalInfo struct containing the name and use cases."
+					}
+				},
+				"getCapitalCount()": {
+					"returns": {
+						"_0": "The count of capital entries."
+					}
+				},
+				"updateCapital(uint256,string,string)": {
+					"params": {
+						"_name": "The new name.",
+						"_useCases": "The new description of use cases.",
+						"index": "The index of the capital to update."
+					}
+				}
+			},
+			"title": "CryptoCapitalDictionary",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addCapital(string,string)": {
+					"notice": "Adds a new type of capital to the dictionary."
+				},
+				"getCapital(uint256)": {
+					"notice": "Retrieves the capital information at a given index."
+				},
+				"getCapitalCount()": {
+					"notice": "Returns the total number of capital types stored."
+				},
+				"updateCapital(uint256,string,string)": {
+					"notice": "Updates an existing capital entry."
+				}
+			},
+			"notice": "This contract acts as an on-chain dictionary for different types of capital in the crypto ecosystem.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/capitalTypes.sol": "CryptoCapitalDictionary"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/capitalTypes.sol": {
+			"keccak256": "0xe2202b953cc85dc3ea8cd37032fe990ded4360827dd982243d7cc6e83def08ad",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://93c49294f4c7efae9e6f07d812832be94806d962cf4722d670d3317b71f76cc5",
+				"dweb:/ipfs/Qmb6t9819YRuooTrXLqTMqr8zibuicaWBCXpemqqJyMXsA"
+			]
+		}
+	},
+	"version": 1
+}

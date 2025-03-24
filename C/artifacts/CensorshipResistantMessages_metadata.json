@@ -1,0 +1,188 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "content",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "MessagePosted",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getMessage",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "content",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMessagesCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "messages",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "content",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_content",
+						"type": "string"
+					}
+				],
+				"name": "postMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getMessage(uint256)": {
+					"params": {
+						"index": "The index of the message."
+					},
+					"returns": {
+						"content": "The content of the message.",
+						"sender": "The address that posted the message.",
+						"timestamp": "The timestamp when the message was posted."
+					}
+				},
+				"getMessagesCount()": {
+					"returns": {
+						"_0": "The count of messages."
+					}
+				},
+				"postMessage(string)": {
+					"params": {
+						"_content": "The message content."
+					}
+				}
+			},
+			"title": "CensorshipResistantMessages",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getMessage(uint256)": {
+					"notice": "Retrieves a message by its index."
+				},
+				"getMessagesCount()": {
+					"notice": "Returns the total number of messages posted."
+				},
+				"postMessage(string)": {
+					"notice": "Allows any user to post a message."
+				}
+			},
+			"notice": "A simple decentralized message board where anyone can post messages without censorship. This contract is designed to be censorship resistant by not imposing any restrictions on who can post.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/censorship.sol": "CensorshipResistantMessages"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/censorship.sol": {
+			"keccak256": "0xac753e0b6dc2aaedf717e999de945d9e0437114a1c5f3578500293366adabe9e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d5c9299fa5b180b2cac7db8fe3a23a51d26cdfbe3a0264dde34d9d5a8d603dd6",
+				"dweb:/ipfs/QmZ7SJc84rouPwqQhXrDDPWokzraG9emwpNHfLAkqTnMAk"
+			]
+		}
+	},
+	"version": 1
+}

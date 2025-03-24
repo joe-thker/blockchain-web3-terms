@@ -1,0 +1,197 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "contributor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ContributionReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "FundsWithdrawn",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "contribute",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "contributions",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalCapital",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalCapital",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawFunds",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getTotalCapital()": {
+					"returns": {
+						"_0": "The total amount of Ether contributed."
+					}
+				},
+				"withdrawFunds(uint256)": {
+					"params": {
+						"amount": "The amount of Ether to withdraw."
+					}
+				}
+			},
+			"title": "CapitalFunds",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the contract owner."
+				},
+				"contribute()": {
+					"notice": "Allows anyone to contribute Ether to the capital funds."
+				},
+				"getTotalCapital()": {
+					"notice": "Returns the total capital funds available."
+				},
+				"withdrawFunds(uint256)": {
+					"notice": "Allows the owner to withdraw a specified amount of funds."
+				}
+			},
+			"notice": "A simple contract to manage capital funds in a decentralized project.         Contributors can deposit funds to support a project, and the owner can withdraw funds.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/capitulation.sol": "CapitalFunds"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/capitulation.sol": {
+			"keccak256": "0xb41d7f3c6e1dca094bf1841db9f8c86e0f79f3d009741488953526833aec5b67",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c1b2fbdad4d567444d0987571748697d92f244ab11ef33a4612d3afbd35eb0a7",
+				"dweb:/ipfs/QmQzXu8oaoMoVpYgE12M1vJSv6qseAereuTdhMM2qG8WXL"
+			]
+		}
+	},
+	"version": 1
+}

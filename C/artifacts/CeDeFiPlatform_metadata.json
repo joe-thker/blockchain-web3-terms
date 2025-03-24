@@ -1,0 +1,363 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_interestRate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "depositTime",
+						"type": "uint256"
+					}
+				],
+				"name": "DepositMade",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newInterestRate",
+						"type": "uint256"
+					}
+				],
+				"name": "InterestRateUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"name": "PlatformStatusChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "interest",
+						"type": "uint256"
+					}
+				],
+				"name": "WithdrawalMade",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "depositTime",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateInterest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "interest",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "deposits",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "depositTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "withdrawn",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getDeposits",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "depositTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "withdrawn",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct CeDeFiPlatform.Deposit[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "interestRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "platformActive",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "togglePlatformStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newInterestRate",
+						"type": "uint256"
+					}
+				],
+				"name": "updateInterestRate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateInterest(uint256,uint256)": {
+					"params": {
+						"depositTime": "The time when the deposit was made.",
+						"principal": "The deposited amount."
+					},
+					"returns": {
+						"interest": "The accrued interest."
+					}
+				},
+				"constructor": {
+					"params": {
+						"_interestRate": "Annual interest rate in basis points (e.g., 100 for 1%)."
+					}
+				},
+				"getDeposits(address)": {
+					"params": {
+						"user": "The address of the user."
+					},
+					"returns": {
+						"_0": "The array of deposits."
+					}
+				},
+				"updateInterestRate(uint256)": {
+					"params": {
+						"_newInterestRate": "The new interest rate in basis points."
+					}
+				},
+				"withdraw(uint256)": {
+					"params": {
+						"index": "The index of the deposit to withdraw."
+					}
+				}
+			},
+			"title": "CeDeFiPlatform",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateInterest(uint256,uint256)": {
+					"notice": "Calculates the simple interest for a deposit."
+				},
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner, the initial interest rate, and activates the platform."
+				},
+				"deposit()": {
+					"notice": "Allows users to deposit Ether into the platform."
+				},
+				"getDeposits(address)": {
+					"notice": "Retrieves all deposits of a user."
+				},
+				"togglePlatformStatus()": {
+					"notice": "Allows the owner to toggle the platform's active status."
+				},
+				"updateInterestRate(uint256)": {
+					"notice": "Allows the owner to update the annual interest rate."
+				},
+				"withdraw(uint256)": {
+					"notice": "Allows a user to withdraw a specific deposit along with the accrued interest."
+				}
+			},
+			"notice": "A simplified CeDeFi platform that allows users to deposit Ether, earn simple interest over time, and withdraw their funds. This contract simulates a centralized management layer with on-chain execution.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/ceDefi.sol": "CeDeFiPlatform"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/ceDefi.sol": {
+			"keccak256": "0xde1c0fb8ab0484b8254d9b643ec3b0f7db95a60ac01a6695c454ff5370fe330e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ee37a9acd3c865a521fb0b84495f867b4ad27d1debc91f6396d279c36cca4b99",
+				"dweb:/ipfs/QmbxzEMX5ogHjd74Yw8kDsmhANduip9HfQiewWr5aA2G5P"
+			]
+		}
+	},
+	"version": 1
+}

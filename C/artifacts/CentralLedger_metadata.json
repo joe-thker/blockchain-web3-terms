@@ -1,0 +1,267 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "entryId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "EntryAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					}
+				],
+				"name": "addEntry",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getEntry",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEntryCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ledger",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addEntry(address,address,uint256,string)": {
+					"params": {
+						"_amount": "The amount transacted.",
+						"_description": "A description of the transaction.",
+						"_from": "The address from which the transaction originates.",
+						"_to": "The address to which the transaction is sent."
+					}
+				},
+				"getEntry(uint256)": {
+					"params": {
+						"index": "The index of the ledger entry."
+					},
+					"returns": {
+						"amount": "The amount transacted.",
+						"description": "A description of the transaction.",
+						"from": "The address from which the transaction originated.",
+						"timestamp": "The timestamp of the transaction.",
+						"to": "The address to which the transaction is sent."
+					}
+				},
+				"getEntryCount()": {
+					"returns": {
+						"_0": "The count of ledger entries."
+					}
+				}
+			},
+			"title": "CentralLedger",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addEntry(address,address,uint256,string)": {
+					"notice": "Adds a new ledger entry. Only the owner can call this function."
+				},
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner."
+				},
+				"getEntry(uint256)": {
+					"notice": "Retrieves a ledger entry by its index."
+				},
+				"getEntryCount()": {
+					"notice": "Returns the total number of ledger entries."
+				}
+			},
+			"notice": "This contract simulates a centralized ledger system for recording financial transactions.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/centralLedger.sol": "CentralLedger"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/centralLedger.sol": {
+			"keccak256": "0x4982e0d472a86ad5eff14d3a69bde0998441717b626f59c5a8303426c7b387c4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bee2bd8011b37dcfed5de1b9fa9a82102d60be641906d4bf4f1480b116d3f9d1",
+				"dweb:/ipfs/QmYTDN15U6ogzVvan5nDU6f42mje1kBJSoUZiGWpF7peiu"
+			]
+		}
+	},
+	"version": 1
+}

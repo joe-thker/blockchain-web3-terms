@@ -1,0 +1,174 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "efficiency",
+						"type": "uint256"
+					}
+				],
+				"name": "EfficiencyCalculated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "revenue",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "capitalInvested",
+						"type": "uint256"
+					}
+				],
+				"name": "ValuesUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "calculateEfficiency",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "efficiency",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "capitalInvested",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "revenue",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_revenue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_capitalInvested",
+						"type": "uint256"
+					}
+				],
+				"name": "updateValues",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateEfficiency()": {
+					"returns": {
+						"efficiency": "The efficiency percentage (e.g., 150 means 150%)."
+					}
+				},
+				"updateValues(uint256,uint256)": {
+					"params": {
+						"_capitalInvested": "The total capital that was invested.",
+						"_revenue": "The total revenue or output generated."
+					}
+				}
+			},
+			"title": "CapitalEfficiencyCalculator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateEfficiency()": {
+					"notice": "Calculates the capital efficiency as a percentage."
+				},
+				"updateValues(uint256,uint256)": {
+					"notice": "Allows the owner to set or update revenue and capital invested."
+				}
+			},
+			"notice": "This contract calculates the capital efficiency ratio as a percentage. Capital efficiency indicates the return generated per unit of capital invested.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/capitalEfficiencies.sol": "CapitalEfficiencyCalculator"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/capitalEfficiencies.sol": {
+			"keccak256": "0x0d9b5ae479b0ecb24ccdd6bbdb178677668f20ced7ee4d283119c229d24619e0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fa86b85b8a82c0fececd684b63992083dd0f5aaf26a6969b094cb5ff0e6706fa",
+				"dweb:/ipfs/QmUKhYXsgZhH8N4Mzjh3FaTDbfsGWdVuBb7EWqUkt9aQUD"
+			]
+		}
+	},
+	"version": 1
+}

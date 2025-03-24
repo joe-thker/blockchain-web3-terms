@@ -1,0 +1,198 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "Blacklisted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "MessagePosted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "RemovedFromBlacklist",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_addr",
+						"type": "address"
+					}
+				],
+				"name": "addToBlacklist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "blacklist",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					}
+				],
+				"name": "postMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_addr",
+						"type": "address"
+					}
+				],
+				"name": "removeFromBlacklist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addToBlacklist(address)": {
+					"params": {
+						"_addr": "The address to blacklist."
+					}
+				},
+				"postMessage(string)": {
+					"params": {
+						"_message": "The message content."
+					}
+				},
+				"removeFromBlacklist(address)": {
+					"params": {
+						"_addr": "The address to remove from the blacklist."
+					}
+				}
+			},
+			"title": "CensorshipControl",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addToBlacklist(address)": {
+					"notice": "Adds an address to the blacklist. Only the owner can call this function."
+				},
+				"constructor": {
+					"notice": "Constructor sets the deployer as the contract owner."
+				},
+				"postMessage(string)": {
+					"notice": "Allows non-blacklisted users to post a message."
+				},
+				"removeFromBlacklist(address)": {
+					"notice": "Removes an address from the blacklist. Only the owner can call this function."
+				}
+			},
+			"notice": "This contract implements a basic censorship mechanism by maintaining a blacklist of addresses. Only addresses not on the blacklist can perform certain actions (e.g., post messages).",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/censhorshipResistance.sol": "CensorshipControl"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/censhorshipResistance.sol": {
+			"keccak256": "0x2eea85756e816a1e63a4ced6473f6b518defc5643e52b60d56059a6d91f6c8c5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d9a1be274cedf294908f8a11d7e1aa400d12b04089c035078b32b4260cb0477d",
+				"dweb:/ipfs/QmPnj2d79Fi9nmsrhH4yPEoZtee7b6ec7HAL6KVRLNK3LX"
+			]
+		}
+	},
+	"version": 1
+}

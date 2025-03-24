@@ -1,0 +1,152 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newDefinition",
+						"type": "string"
+					}
+				],
+				"name": "DefinitionUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "definition",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDefinition",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "term",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newDefinition",
+						"type": "string"
+					}
+				],
+				"name": "updateDefinition",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getDefinition()": {
+					"returns": {
+						"_0": "The current definition as a string."
+					}
+				},
+				"updateDefinition(string)": {
+					"params": {
+						"newDefinition": "The new definition string."
+					}
+				}
+			},
+			"title": "CapitalDictionary",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner and initializes the definition."
+				},
+				"getDefinition()": {
+					"notice": "Retrieves the definition of Capital."
+				},
+				"updateDefinition(string)": {
+					"notice": "Allows the owner to update the definition."
+				}
+			},
+			"notice": "A contract that stores and retrieves the definition and use cases for the term \"Capital\" in finance and crypto.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/capital.sol": "CapitalDictionary"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/capital.sol": {
+			"keccak256": "0xf0af6928e45d14bfc979ed2e7f7224978c20e3ce0456328ef2b873a5256fe9a7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c69acfd314dab25edc3c544dd7331fd573c5c25c17fca49e6a69a3e4ec883757",
+				"dweb:/ipfs/QmPP1yr7QXYiFyLHfr3ed1pWv4XErmwm5PDUPSBErSdgJG"
+			]
+		}
+	},
+	"version": 1
+}

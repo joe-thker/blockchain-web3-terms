@@ -1,0 +1,354 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizationGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "AuthorizationRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "entryId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"name": "EntryAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					}
+				],
+				"name": "addEntry",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "authorized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getEntry",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEntryCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "grantAuthorization",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ledger",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "revokeAuthorization",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addEntry(address,address,uint256,string)": {
+					"params": {
+						"_amount": "The amount transacted.",
+						"_description": "A brief description of the transaction.",
+						"_from": "The sender address.",
+						"_to": "The recipient address."
+					}
+				},
+				"getEntry(uint256)": {
+					"params": {
+						"index": "The index of the entry."
+					},
+					"returns": {
+						"amount": "The transacted amount.",
+						"description": "The entry's description.",
+						"from": "The sender address.",
+						"timestamp": "The timestamp of the entry.",
+						"to": "The recipient address."
+					}
+				},
+				"getEntryCount()": {
+					"returns": {
+						"_0": "The count of ledger entries."
+					}
+				},
+				"grantAuthorization(address)": {
+					"params": {
+						"addr": "The address to authorize."
+					}
+				},
+				"revokeAuthorization(address)": {
+					"params": {
+						"addr": "The address to revoke."
+					}
+				}
+			},
+			"title": "PermissionedCentralLedger",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addEntry(address,address,uint256,string)": {
+					"notice": "Adds a new ledger entry."
+				},
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner and grants them authorization."
+				},
+				"getEntry(uint256)": {
+					"notice": "Retrieves a ledger entry by index."
+				},
+				"getEntryCount()": {
+					"notice": "Returns the total number of ledger entries."
+				},
+				"grantAuthorization(address)": {
+					"notice": "Grants authorization to an address to add ledger entries."
+				},
+				"revokeAuthorization(address)": {
+					"notice": "Revokes authorization from an address."
+				}
+			},
+			"notice": "A centralized ledger that records financial transactions. Only authorized addresses (managed by the owner) can add new ledger entries.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/permissionedCentralLedger.sol": "PermissionedCentralLedger"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/permissionedCentralLedger.sol": {
+			"keccak256": "0xd318cea621f588e86d5623afd07d3800836cfdb655c04c173f0b1ec8995953bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e4eb0b552ad10ef6d2ee3fd9ee72678ab74a4b808b96e258f2198f3ab4c3e9fc",
+				"dweb:/ipfs/QmaaeqBKPDz2ocJWCLDQgaP6XVs8RLJWuXLaaStB822b9Q"
+			]
+		}
+	},
+	"version": 1
+}
