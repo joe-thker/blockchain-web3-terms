@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.29+commit.ab55807c"
+		"version": "0.8.19+commit.7dd6d404"
 	},
 	"language": "Solidity",
 	"output": {
@@ -29,8 +29,14 @@
 					{
 						"indexed": false,
 						"internalType": "uint8",
-						"name": "changeType",
+						"name": "changeMode",
 						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "address[]",
+						"name": "changeAddresses",
+						"type": "address[]"
 					}
 				],
 				"name": "TransactionExecuted",
@@ -113,8 +119,13 @@
 					},
 					{
 						"internalType": "uint8",
-						"name": "changeType",
+						"name": "changeMode",
 						"type": "uint8"
+					},
+					{
+						"internalType": "address[]",
+						"name": "changeAddresses",
+						"type": "address[]"
 					}
 				],
 				"name": "send",
@@ -160,37 +171,38 @@
 		"devdoc": {
 			"kind": "dev",
 			"methods": {
-				"send(uint256[],address,uint256,uint8)": {
+				"send(uint256[],address,uint256,uint8,address[])": {
 					"params": {
-						"amount": "The amount to send (in wei).",
-						"changeType": "The change mode (0, 1, or 2).",
-						"recipient": "The address of the recipient.",
-						"utxoIds": "An array of UTXO IDs to use as inputs."
+						"amount": "The amount (in wei) to send to the recipient.",
+						"changeAddresses": "An array of addresses for receiving change:        - For mode 0, this is ignored.        - For mode 1, it must contain 1 address.        - For mode 2, it must contain 2 addresses.",
+						"changeMode": "The change mode: 0 (self-change), 1 (single external), 2 (split change).",
+						"recipient": "The address to receive the payment.",
+						"utxoIds": "An array of UTXO IDs to be spent."
 					}
 				}
 			},
-			"title": "UTXOSimulatorWithChangeTypes",
+			"title": "UTXOChangeAddressTypes",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
 			"methods": {
 				"deposit()": {
-					"notice": "Deposits Ether and creates a new UTXO."
+					"notice": "Deposits Ether to create a new UTXO."
 				},
-				"send(uint256[],address,uint256,uint8)": {
-					"notice": "Sends Ether using specified UTXOs. The function supports three types of change handling: changeType 0: Exact Payment (require totalInput == amount) changeType 1: Single Change Output (one UTXO for all change) changeType 2: Multiple Change Outputs (split change into two UTXOs)"
+				"send(uint256[],address,uint256,uint8,address[])": {
+					"notice": "Sends Ether using specified UTXOs and returns change according to the selected mode."
 				}
 			},
-			"notice": "This contract simulates a basic UTXO model with different types of change outputs. Users can deposit Ether to create UTXOs and then spend them. Depending on the changeType parameter, the contract will handle \"change\" in three ways: 0 - Exact Payment: require input equals payment (no change). 1 - Single Change Output: create one UTXO for all the change. 2 - Multiple Change Outputs: split the change into two separate UTXOs.",
+			"notice": "Simulates a UTXO model with multiple methods for returning change to a designated address. The contract supports three change modes: 0 - Self-Change: Return all change to the sender. 1 - Single External Change Address: Return all change to a specified address. 2 - Split Change: Divide the change equally between two specified addresses.",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"C/changeTypes.sol": "UTXOSimulatorWithChangeTypes"
+			"C/changeAddressTypes.sol": "UTXOChangeAddressTypes"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -202,12 +214,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"C/changeTypes.sol": {
-			"keccak256": "0x5e8e3fb7289499687076333d0cdb4788ffa8923690d15a10bfe5f5a0d0987a3d",
+		"C/changeAddressTypes.sol": {
+			"keccak256": "0x0bddf0595415df563b615c7d385017878ea967f85f7825626d423b8a4d722292",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f432872a47065ec929ac5d45c7119d4fd0eacd8e2984d11197a3dec4ec1f618a",
-				"dweb:/ipfs/Qmd5iX6j1RFUnRaoTfioaUPqSA17b3ABpJs12d6G9pYNe8"
+				"bzz-raw://500b77faa19eff19b5840e09f305ee395a63fcda86d784b0cfa40a52ca792efb",
+				"dweb:/ipfs/QmXSxbnWVdDTbmPBZdNcvindrTZ8e42rNmPnLLPmQCBTB2"
 			]
 		}
 	},

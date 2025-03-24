@@ -1,0 +1,280 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "messageId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "cipherText",
+						"type": "bytes"
+					}
+				],
+				"name": "MessageStored",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "messageId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "key",
+						"type": "string"
+					}
+				],
+				"name": "decryptStored",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "plainText",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "key",
+						"type": "string"
+					}
+				],
+				"name": "encryptAndStore",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "messageId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "messageId",
+						"type": "uint256"
+					}
+				],
+				"name": "getCipherText",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "messages",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "cipherText",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextMessageId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "key",
+						"type": "bytes"
+					}
+				],
+				"name": "xorCipher",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "result",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "This example is for educational purposes and does not provide strong security.",
+			"kind": "dev",
+			"methods": {
+				"decryptStored(uint256,string)": {
+					"params": {
+						"key": "The key used for decryption.",
+						"messageId": "The ID of the stored message."
+					},
+					"returns": {
+						"_0": "The decrypted plain text string."
+					}
+				},
+				"encryptAndStore(string,string)": {
+					"params": {
+						"key": "The key used for encryption.",
+						"plainText": "The message to encrypt."
+					},
+					"returns": {
+						"messageId": "The ID assigned to the stored encrypted message."
+					}
+				},
+				"getCipherText(uint256)": {
+					"params": {
+						"messageId": "The ID of the stored message."
+					},
+					"returns": {
+						"_0": "The cipher text as bytes."
+					}
+				},
+				"xorCipher(bytes,bytes)": {
+					"params": {
+						"data": "The data to encrypt or decrypt.",
+						"key": "The key used for the XOR operation."
+					},
+					"returns": {
+						"result": "The output after applying XOR."
+					}
+				}
+			},
+			"title": "CipherTextStore",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"decryptStored(uint256,string)": {
+					"notice": "Decrypts a stored cipher text using the provided key."
+				},
+				"encryptAndStore(string,string)": {
+					"notice": "Encrypts a plain text message with a key and stores the resulting cipher text on-chain."
+				},
+				"getCipherText(uint256)": {
+					"notice": "Retrieves the cipher text for a stored message."
+				},
+				"xorCipher(bytes,bytes)": {
+					"notice": "Performs XOR encryption/decryption on the input data using the provided key."
+				}
+			},
+			"notice": "A contract to encrypt, store, and decrypt messages using a simple XOR cipher.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cipherText.sol": "CipherTextStore"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cipherText.sol": {
+			"keccak256": "0x80026185c37e131ddfc6d609b9ca9819a2f7bcd1a6b62cf9b6a15a03a9db8a6f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b5d9deaa5931e8e645c41b7154d14bf959f681bfece7cddd7029908b3e7071ec",
+				"dweb:/ipfs/QmakdxhcqcR4cQycSqCEF83x67G1jgxCd2kmTPnMECSKQo"
+			]
+		}
+	},
+	"version": 1
+}

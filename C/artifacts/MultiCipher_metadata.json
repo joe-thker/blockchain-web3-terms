@@ -1,0 +1,158 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint8",
+						"name": "shift",
+						"type": "uint8"
+					}
+				],
+				"name": "caesarCipher",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "result",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint8",
+						"name": "shift",
+						"type": "uint8"
+					}
+				],
+				"name": "caesarDecipher",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "result",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "key",
+						"type": "bytes"
+					}
+				],
+				"name": "xorCipher",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "result",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"caesarCipher(bytes,uint8)": {
+					"params": {
+						"data": "The data to encrypt (as bytes).",
+						"shift": "The number of positions to shift each byte."
+					},
+					"returns": {
+						"result": "The resulting ciphertext."
+					}
+				},
+				"caesarDecipher(bytes,uint8)": {
+					"params": {
+						"data": "The ciphertext (as bytes).",
+						"shift": "The number of positions that were used to shift during encryption."
+					},
+					"returns": {
+						"result": "The decrypted plaintext."
+					}
+				},
+				"xorCipher(bytes,bytes)": {
+					"params": {
+						"data": "The data to be encrypted/decrypted.",
+						"key": "The key used for the XOR operation."
+					},
+					"returns": {
+						"result": "The output after applying XOR with the key."
+					}
+				}
+			},
+			"title": "MultiCipher",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"caesarCipher(bytes,uint8)": {
+					"notice": "Encrypts data using a simple Caesar cipher (shifting each byte by 'shift' modulo 256)."
+				},
+				"caesarDecipher(bytes,uint8)": {
+					"notice": "Decrypts data that was encrypted with the Caesar cipher."
+				},
+				"xorCipher(bytes,bytes)": {
+					"notice": "Performs XOR encryption or decryption on input data using a repeating key."
+				}
+			},
+			"notice": "A simple contract that demonstrates two basic symmetric ciphers: an XOR cipher and a Caesar cipher. These are provided for educational purposes only.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cipherTypes.sol": "MultiCipher"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cipherTypes.sol": {
+			"keccak256": "0xdef3fc78224631c462657f7f3702c655147fbe638e1dc5907da2f79916918b1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c126f598fe9a440379f2dba7b4043766ad9531073c7d7d9b7c28394316cb55ad",
+				"dweb:/ipfs/QmYzjyMQUyUEk5Z1bkrVsakzh8sRpH42S7LtWczJ7KYJpc"
+			]
+		}
+	},
+	"version": 1
+}

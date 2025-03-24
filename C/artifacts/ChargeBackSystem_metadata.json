@@ -1,0 +1,315 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "paymentId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "ChargeBackApproved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "paymentId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					}
+				],
+				"name": "DisputeFiled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "paymentId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "PaymentSent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "paymentId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RefundIssued",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "paymentId",
+						"type": "uint256"
+					}
+				],
+				"name": "approveChargeBack",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "disputePeriod",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "paymentId",
+						"type": "uint256"
+					}
+				],
+				"name": "fileDispute",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextPaymentId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "payments",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "disputed",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "chargebackApproved",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "refunded",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					}
+				],
+				"name": "sendPayment",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "paymentId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"approveChargeBack(uint256)": {
+					"params": {
+						"paymentId": "The ID of the payment to reverse."
+					}
+				},
+				"fileDispute(uint256)": {
+					"params": {
+						"paymentId": "The ID of the payment to dispute."
+					}
+				},
+				"sendPayment(address)": {
+					"params": {
+						"seller": "The recipient of the payment."
+					},
+					"returns": {
+						"paymentId": "The unique ID assigned to the payment."
+					}
+				}
+			},
+			"title": "ChargeBackSystem",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"approveChargeBack(uint256)": {
+					"notice": "Allows the owner (admin) to approve a chargeback on a disputed payment."
+				},
+				"fileDispute(uint256)": {
+					"notice": "Allows the buyer to file a dispute on a payment within the dispute period."
+				},
+				"sendPayment(address)": {
+					"notice": "Sends a payment from the buyer to the seller."
+				}
+			},
+			"notice": "This contract simulates a simple chargeback mechanism for crypto payments. Buyers can send payments to sellers and file disputes within a specified period. The owner (acting as an administrator) can approve chargebacks to refund the buyer.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/chargeback.sol": "ChargeBackSystem"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/chargeback.sol": {
+			"keccak256": "0xba57d67a42201e2a2453db78eae7138b65b170fdd3c2fab083b97b53da79461b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://93253032dec6f4c0bc874b63791aae921895d547ad73dcd7aaa4b3e45031e5a3",
+				"dweb:/ipfs/QmVacp3TLxVAt96VP6CVDqqWHBcC2uYxFmgWJ4BT3DH7ZB"
+			]
+		}
+	},
+	"version": 1
+}

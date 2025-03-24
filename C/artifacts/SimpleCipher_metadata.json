@@ -1,0 +1,159 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "cipherText",
+						"type": "bytes"
+					},
+					{
+						"internalType": "string",
+						"name": "key",
+						"type": "string"
+					}
+				],
+				"name": "decrypt",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "plainText",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "plainText",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "key",
+						"type": "string"
+					}
+				],
+				"name": "encrypt",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "cipherText",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "key",
+						"type": "bytes"
+					}
+				],
+				"name": "xorCipher",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "result",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "This cipher uses a repeating key to XOR with the data. It is NOT secure for production use.",
+			"kind": "dev",
+			"methods": {
+				"decrypt(bytes,string)": {
+					"params": {
+						"cipherText": "The ciphertext to decrypt.",
+						"key": "The key string."
+					},
+					"returns": {
+						"plainText": "The resulting plaintext string."
+					}
+				},
+				"encrypt(string,string)": {
+					"params": {
+						"key": "The key string.",
+						"plainText": "The plaintext string."
+					},
+					"returns": {
+						"cipherText": "The resulting ciphertext as bytes."
+					}
+				},
+				"xorCipher(bytes,bytes)": {
+					"params": {
+						"data": "The data to encrypt or decrypt (in bytes).",
+						"key": "The key to use for the XOR operation (in bytes)."
+					},
+					"returns": {
+						"result": "The resulting encrypted or decrypted data."
+					}
+				}
+			},
+			"title": "SimpleCipher",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"decrypt(bytes,string)": {
+					"notice": "Decrypts a ciphertext (in bytes) using a key."
+				},
+				"encrypt(string,string)": {
+					"notice": "Encrypts a plaintext string using a key."
+				},
+				"xorCipher(bytes,bytes)": {
+					"notice": "Performs XOR encryption/decryption on the input data using the given key."
+				}
+			},
+			"notice": "A simple XOR-based cipher for educational purposes.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cipher.sol": "SimpleCipher"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cipher.sol": {
+			"keccak256": "0x2330facb1890bb0ba3ffbb9e67ee24c0479834b26b38b8f56678edfe8d14a4f8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b7b9ddb8c21f88545a71f0fd6ec5efbc627e05953b42774418f5c3851956e8b",
+				"dweb:/ipfs/Qmai8iLwoygmXNcLbAdRRM2ZaNRWqYXNtH9u5bNaQWYCq1"
+			]
+		}
+	},
+	"version": 1
+}

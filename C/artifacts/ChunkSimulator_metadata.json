@@ -1,0 +1,319 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "chunkId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "shardId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "stateRoot",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ChunkAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "chunkId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "transactionData",
+						"type": "string"
+					}
+				],
+				"name": "TransactionAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "shardId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "stateRoot",
+						"type": "bytes32"
+					}
+				],
+				"name": "addChunk",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "chunkId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "transactionData",
+						"type": "string"
+					}
+				],
+				"name": "addTransactionToChunk",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "chunks",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "chunkId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "shardId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "stateRoot",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "chunkId",
+						"type": "uint256"
+					}
+				],
+				"name": "getChunk",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "chunkId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "shardId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "blockNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "stateRoot",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "string[]",
+								"name": "transactions",
+								"type": "string[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ChunkSimulator.Chunk",
+						"name": "chunk",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getChunkCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextChunkId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addChunk(uint256,uint256,bytes32)": {
+					"params": {
+						"blockNumber": "The block number for which this chunk is created.",
+						"shardId": "The shard ID for the chunk.",
+						"stateRoot": "The state root of the chunk."
+					}
+				},
+				"addTransactionToChunk(uint256,string)": {
+					"params": {
+						"chunkId": "The ID of the chunk.",
+						"transactionData": "The transaction data (as a string) to add."
+					}
+				},
+				"getChunk(uint256)": {
+					"params": {
+						"chunkId": "The ID of the chunk to retrieve."
+					},
+					"returns": {
+						"chunk": "The Chunk struct containing all details."
+					}
+				},
+				"getChunkCount()": {
+					"returns": {
+						"_0": "The count of chunks."
+					}
+				}
+			},
+			"title": "ChunkSimulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addChunk(uint256,uint256,bytes32)": {
+					"notice": "Adds a new chunk to the system."
+				},
+				"addTransactionToChunk(uint256,string)": {
+					"notice": "Adds a transaction to a specific chunk."
+				},
+				"getChunk(uint256)": {
+					"notice": "Retrieves the details of a specific chunk."
+				},
+				"getChunkCount()": {
+					"notice": "Returns the total number of chunks stored."
+				}
+			},
+			"notice": "A simplified simulation of the \"chunk\" concept from NEAR protocol. In NEAR, each block is divided into chunks that belong to specific shards. This simulation allows the owner to add chunks, append transactions to them, and retrieve chunk data.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/chunk.sol": "ChunkSimulator"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/chunk.sol": {
+			"keccak256": "0x1052795f4aca52f4535268920efa07c3efb43c3400d2bf35798e66db49c66bb7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d6c5b8c7ee717cfbd409c8d536848a82e55d80fad8755391ba5903f5003d8005",
+				"dweb:/ipfs/QmehiYHML79MDHfoZ2ePvAajDmbSrfJWr5iuEzjZLNNtrL"
+			]
+		}
+	},
+	"version": 1
+}
