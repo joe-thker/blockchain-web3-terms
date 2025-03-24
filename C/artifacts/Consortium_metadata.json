@@ -1,0 +1,268 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "member",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "ConsortiumActionExecuted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newMember",
+						"type": "address"
+					}
+				],
+				"name": "MemberAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "removedMember",
+						"type": "address"
+					}
+				],
+				"name": "MemberRemoved",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_member",
+						"type": "address"
+					}
+				],
+				"name": "addMember",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "consortiumAction",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMembers",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_addr",
+						"type": "address"
+					}
+				],
+				"name": "isMember",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "memberList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "members",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_member",
+						"type": "address"
+					}
+				],
+				"name": "removeMember",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addMember(address)": {
+					"params": {
+						"_member": "The address to add as a member."
+					}
+				},
+				"consortiumAction()": {
+					"returns": {
+						"_0": "A string message confirming the action execution."
+					}
+				},
+				"getMembers()": {
+					"returns": {
+						"_0": "An array of addresses of the consortium members."
+					}
+				},
+				"isMember(address)": {
+					"params": {
+						"_addr": "The address to check."
+					},
+					"returns": {
+						"_0": "True if the address is a member, false otherwise."
+					}
+				},
+				"removeMember(address)": {
+					"params": {
+						"_member": "The address to remove."
+					}
+				}
+			},
+			"title": "Consortium",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addMember(address)": {
+					"notice": "Adds a new member to the consortium."
+				},
+				"consortiumAction()": {
+					"notice": "A sample function that simulates a consortium action. Only authorized members can execute this action."
+				},
+				"constructor": {
+					"notice": "Constructor sets the deployer as the owner and first consortium member."
+				},
+				"getMembers()": {
+					"notice": "Returns the list of consortium members."
+				},
+				"isMember(address)": {
+					"notice": "Checks whether a given address is a member."
+				},
+				"removeMember(address)": {
+					"notice": "Removes a member from the consortium."
+				}
+			},
+			"notice": "A simple consortium governance system where only authorized members can perform consortium actions. The owner can add or remove members.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/consortium.sol": "Consortium"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/consortium.sol": {
+			"keccak256": "0x13a8b4fc2b4f96d6bbb747c6c228379dc77a509c5a8d7f00c597d6315f21521e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://69227a3532f2ae5881317deabf4214b8bcd599653253e370d7694e73b5d024a3",
+				"dweb:/ipfs/QmWJtTg4qSZysVNsJxqo9xrzyh6WiMT1cE8ZVEKh3qysVt"
+			]
+		}
+	},
+	"version": 1
+}
