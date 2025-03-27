@@ -1,0 +1,522 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_trustedTEE",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "submitter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					}
+				],
+				"name": "JobCompleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "submitter",
+						"type": "address"
+					}
+				],
+				"name": "JobFailed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "submitter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					}
+				],
+				"name": "JobSubmitted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newTrustedTEE",
+						"type": "address"
+					}
+				],
+				"name": "TrustedTEEUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"name": "getJob",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "submitter",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "encryptedInput",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "commitment",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "enum ConfidentialComputing.JobStatus",
+								"name": "status",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes",
+								"name": "encryptedOutput",
+								"type": "bytes"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ConfidentialComputing.Job",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "jobs",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "submitter",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "encryptedInput",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum ConfidentialComputing.JobStatus",
+						"name": "status",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes",
+						"name": "encryptedOutput",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextJobId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "encryptedOutput",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"name": "reportJobResult",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "encryptedInput",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					}
+				],
+				"name": "submitJob",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "jobId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "trustedTEE",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_trustedTEE",
+						"type": "address"
+					}
+				],
+				"name": "updateTrustedTEE",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_trustedTEE": "Address of the trusted TEE operator."
+					}
+				},
+				"getJob(uint256)": {
+					"params": {
+						"jobId": "The identifier of the job."
+					},
+					"returns": {
+						"_0": "The Job struct associated with the given jobId."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"reportJobResult(uint256,bytes,bool)": {
+					"params": {
+						"encryptedOutput": "The encrypted result data.",
+						"jobId": "The identifier of the job.",
+						"success": "A boolean indicating whether the computation succeeded."
+					}
+				},
+				"submitJob(bytes,bytes32)": {
+					"params": {
+						"commitment": "A commitment hash (e.g., hash of the expected output).",
+						"encryptedInput": "The encrypted input data."
+					},
+					"returns": {
+						"jobId": "The unique identifier of the submitted job."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateTrustedTEE(address)": {
+					"params": {
+						"_trustedTEE": "Address of the new trusted TEE operator."
+					}
+				}
+			},
+			"title": "ConfidentialComputing",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"JobCompleted(uint256,address,bytes32)": {
+					"notice": "Emitted when a job is successfully completed."
+				},
+				"JobFailed(uint256,address)": {
+					"notice": "Emitted when a job fails."
+				},
+				"JobSubmitted(uint256,address,bytes32)": {
+					"notice": "Emitted when a new job is submitted."
+				},
+				"TrustedTEEUpdated(address)": {
+					"notice": "Emitted when the trusted TEE operator is updated."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the initial trusted TEE operator."
+				},
+				"getJob(uint256)": {
+					"notice": "Retrieves the details of a specific job."
+				},
+				"jobs(uint256)": {
+					"notice": "Mapping from job id to the Job details."
+				},
+				"reportJobResult(uint256,bytes,bool)": {
+					"notice": "Reports the result of a confidential computing job. Only the trusted TEE operator can call this function."
+				},
+				"submitJob(bytes,bytes32)": {
+					"notice": "Submits a new confidential computing job."
+				},
+				"trustedTEE()": {
+					"notice": "Address of the trusted TEE operator that is authorized to report job results."
+				},
+				"updateTrustedTEE(address)": {
+					"notice": "Allows the owner to update the trusted TEE operator."
+				}
+			},
+			"notice": "This contract allows users to submit confidential computation jobs. Each job includes encrypted input data and a commitment hash. A trusted TEE operator later reports the result (encrypted output) and marks the job as completed or failed. The contract uses Ownable and ReentrancyGuard for security.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/Confidential Computing.sol": "ConfidentialComputing"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"C/Confidential Computing.sol": {
+			"keccak256": "0x5a9bc1596334cd8375512268c43763fad1bac6a1a2624953837021c5f7597488",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1a1844348626f5ef02cb981116607e4f52c2944b90598d994890364d9cf28882",
+				"dweb:/ipfs/QmRzRK54bZUUGnnkQHm9isvg1bKtgRjHmSAJqmvoeNyrEw"
+			]
+		}
+	},
+	"version": 1
+}
