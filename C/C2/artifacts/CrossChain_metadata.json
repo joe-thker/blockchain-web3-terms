@@ -1,0 +1,186 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "sourceChainId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "MessageReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "targetChainId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "MessageSent",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "sourceChainId",
+						"type": "uint256"
+					}
+				],
+				"name": "getMessages",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "sourceChainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "receiveMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "targetChainId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "sendMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getMessages(uint256)": {
+					"params": {
+						"sourceChainId": "The identifier of the source chain."
+					},
+					"returns": {
+						"_0": "An array of messages received from that chain."
+					}
+				},
+				"receiveMessage(uint256,string)": {
+					"details": "This function simulates receiving a message from another chain. In production, access might be restricted to a trusted oracle or relayer.",
+					"params": {
+						"message": "The message content.",
+						"sourceChainId": "The identifier of the source chain."
+					}
+				},
+				"sendMessage(uint256,string)": {
+					"details": "In a real system, off-chain relayers would capture this event and relay the message.",
+					"params": {
+						"message": "The message content.",
+						"targetChainId": "The identifier of the target chain."
+					}
+				}
+			},
+			"title": "CrossChain",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getMessages(uint256)": {
+					"notice": "Retrieves all messages received from a specific source chain."
+				},
+				"receiveMessage(uint256,string)": {
+					"notice": "Receives a cross-chain message from a source chain."
+				},
+				"sendMessage(uint256,string)": {
+					"notice": "Sends a cross-chain message."
+				}
+			},
+			"notice": "This contract simulates a simplified cross-chain messaging system. It allows users to \"send\" messages to a target chain (by emitting an event) and \"receive\" messages from a source chain (stored on-chain).",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C2/crosschain.sol": "CrossChain"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C2/crosschain.sol": {
+			"keccak256": "0xd984aabfc277d4c64ee87d94cea19af476b3b418dcd6e914a8eb1cf45e7f6d16",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3077e1ec6ff6860313a7fc6bb7ac4411c793510d1ea51d50522ed0cf067b6dd",
+				"dweb:/ipfs/QmYWbSxpX4gezkmoLey1pm62gMjxUGxULGSrkDjQ2dW7J8"
+			]
+		}
+	},
+	"version": 1
+}
