@@ -1,0 +1,416 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "newDataRoot",
+						"type": "bytes32"
+					}
+				],
+				"name": "DataRootUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newRequiredSamples",
+						"type": "uint256"
+					}
+				],
+				"name": "RequiredSamplesUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sampler",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "sampleIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "valid",
+						"type": "bool"
+					}
+				],
+				"name": "SampleSubmitted",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "dataRoot",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isDataAvailable",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "available",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "requiredSamples",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "sampleSubmitted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "sampleIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "leaf",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "proof",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "submitSample",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSamples",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_dataRoot",
+						"type": "bytes32"
+					}
+				],
+				"name": "updateDataRoot",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requiredSamples",
+						"type": "uint256"
+					}
+				],
+				"name": "updateRequiredSamples",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "validSamples",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"isDataAvailable()": {
+					"returns": {
+						"available": "True if validSamples meets or exceeds requiredSamples."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"submitSample(uint256,bytes32,bytes32[])": {
+					"params": {
+						"leaf": "The hash of the data chunk.",
+						"proof": "The Merkle proof that the leaf is in the dataset.",
+						"sampleIndex": "The index of the sample."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateDataRoot(bytes32)": {
+					"params": {
+						"_dataRoot": "The new Merkle root."
+					}
+				},
+				"updateRequiredSamples(uint256)": {
+					"params": {
+						"_requiredSamples": "The number of valid samples needed."
+					}
+				}
+			},
+			"title": "DataAvailabilitySampling",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the initial owner."
+				},
+				"isDataAvailable()": {
+					"notice": "Checks whether the data is considered available based on valid samples."
+				},
+				"submitSample(uint256,bytes32,bytes32[])": {
+					"notice": "Submits a sample for data availability verification."
+				},
+				"updateDataRoot(bytes32)": {
+					"notice": "Sets or updates the Merkle root representing the off-chain dataset. Resets sample counters when updated."
+				},
+				"updateRequiredSamples(uint256)": {
+					"notice": "Sets the required number of valid samples."
+				}
+			},
+			"notice": "This contract allows the owner to set a Merkle root representing an off‑chain dataset. Participants submit samples (with sample index, leaf, and Merkle proof) to verify that data is available. The contract tracks the total and valid samples, and once the number of valid samples meets the threshold, the data is considered available.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/dataAvailabilitySampling.sol": "DataAvailabilitySampling"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"@openzeppelin/contracts/utils/cryptography/Hashes.sol": {
+			"keccak256": "0x631dc1958d5308bd2d9f91190bbcde4f9ffb9d9401ce8d358c17b35f1a942bb7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e7ef16d9a6f57eae9ab275116eaba1e8de70efd3d0e3682b1585b8f069d9c3f9",
+				"dweb:/ipfs/QmR3JQHAyv4sNWnRHeiC6oaz8Bqn8rtzu5sdAqAJRtBqpj"
+			]
+		},
+		"@openzeppelin/contracts/utils/cryptography/MerkleProof.sol": {
+			"keccak256": "0x36a0c409c437a753cac9b92b75f93b0fbe92803bf2c8ff1517e54b247f166134",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0f91ba472de411aa557cdbf6560c40750d87bd11c9060bc04d2ba7119af9d5a6",
+				"dweb:/ipfs/QmQjtYo2i7dDvzCEzZ67bDoNSG4RrwMoxPWuqFmX5Xzpuw"
+			]
+		},
+		"D/dataAvailabilitySampling.sol": {
+			"keccak256": "0x650cfc1b76ab9305b0318f8985012670d62d9e72ed460e3c9222f8fecafcb12d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb2daecfbd1878408ee4c87e4fa3ba56e473de22bd8c5d96fcda4276be72811d",
+				"dweb:/ipfs/QmNiAKSBsabUQGnszj8gx2J2MkfRrxhwjRjxymiFTXj3Ni"
+			]
+		}
+	},
+	"version": 1
+}
