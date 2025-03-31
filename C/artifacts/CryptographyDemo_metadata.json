@@ -1,0 +1,152 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "SignatureVerified",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "getEthSignedMessageHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "verifySignature",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "valid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getEthSignedMessageHash(bytes32)": {
+					"params": {
+						"messageHash": "The hash of the original message."
+					},
+					"returns": {
+						"_0": "The hash corresponding to the signed message."
+					}
+				},
+				"verifySignature(string,uint8,bytes32,bytes32)": {
+					"params": {
+						"message": "The original message (in plain text).",
+						"r": "The first 32 bytes of the signature.",
+						"s": "The second 32 bytes of the signature.",
+						"v": "The recovery identifier."
+					},
+					"returns": {
+						"valid": "A boolean indicating whether the signature is valid."
+					}
+				}
+			},
+			"title": "CryptographyDemo",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"SignatureVerified(address,string)": {
+					"notice": "Emitted when a signature is successfully verified."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"getEthSignedMessageHash(bytes32)": {
+					"notice": "Returns the Ethereum Signed Message hash for a given message hash."
+				},
+				"verifySignature(string,uint8,bytes32,bytes32)": {
+					"notice": "Verifies that a message was signed by the holder of the private key corresponding to the recovered address."
+				}
+			},
+			"notice": "This contract demonstrates cryptographic signature verification in Solidity. It computes the Ethereum signed message hash from a plain text message, recovers the signer using ECDSA (ecrecover), and emits an event if the signature is valid.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cryptography.sol": "CryptographyDemo"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cryptography.sol": {
+			"keccak256": "0x56c102093bc23b9d17f8fe160269412fdc1afa5114fde96a63f013c3adf28e31",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eb2a568192235a3430ded8f55ba19c1f8d7f75c940096ec7fb8b774e0f3844be",
+				"dweb:/ipfs/QmV6qyLi32XjxtCRoMEfRXwg3i5Aq6MjPzThFo19G53Hpv"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,168 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "committer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					}
+				],
+				"name": "CommitmentMade",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "committer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "value",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					}
+				],
+				"name": "CommitmentRevealed",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					}
+				],
+				"name": "commit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "commitments",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "value",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					}
+				],
+				"name": "reveal",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "valid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"commit(bytes32)": {
+					"params": {
+						"commitment": "The hash of the value and nonce (computed as keccak256(abi.encodePacked(value, nonce)))."
+					}
+				},
+				"reveal(string,uint256)": {
+					"params": {
+						"nonce": "A number used to ensure uniqueness.",
+						"value": "The original string value."
+					},
+					"returns": {
+						"valid": "A boolean indicating if the revealed value matches the commitment."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"commit(bytes32)": {
+					"notice": "Allows a user to commit to a value by submitting its hash."
+				},
+				"reveal(string,uint256)": {
+					"notice": "Reveals the original value and nonce to prove the commitment."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/cryptographicHashFunction.sol": "CommitmentScheme"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/cryptographicHashFunction.sol": {
+			"keccak256": "0x164596dd9f01e00f93490aaf081974e6275da67834d42aac6c1790150a36c45b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://880e7c8cfcfdf57016bc76207513e574c0a02bf40c52bad3411f0bec1cd9dc47",
+				"dweb:/ipfs/QmQRqDmhJiKtJmdTEcNV1XnAzA5r8ozQQEPdaHwHQD5VCB"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,135 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[2]",
+						"name": "amounts",
+						"type": "uint256[2]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "min_mint_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "add_liquidity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "min_amounts",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "remove_liquidity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"add_liquidity(uint256[2],uint256)": {
+					"params": {
+						"amounts": "An array with amounts for each token (here, we assume a 2-token pool).",
+						"min_mint_amount": "The minimum amount of liquidity tokens to mint."
+					}
+				},
+				"remove_liquidity(uint256,uint256[2])": {
+					"params": {
+						"_amount": "The amount of liquidity tokens to remove.",
+						"min_amounts": "The minimum amounts of each token to receive."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"add_liquidity(uint256[2],uint256)": {
+					"notice": "Adds liquidity to the pool."
+				},
+				"remove_liquidity(uint256,uint256[2])": {
+					"notice": "Removes liquidity from the pool."
+				}
+			},
+			"notice": "A minimal interface for a Curve-like pool. In a real-world scenario, the pool would have additional functions and complexity.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/curveAMO.sol": "ICurvePool"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe06a3f08a987af6ad2e1c1e774405d4fe08f1694b67517438b467cecf0da0ef7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df6f0c459663c9858b6cba2cda1d14a7d05a985bed6d2de72bd8e78c25ee79db",
+				"dweb:/ipfs/QmeTTxZ7qVk9rjEv2R4CpCwdf8UMCcRqDNMvzNxHc3Fnn9"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"C/curveAMO.sol": {
+			"keccak256": "0xd0f689421d518055b5eeeced29d87052049c403e3527745bae39a39d3402621d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2ce82e1691121ed82b2733a0c1fcd188d86a9097c8083b0ac6a7c8c023da1d09",
+				"dweb:/ipfs/QmRpDn5ecnUCPnajaRqP4x3Lvp3AN2JrXgaYKLtqSvpXZB"
+			]
+		}
+	},
+	"version": 1
+}

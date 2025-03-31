@@ -1,0 +1,418 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "_stablecoin",
+						"type": "address"
+					},
+					{
+						"internalType": "contract ICurvePool",
+						"name": "_curvePool",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_minMintAmount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "stablecoinAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "Invested",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "liquidityRemoved",
+						"type": "uint256"
+					}
+				],
+				"name": "LiquidityWithdrawn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newMinMintAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "MinMintAmountUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newPool",
+						"type": "address"
+					}
+				],
+				"name": "PoolUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "StablecoinDeposited",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "curvePool",
+				"outputs": [
+					{
+						"internalType": "contract ICurvePool",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "depositStablecoin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "invest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minMintAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stablecoin",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_minMintAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "updateMinMintAmount",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ICurvePool",
+						"name": "_newPool",
+						"type": "address"
+					}
+				],
+				"name": "updatePool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "liquidityAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "minAmounts",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "withdrawInvested",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_curvePool": "The address of the Curve-like pool.",
+						"_minMintAmount": "The initial minimum liquidity mint amount.",
+						"_stablecoin": "The address of the ERC20 stablecoin."
+					}
+				},
+				"depositStablecoin(uint256)": {
+					"params": {
+						"amount": "The amount of stablecoin to deposit."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateMinMintAmount(uint256)": {
+					"params": {
+						"_minMintAmount": "The new minimum mint amount."
+					}
+				},
+				"updatePool(address)": {
+					"params": {
+						"_newPool": "The new Curve pool address."
+					}
+				},
+				"withdrawInvested(uint256,uint256[2])": {
+					"params": {
+						"liquidityAmount": "The amount of liquidity tokens to withdraw.",
+						"minAmounts": "The minimum amounts of each token to receive upon withdrawal."
+					}
+				}
+			},
+			"title": "CurveAMO",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the stablecoin, the initial pool, and the minimum mint amount."
+				},
+				"depositStablecoin(uint256)": {
+					"notice": "Deposits stablecoin into the contract. The owner must approve the transfer before calling this function."
+				},
+				"invest()": {
+					"notice": "Invests all stablecoin held by the contract into the Curve pool. This function approves the pool to spend the stablecoin and calls add_liquidity."
+				},
+				"updateMinMintAmount(uint256)": {
+					"notice": "Updates the minimum mint amount required when adding liquidity."
+				},
+				"updatePool(address)": {
+					"notice": "Updates the pool address."
+				},
+				"withdrawInvested(uint256,uint256[2])": {
+					"notice": "Withdraws liquidity from the Curve pool."
+				}
+			},
+			"notice": "A simplified example of a Curve Automated Market Operations (AMO) contract. It accepts deposits of a stablecoin, invests the funds into a Curve-like pool, and allows the owner to withdraw liquidity. Key parameters (such as the pool address and minimum mint amount) can be updated dynamically.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/curveAMO.sol": "CurveAMO"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe06a3f08a987af6ad2e1c1e774405d4fe08f1694b67517438b467cecf0da0ef7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df6f0c459663c9858b6cba2cda1d14a7d05a985bed6d2de72bd8e78c25ee79db",
+				"dweb:/ipfs/QmeTTxZ7qVk9rjEv2R4CpCwdf8UMCcRqDNMvzNxHc3Fnn9"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"C/curveAMO.sol": {
+			"keccak256": "0xd0f689421d518055b5eeeced29d87052049c403e3527745bae39a39d3402621d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2ce82e1691121ed82b2733a0c1fcd188d86a9097c8083b0ac6a7c8c023da1d09",
+				"dweb:/ipfs/QmRpDn5ecnUCPnajaRqP4x3Lvp3AN2JrXgaYKLtqSvpXZB"
+			]
+		}
+	},
+	"version": 1
+}

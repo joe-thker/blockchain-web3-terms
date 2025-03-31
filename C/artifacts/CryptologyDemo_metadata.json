@@ -1,0 +1,273 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "committer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					}
+				],
+				"name": "Committed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "committer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "secret",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "valid",
+						"type": "bool"
+					}
+				],
+				"name": "Revealed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "SignatureVerified",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					}
+				],
+				"name": "commit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "commitments",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "getEthSignedMessageHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "secret",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					}
+				],
+				"name": "reveal",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "valid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "verifySignature",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "valid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"commit(bytes32)": {
+					"params": {
+						"commitment": "The hash of the secret and nonce."
+					}
+				},
+				"getEthSignedMessageHash(bytes32)": {
+					"params": {
+						"messageHash": "The hash of the original message."
+					},
+					"returns": {
+						"_0": "The hash corresponding to the signed message."
+					}
+				},
+				"reveal(string,uint256)": {
+					"params": {
+						"nonce": "A number used to ensure uniqueness.",
+						"secret": "The original secret (e.g., a string)."
+					},
+					"returns": {
+						"valid": "A boolean indicating whether the revealed secret matches the commitment."
+					}
+				},
+				"verifySignature(string,uint8,bytes32,bytes32)": {
+					"params": {
+						"message": "The original message (plain text).",
+						"r": "The first 32 bytes of the signature.",
+						"s": "The second 32 bytes of the signature.",
+						"v": "The recovery identifier of the signature."
+					},
+					"returns": {
+						"valid": "A boolean indicating if the signature is valid."
+					}
+				}
+			},
+			"title": "CryptologyDemo",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"commit(bytes32)": {
+					"notice": "Allows a user to commit to a secret by submitting its hash. The commitment is computed off-chain as: keccak256(abi.encodePacked(secret, nonce))"
+				},
+				"getEthSignedMessageHash(bytes32)": {
+					"notice": "Returns the Ethereum Signed Message hash for a given message hash."
+				},
+				"reveal(string,uint256)": {
+					"notice": "Reveals the secret and nonce to validate the commitment."
+				},
+				"verifySignature(string,uint8,bytes32,bytes32)": {
+					"notice": "Verifies that a message was signed by the holder of the private key corresponding to the recovered address."
+				}
+			},
+			"notice": "Demonstrates cryptographic techniques including a commit–reveal scheme and signature verification.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"C/CryptologyDemo.sol": "CryptologyDemo"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"C/CryptologyDemo.sol": {
+			"keccak256": "0x857f333b7fa36f69835991177555c2d0fbc4f1a2e66ad1b55dedeac3667f5350",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://343c355f7d267c5a8c0e3875ae5c4b48a669f91297c0a4c5fdc060e583e5cbd6",
+				"dweb:/ipfs/QmQwuP6yaQqysqVXwqRDK57dg1LyWPi9NcxkwSxdTjcwPD"
+			]
+		}
+	},
+	"version": 1
+}
