@@ -1,0 +1,186 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "DataStored",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "key",
+						"type": "bytes"
+					}
+				],
+				"name": "decryptStoredData",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getEncryptedData",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "storeEncryptedData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "ciphertext",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "key",
+						"type": "bytes"
+					}
+				],
+				"name": "xorDecrypt",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "plaintext",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"decryptStoredData(bytes)": {
+					"params": {
+						"key": "The key used for XOR decryption."
+					},
+					"returns": {
+						"_0": "The decrypted data."
+					}
+				},
+				"getEncryptedData(address)": {
+					"params": {
+						"user": "The address whose encrypted data to retrieve."
+					},
+					"returns": {
+						"_0": "The stored encrypted data as bytes."
+					}
+				},
+				"storeEncryptedData(bytes)": {
+					"params": {
+						"data": "The encrypted data (should be produced off-chain using an XOR cipher with a secret key)."
+					}
+				},
+				"xorDecrypt(bytes,bytes)": {
+					"params": {
+						"ciphertext": "The encrypted data.",
+						"key": "The key used for XOR decryption. If the key is shorter than the ciphertext, it repeats."
+					},
+					"returns": {
+						"plaintext": "The decrypted data."
+					}
+				}
+			},
+			"title": "SimpleDecryption",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"decryptStoredData(bytes)": {
+					"notice": "Decrypts the stored encrypted data for the sender using the provided key."
+				},
+				"getEncryptedData(address)": {
+					"notice": "Retrieves the stored encrypted data for a given user."
+				},
+				"storeEncryptedData(bytes)": {
+					"notice": "Stores encrypted data for the sender."
+				},
+				"xorDecrypt(bytes,bytes)": {
+					"notice": "Decrypts a ciphertext using an XOR cipher with the provided key."
+				}
+			},
+			"notice": "A demonstration contract that implements a simple XOR-based decryption algorithm. This is for educational purposes only and is not intended for secure cryptographic operations.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/decryption.sol": "SimpleDecryption"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"D/decryption.sol": {
+			"keccak256": "0x24c395c57baa8b2083d6bb368bf782fadc5dae9f1b6f8021cf9e7370dd4622c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4de39f8e6ce42ce8f14abf8fbef0926d5ce5fd40a3950337b7aba7299b670538",
+				"dweb:/ipfs/QmaNd3G7ZVLDY9tPWdtwp6XVEiqSzUPWgo6sc1njq87m8m"
+			]
+		}
+	},
+	"version": 1
+}
