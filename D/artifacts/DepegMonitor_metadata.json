@@ -1,0 +1,460 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_pegPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_thresholdBps",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_priceAggregator",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newAggregator",
+						"type": "address"
+					}
+				],
+				"name": "AggregatorUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "Depegged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newPegPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "PegPriceUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "reportedPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "depegged",
+						"type": "bool"
+					}
+				],
+				"name": "PriceReported",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "Repegged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newThresholdBps",
+						"type": "uint256"
+					}
+				],
+				"name": "ThresholdUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "isDepegged",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pegPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "priceAggregator",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "reportedPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "reportPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "thresholdBps",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newAggregator",
+						"type": "address"
+					}
+				],
+				"name": "updateAggregator",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newPegPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updatePegPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newThresholdBps",
+						"type": "uint256"
+					}
+				],
+				"name": "updateThreshold",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_pegPrice": "The stablecoin’s ideal peg price (in scaled integer form).",
+						"_priceAggregator": "The address authorized to update the price.",
+						"_thresholdBps": "The basis-point deviation threshold (e.g., 500 for 5%)."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"reportPrice(uint256)": {
+					"params": {
+						"reportedPrice": "The stablecoin’s reported price (in scaled integer form)."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateAggregator(address)": {
+					"params": {
+						"newAggregator": "The new aggregator address."
+					}
+				},
+				"updatePegPrice(uint256)": {
+					"params": {
+						"newPegPrice": "The new peg price in scaled integer form."
+					}
+				},
+				"updateThreshold(uint256)": {
+					"params": {
+						"newThresholdBps": "The new threshold in basis points."
+					}
+				}
+			},
+			"title": "DepegMonitor",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the initial peg price, threshold, aggregator, and owner."
+				},
+				"isDepegged()": {
+					"notice": "Whether the stablecoin is currently considered depegged."
+				},
+				"lastPrice()": {
+					"notice": "The last reported price of the stablecoin (scaled integer, e.g., 1.05 USD = 105000000)."
+				},
+				"pegPrice()": {
+					"notice": "The stablecoin’s ideal peg price in scaled integer form (e.g. 1.0 USD = 1e8)."
+				},
+				"priceAggregator()": {
+					"notice": "Address authorized to update the stablecoin price (e.g., an oracle or aggregator)."
+				},
+				"reportPrice(uint256)": {
+					"notice": "The aggregator reports the stablecoin’s current price. This function checks if the stablecoin is depegged based on the threshold from pegPrice."
+				},
+				"thresholdBps()": {
+					"notice": "Deviation threshold in basis points. For instance, 500 = 5%."
+				},
+				"updateAggregator(address)": {
+					"notice": "Updates the aggregator address allowed to report stablecoin prices. Only callable by the owner."
+				},
+				"updatePegPrice(uint256)": {
+					"notice": "Updates the stablecoin’s ideal peg price. Only callable by the owner. e.g., 1.00 USD = 1e8 if using 8 decimal scaling."
+				},
+				"updateThreshold(uint256)": {
+					"notice": "Updates the deviation threshold in basis points. Only callable by the owner. e.g., 500 means 5%."
+				}
+			},
+			"notice": "Monitors the price of a stablecoin and detects when it depegs (i.e., goes beyond a certain threshold from its peg price). The owner can dynamically update the peg price, threshold, and the authorized aggregator that reports prices.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/depeg.sol": "DepegMonitor"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"D/depeg.sol": {
+			"keccak256": "0xc8f7d8bd2838520751e742c73f622c17ad63ae6576ac83c61bdd2ba2ba2467f8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://026601634e808989ea3f90b695f51b2934d1f76b67ff07772bf54b4db62e7453",
+				"dweb:/ipfs/QmWB1x8nWJP5BJP2HUrVSdfdJ7PdQxi1Rby5LtjM5UBbDa"
+			]
+		}
+	},
+	"version": 1
+}
