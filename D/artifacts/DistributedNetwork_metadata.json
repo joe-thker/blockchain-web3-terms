@@ -1,0 +1,562 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "to",
+						"type": "uint256"
+					}
+				],
+				"name": "EdgeAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "to",
+						"type": "uint256"
+					}
+				],
+				"name": "EdgeRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "metadata",
+						"type": "string"
+					}
+				],
+				"name": "NodeCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"name": "NodeRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newMetadata",
+						"type": "string"
+					}
+				],
+				"name": "NodeUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "to",
+						"type": "uint256"
+					}
+				],
+				"name": "addEdge",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "adjacency",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "metadata",
+						"type": "string"
+					}
+				],
+				"name": "createNode",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"name": "getChildren",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"name": "getNode",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "active",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "metadata",
+								"type": "string"
+							}
+						],
+						"internalType": "struct DistributedNetwork.Node",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextNodeId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "nodes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "metadata",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "to",
+						"type": "uint256"
+					}
+				],
+				"name": "removeEdge",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"name": "removeNode",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalNodes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "newMetadata",
+						"type": "string"
+					}
+				],
+				"name": "updateNode",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"addEdge(uint256,uint256)": {
+					"params": {
+						"from": "The ID of the source node.",
+						"to": "The ID of the target node."
+					}
+				},
+				"createNode(string)": {
+					"params": {
+						"metadata": "A string describing or labeling this node."
+					},
+					"returns": {
+						"nodeId": "The ID assigned to the newly created node."
+					}
+				},
+				"getChildren(uint256)": {
+					"params": {
+						"nodeId": "The ID of the node."
+					},
+					"returns": {
+						"_0": "An array of node IDs."
+					}
+				},
+				"getNode(uint256)": {
+					"params": {
+						"nodeId": "The ID of the node to query."
+					},
+					"returns": {
+						"_0": "A Node struct with id, active, and metadata fields."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"removeEdge(uint256,uint256)": {
+					"params": {
+						"from": "The ID of the source node.",
+						"to": "The ID of the target node."
+					}
+				},
+				"removeNode(uint256)": {
+					"params": {
+						"nodeId": "The ID of the node to remove."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"totalNodes()": {
+					"returns": {
+						"_0": "The length of the `nodes` array."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateNode(uint256,string)": {
+					"params": {
+						"newMetadata": "The new string metadata for this node.",
+						"nodeId": "The ID of the node to update."
+					}
+				}
+			},
+			"title": "DistributedNetwork",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addEdge(uint256,uint256)": {
+					"notice": "Adds a directed edge from node `from` to node `to`. This can create cycles."
+				},
+				"constructor": {
+					"notice": "Constructor sets the deployer as initial owner.  Call Ownable(msg.sender) to fix “no arguments to base constructor” error."
+				},
+				"createNode(string)": {
+					"notice": "Creates a new node with optional metadata. Only owner can create nodes."
+				},
+				"getChildren(uint256)": {
+					"notice": "Returns the array of node IDs that the given node points to (outgoing edges)."
+				},
+				"getNode(uint256)": {
+					"notice": "Returns the Node struct for a given nodeId."
+				},
+				"removeEdge(uint256,uint256)": {
+					"notice": "Removes a directed edge from node `from` to node `to`. Only owner can remove edges."
+				},
+				"removeNode(uint256)": {
+					"notice": "Removes (marks inactive) an existing node, preventing future edges from or to it. Only owner can remove."
+				},
+				"totalNodes()": {
+					"notice": "Returns the total number of nodes ever created (including inactive)."
+				},
+				"updateNode(uint256,string)": {
+					"notice": "Updates the metadata for an existing node. Only owner can update."
+				}
+			},
+			"notice": "A dynamic and optimized contract for managing a set of nodes and edges in a distributed network. Unlike a DAG approach, we allow cycles. The owner can add or remove nodes, and add or remove edges.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/distributedNetwork.sol": "DistributedNetwork"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"D/distributedNetwork.sol": {
+			"keccak256": "0xb7a551db229e657e0750b1655f41bec34352d19dabe38dc0d3687c628128c134",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://73ce07db8dcb76e3b7a218eee7c4e68cc55faa79e5ff59b1025f8715dfc9839e",
+				"dweb:/ipfs/QmcEJRXYdS6Gp522aG6g7NMD49wSD1N67xtjbnYZ3iM6MS"
+			]
+		}
+	},
+	"version": 1
+}
