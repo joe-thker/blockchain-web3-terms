@@ -1,0 +1,516 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "to",
+						"type": "uint256"
+					}
+				],
+				"name": "EdgeAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "to",
+						"type": "uint256"
+					}
+				],
+				"name": "EdgeRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "metadata",
+						"type": "string"
+					}
+				],
+				"name": "NodeCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"name": "NodeRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "to",
+						"type": "uint256"
+					}
+				],
+				"name": "addEdge",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "adjacency",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "metadata",
+						"type": "string"
+					}
+				],
+				"name": "createNode",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"name": "getChildren",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"name": "getNode",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "active",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "metadata",
+								"type": "string"
+							}
+						],
+						"internalType": "struct DirectedAcyclicGraph.Node",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nextNodeId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "nodes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "metadata",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "from",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "to",
+						"type": "uint256"
+					}
+				],
+				"name": "removeEdge",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "nodeId",
+						"type": "uint256"
+					}
+				],
+				"name": "removeNode",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalNodes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"addEdge(uint256,uint256)": {
+					"params": {
+						"from": "The ID of the source node.",
+						"to": "The ID of the target node."
+					}
+				},
+				"createNode(string)": {
+					"params": {
+						"metadata": "A string storing any label or data for the node."
+					},
+					"returns": {
+						"nodeId": "The ID of the newly created node."
+					}
+				},
+				"getChildren(uint256)": {
+					"params": {
+						"nodeId": "The ID of the node."
+					},
+					"returns": {
+						"_0": "An array of node IDs that nodeId points to."
+					}
+				},
+				"getNode(uint256)": {
+					"params": {
+						"nodeId": "The ID of the node."
+					},
+					"returns": {
+						"_0": "A Node struct (id, active, metadata)."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"removeEdge(uint256,uint256)": {
+					"params": {
+						"from": "The ID of the source node.",
+						"to": "The ID of the target node."
+					}
+				},
+				"removeNode(uint256)": {
+					"params": {
+						"nodeId": "The ID of the node to remove."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"totalNodes()": {
+					"returns": {
+						"_0": "The length of the nodes array."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"title": "DirectedAcyclicGraph",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addEdge(uint256,uint256)": {
+					"notice": "Adds a directed edge from node `from` to node `to`. Checks if this edge would create a cycle."
+				},
+				"constructor": {
+					"notice": "Constructor sets deployer as initial owner."
+				},
+				"createNode(string)": {
+					"notice": "Creates a new active node with optional metadata. Only the owner can create nodes."
+				},
+				"getChildren(uint256)": {
+					"notice": "Returns the list of children (outgoing edges) for a given node."
+				},
+				"getNode(uint256)": {
+					"notice": "Returns the node struct for a given nodeId. Reverts if out of range."
+				},
+				"removeEdge(uint256,uint256)": {
+					"notice": "Removes a directed edge from node `from` to node `to`."
+				},
+				"removeNode(uint256)": {
+					"notice": "Removes (deactivates) a node, preventing further edges from/to this node."
+				},
+				"totalNodes()": {
+					"notice": "Returns the total number of nodes created (including inactive)."
+				}
+			},
+			"notice": "A dynamic, optimized contract for managing a directed acyclic graph (DAG). The owner can add nodes, add edges, and remove nodes. The contract checks for cycles  before adding an edge, reverting if the new edge would create a cycle.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/directedAcyclicGraph.sol": "DirectedAcyclicGraph"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"D/directedAcyclicGraph.sol": {
+			"keccak256": "0x6ad4b116236d5ea13f17f2db1b50cff68576a4fd84f36dcb6d799879b39b91bf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://35fe09cf7055e7aea737b471cb9cdea6b62a45b7d453553c417edd6420c4f248",
+				"dweb:/ipfs/QmcTGGpCBxpjXBtcbbQwyDrxYSKo7u7LUvicZ7crcyWXBY"
+			]
+		}
+	},
+	"version": 1
+}
