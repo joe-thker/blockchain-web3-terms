@@ -1,0 +1,247 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposited",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					}
+				],
+				"name": "Spent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawn",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					}
+				],
+				"name": "spend",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "usedNonces",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getBalance(address)": {
+					"params": {
+						"user": "The user address."
+					},
+					"returns": {
+						"_0": "The balance in wei."
+					}
+				},
+				"spend(uint256,uint256)": {
+					"params": {
+						"amount": "The amount to spend.",
+						"nonce": "A user-chosen, unique nonce for this spend operation."
+					}
+				}
+			},
+			"title": "DoubleSpending",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"balances(address)": {
+					"notice": "Mapping from user => their on-chain Ether balance (in wei)."
+				},
+				"deposit()": {
+					"notice": "Users deposit Ether into this contract. The deposit function is external and nonReentrant."
+				},
+				"getBalance(address)": {
+					"notice": "Returns the user’s current on-chain balance in this contract."
+				},
+				"spend(uint256,uint256)": {
+					"notice": "A user \"spends\" an amount of their on-chain balance, requiring a unique nonce to prevent double spending."
+				},
+				"usedNonces(address,uint256)": {
+					"notice": "Mapping from user => (nonce => bool) indicating whether a nonce has been used for spending."
+				},
+				"withdraw()": {
+					"notice": "Allows a user to withdraw their remaining Ether from the contract, using a pull-payment approach. There's no nonce required for withdrawal since the contract no longer holds that portion once withdrawn."
+				}
+			},
+			"notice": "Demonstrates a dynamic, optimized contract that prevents double spending of on-chain balances by requiring each spend call to provide a unique nonce that cannot be reused.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/doubleSpending.sol": "DoubleSpending"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"D/doubleSpending.sol": {
+			"keccak256": "0x8d231763534733e62083efa708d9cde496989dff4b6f6377d3e136018e6300fa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://826490bad3857269652bfc2ad43e82c674b34a0ab16125f0517a9e932c4fd315",
+				"dweb:/ipfs/QmPHcAYMXNV7rAK4XduJwdn15svz6UCSPqQrqzhGydHwwJ"
+			]
+		}
+	},
+	"version": 1
+}

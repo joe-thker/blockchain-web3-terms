@@ -1,0 +1,506 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_stakingToken",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "slashAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "Slashed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Staked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Unstaked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					}
+				],
+				"name": "WatcherRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					}
+				],
+				"name": "WatcherUnregistered",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					}
+				],
+				"name": "getStakedBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					}
+				],
+				"name": "isActiveWatcher",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					}
+				],
+				"name": "registerWatcher",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "slashAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					}
+				],
+				"name": "slash",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "stake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakingToken",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalStaked",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "watcher",
+						"type": "address"
+					}
+				],
+				"name": "unregisterWatcher",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "unstake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "watchers",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "watcherAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stakedBalance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_stakingToken": "The ERC20 token contract address used for staking."
+					}
+				},
+				"getStakedBalance(address)": {
+					"params": {
+						"watcher": "The address of the watcher."
+					},
+					"returns": {
+						"_0": "The amount of staked tokens."
+					}
+				},
+				"isActiveWatcher(address)": {
+					"params": {
+						"watcher": "The address to check."
+					},
+					"returns": {
+						"_0": "True if watcher is active, false otherwise."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"registerWatcher(address)": {
+					"params": {
+						"watcher": "The address of the watcher to register."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"slash(address,uint256,address)": {
+					"params": {
+						"recipient": "The address that receives the slashed stake. Typically the protocol treasury or the contract's address.",
+						"slashAmount": "The amount to slash from the watcher's stake.",
+						"watcher": "The address of the watcher to slash."
+					}
+				},
+				"stake(uint256)": {
+					"params": {
+						"amount": "The number of tokens to stake."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"unregisterWatcher(address)": {
+					"params": {
+						"watcher": "The address of the watcher to unregister."
+					}
+				},
+				"unstake(uint256)": {
+					"params": {
+						"amount": "The number of tokens to unstake."
+					}
+				}
+			},
+			"title": "DPoSec (Distributed Proof of Security)",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the deployer as the contract owner and the ERC20 staking token."
+				},
+				"getStakedBalance(address)": {
+					"notice": "Returns the staked balance of a watcher."
+				},
+				"isActiveWatcher(address)": {
+					"notice": "Checks if an address is currently an active watcher."
+				},
+				"registerWatcher(address)": {
+					"notice": "The owner registers a new watcher, enabling them to stake tokens."
+				},
+				"slash(address,uint256,address)": {
+					"notice": "The owner slashes a specified amount from a watcher's stake, sending it to the owner or a slash recipient."
+				},
+				"stake(uint256)": {
+					"notice": "A registered watcher stakes an amount of tokens. Must have approved this contract for that amount."
+				},
+				"stakingToken()": {
+					"notice": "The ERC20 token used for staking (e.g. a stablecoin or governance token)."
+				},
+				"unregisterWatcher(address)": {
+					"notice": "The owner un-registers a watcher, preventing future stake changes.  The watcher must unstake before being fully removed, or the owner can slash if needed."
+				},
+				"unstake(uint256)": {
+					"notice": "A watcher unstakes some of their tokens.  In a real system, you might have timelocks or partial restrictions."
+				}
+			},
+			"notice": "A dynamic and optimized contract where watchers stake tokens to provide security services. The owner can register watchers, slash watchers if they fail security checks, and watchers can stake or unstake.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/distributed proof of security.sol": "DPoSec"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"D/distributed proof of security.sol": {
+			"keccak256": "0x0052d7ea03670da047543bd344f0806b5f09d56e2414b8bb14eca2c9910205c7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb486fb3687abf4574bf65d19384f94367a31b6727af65b52f788c7ebde9fd87",
+				"dweb:/ipfs/QmfVJw4XTkjex1ZzYw3uoG53p9zyfM9RquXbbQijBWorFk"
+			]
+		}
+	},
+	"version": 1
+}
