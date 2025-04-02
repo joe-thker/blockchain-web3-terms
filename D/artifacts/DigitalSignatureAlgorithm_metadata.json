@@ -1,0 +1,306 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "recordId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "remover",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "SignatureRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "recordId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum DigitalSignatureAlgorithm.SignatureAlgo",
+						"name": "algo",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "SignatureVerified",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "recordId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRecord",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "signer",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "messageHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "enum DigitalSignatureAlgorithm.SignatureAlgo",
+								"name": "algo",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "active",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct DigitalSignatureAlgorithm.SignatureRecord",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "records",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "enum DigitalSignatureAlgorithm.SignatureAlgo",
+						"name": "algo",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "recordId",
+						"type": "uint256"
+					}
+				],
+				"name": "removeSignature",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalRecords",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "verifyAndStoreECDSA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "recordId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getRecord(uint256)": {
+					"params": {
+						"recordId": "The ID of the record."
+					},
+					"returns": {
+						"_0": "A SignatureRecord struct with details about the signature."
+					}
+				},
+				"removeSignature(uint256)": {
+					"params": {
+						"recordId": "The ID of the signature record to remove."
+					}
+				},
+				"totalRecords()": {
+					"returns": {
+						"_0": "The length of the `records` array."
+					}
+				},
+				"verifyAndStoreECDSA(bytes32,uint8,bytes32,bytes32)": {
+					"params": {
+						"messageHash": "The Keccak-256 hash of the original message (signed off-chain).",
+						"r": "The r component of the signature (32 bytes).",
+						"s": "The s component of the signature (32 bytes).",
+						"v": "The recovery byte of the signature (27 or 28)."
+					},
+					"returns": {
+						"recordId": "The ID of the newly created signature record."
+					}
+				}
+			},
+			"title": "DigitalSignatureAlgorithm",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getRecord(uint256)": {
+					"notice": "Returns a specific signature record by ID."
+				},
+				"removeSignature(uint256)": {
+					"notice": "Removes an existing signature record. Only the record’s signer can remove it."
+				},
+				"totalRecords()": {
+					"notice": "Retrieves the total number of records ever created (including removed)."
+				},
+				"verifyAndStoreECDSA(bytes32,uint8,bytes32,bytes32)": {
+					"notice": "Verifies an ECDSA signature for a given hashed message, storing a record if successful."
+				}
+			},
+			"notice": "A dynamic and optimized contract that verifies off-chain ECDSA signatures on-chain. Once verified, it records a minimal record of the signature. Signers can remove (invalidate) their records.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/digitalSignatureAlgorithm.sol": "DigitalSignatureAlgorithm"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"D/digitalSignatureAlgorithm.sol": {
+			"keccak256": "0x46b771ece4fffbc763cd2f7ccd4a1bb71f764ad68303a43f81fb89a1af492cd9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d65de5bd4b17aea97563841e63cf919fd00952c860790dfb0acea1017ee4ded3",
+				"dweb:/ipfs/Qme4iMioZkaaixiixwTDCUZv3LqgaXWbmNoXBWcB6Y3vao"
+			]
+		}
+	},
+	"version": 1
+}

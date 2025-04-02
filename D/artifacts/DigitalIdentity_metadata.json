@@ -1,0 +1,322 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "metadataURI",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "IdentityCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "IdentityRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newMetadataURI",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "IdentityUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "metadataURI",
+						"type": "string"
+					}
+				],
+				"name": "createIdentity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getUserIdentity",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "active",
+								"type": "bool"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "metadataURI",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastUpdated",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct DigitalIdentity.Identity",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "identities",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "metadataURI",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastUpdated",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "isActiveIdentity",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "removeIdentity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newMetadataURI",
+						"type": "string"
+					}
+				],
+				"name": "updateIdentity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"createIdentity(string,string)": {
+					"params": {
+						"metadataURI": "A URI containing additional info or metadata for this identity.",
+						"name": "The name or handle for this identity."
+					}
+				},
+				"getUserIdentity(address)": {
+					"params": {
+						"user": "The address of the user whose identity is requested."
+					},
+					"returns": {
+						"_0": "A struct with the user's identity data."
+					}
+				},
+				"isActiveIdentity(address)": {
+					"params": {
+						"user": "The address to check."
+					},
+					"returns": {
+						"_0": "True if the user has an active identity, false otherwise."
+					}
+				},
+				"updateIdentity(string,string)": {
+					"params": {
+						"newMetadataURI": "The updated metadata URI.",
+						"newName": "The updated name."
+					}
+				}
+			},
+			"title": "DigitalIdentity",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"createIdentity(string,string)": {
+					"notice": "Creates a new identity for the caller's address. Reverts if the caller already has an active identity."
+				},
+				"getUserIdentity(address)": {
+					"notice": "Retrieves the full identity record for a given user."
+				},
+				"identities(address)": {
+					"notice": "Mapping from user address to their identity record."
+				},
+				"isActiveIdentity(address)": {
+					"notice": "Checks if a given user has an active identity."
+				},
+				"removeIdentity()": {
+					"notice": "Removes (deactivates) the caller's identity record. Existing data is cleared, but stored as inactive in the mapping."
+				},
+				"updateIdentity(string,string)": {
+					"notice": "Updates an existing identity's name or metadata URI. Reverts if the caller does not have an active identity."
+				}
+			},
+			"notice": "A dynamic and optimized registry allowing addresses to create, update, and remove their own identities. Each identity contains a name and metadata URI, stored in a minimal on-chain struct.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/digitalIdentity.sol": "DigitalIdentity"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"D/digitalIdentity.sol": {
+			"keccak256": "0x5cbdd63c65591c1bf68e68ab0cd6e11f7a0cd86101123706cdc55914dbb44a0e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://62c3494bfaebfdbb2c2a48ef90b86f4c623aaf90ea19abc16d701c0bcedb98cd",
+				"dweb:/ipfs/QmXyrwFkLjLrF6gdddet5aMduXXx7zADkPbixwVMrPmBC4"
+			]
+		}
+	},
+	"version": 1
+}
