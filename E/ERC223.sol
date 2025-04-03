@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+import "@openzeppelin/contracts/utils/Address.sol";
+
 /// @notice ERC223 interface.
 interface IERC223 {
     function transfer(address to, uint256 value, bytes calldata data) external returns (bool);
@@ -21,9 +23,11 @@ interface IERC223Receiver {
 }
 
 /// @title DynamicERC223
-/// @notice A dynamic, optimized ERC223 token contract that is ERC20-compatible. It supports transfers with data,
-/// and if the recipient is a contract, its tokenFallback function is invoked.
+/// @notice A dynamic, optimized ERC223 token contract that is ERC20-compatible.
+/// It supports transfers with additional data and, if the recipient is a contract, it calls its tokenFallback function.
 contract DynamicERC223 is IERC223, IERC20 {
+    using Address for address;
+
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -53,14 +57,14 @@ contract DynamicERC223 is IERC223, IERC20 {
     }
 
     /**
-     * @notice ERC20 transfer function that calls ERC223 transfer with empty data.
+     * @notice ERC20 transfer function that calls the ERC223 transfer function with empty data.
      * @param to The recipient address.
      * @param value The amount of tokens to transfer.
      * @return True if transfer is successful.
      */
     function transfer(address to, uint256 value) external override returns (bool) {
-        bytes memory empty;
-        return transfer(to, value, empty);
+        // Pass an empty bytes literal to the ERC223 transfer.
+        return transfer(to, value, bytes(""));
     }
 
     /**
@@ -84,19 +88,11 @@ contract DynamicERC223 is IERC223, IERC20 {
         emit Transfer(msg.sender, to, value);
         emit Transfer(msg.sender, to, value, data);
 
-        if (isContract(to)) {
+        // Use the Address library to check if 'to' is a contract.
+        if (Address.isContract(to)) {
             IERC223Receiver receiver = IERC223Receiver(to);
             receiver.tokenFallback(msg.sender, value, data);
         }
         return true;
-    }
-
-    /**
-     * @notice Checks if an address is a contract.
-     * @param _addr The address to check.
-     * @return True if _addr is a contract, false otherwise.
-     */
-    function isContract(address _addr) internal view returns (bool) {
-        return _addr.code.length > 0;
     }
 }
