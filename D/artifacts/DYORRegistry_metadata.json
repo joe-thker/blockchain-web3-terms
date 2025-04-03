@@ -1,0 +1,240 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "note",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "SubmissionCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "SubmissionRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newUrl",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newNote",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "SubmissionUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "note",
+						"type": "string"
+					}
+				],
+				"name": "createSubmission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "removeSubmission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "submissions",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "note",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newUrl",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newNote",
+						"type": "string"
+					}
+				],
+				"name": "updateSubmission",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"createSubmission(string,string)": {
+					"params": {
+						"note": "A note describing the research.",
+						"url": "The URL (or IPFS hash) pointing to the research document."
+					}
+				},
+				"updateSubmission(string,string)": {
+					"params": {
+						"newNote": "The new note describing the research.",
+						"newUrl": "The new URL (or IPFS hash) for the research document."
+					}
+				}
+			},
+			"title": "DYORRegistry",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"createSubmission(string,string)": {
+					"notice": "Creates a new research submission."
+				},
+				"removeSubmission()": {
+					"notice": "Removes (deactivates) the caller's research submission."
+				},
+				"submissions(address)": {
+					"notice": "Mapping from user address to their research submission."
+				},
+				"updateSubmission(string,string)": {
+					"notice": "Updates an existing research submission."
+				}
+			},
+			"notice": "A dynamic and optimized registry for \"Do Your Own Research\" submissions. Users can record their research by submitting a URL (or IPFS hash) along with a note, update their submission, or remove it if desired.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"D/dyor.sol": "DYORRegistry"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"D/dyor.sol": {
+			"keccak256": "0x3158147f55ae24b60a08719af570311fd9cad9a42054354f4cf350b6b46a5728",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be9227080763cd949b28dd0b3525a659911c4e520ae2218c7e4c25f4693f9260",
+				"dweb:/ipfs/QmbH2EmkUypX4NHfWS7LLZcGRLgG5w4d4DCJxbaWLLp9Ym"
+			]
+		}
+	},
+	"version": 1
+}
