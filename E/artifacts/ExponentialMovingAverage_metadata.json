@@ -1,0 +1,367 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_period",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newEMA",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newValue",
+						"type": "uint256"
+					}
+				],
+				"name": "EMAUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newPeriod",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newAlpha",
+						"type": "uint256"
+					}
+				],
+				"name": "PeriodUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "alpha",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ema",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEMA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "initialized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "period",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newValue",
+						"type": "uint256"
+					}
+				],
+				"name": "updateEMA",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newPeriod",
+						"type": "uint256"
+					}
+				],
+				"name": "updatePeriod",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"events": {
+				"EMAUpdated(uint256,uint256)": {
+					"params": {
+						"newEMA": "The new EMA value (scaled by 1e18).",
+						"newValue": "The new data point provided (scaled by 1e18)."
+					}
+				},
+				"PeriodUpdated(uint256,uint256)": {
+					"params": {
+						"newAlpha": "The new alpha value (scaled by 1e18).",
+						"newPeriod": "The new period value."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_period": "The initial period for the EMA calculation."
+					}
+				},
+				"getEMA()": {
+					"returns": {
+						"_0": "The current EMA value (scaled by 1e18)."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateEMA(uint256)": {
+					"params": {
+						"newValue": "The new data point to incorporate (scaled by 1e18)."
+					}
+				},
+				"updatePeriod(uint256)": {
+					"params": {
+						"newPeriod": "The new period value (must be > 0)."
+					}
+				}
+			},
+			"title": "ExponentialMovingAverage",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"EMAUpdated(uint256,uint256)": {
+					"notice": "Emitted when the EMA is updated."
+				},
+				"PeriodUpdated(uint256,uint256)": {
+					"notice": "Emitted when the period is updated."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"alpha()": {
+					"notice": "The smoothing factor alpha, scaled by 1e18."
+				},
+				"constructor": {
+					"notice": "Constructor sets the initial period and calculates the initial alpha."
+				},
+				"ema()": {
+					"notice": "The current EMA value, scaled by 1e18."
+				},
+				"getEMA()": {
+					"notice": "Returns the current EMA value."
+				},
+				"initialized()": {
+					"notice": "A flag indicating whether the EMA has been initialized."
+				},
+				"period()": {
+					"notice": "The period used for the EMA calculation."
+				},
+				"updateEMA(uint256)": {
+					"notice": "Updates the EMA with a new data point. If the EMA has not been initialized, it is set to the new value. Otherwise, it updates according to the formula:   EMA = (alpha * newValue + (1e18 - alpha) * previousEMA) / 1e18."
+				},
+				"updatePeriod(uint256)": {
+					"notice": "Updates the period used for the EMA calculation and recalculates alpha."
+				}
+			},
+			"notice": "This contract calculates an exponential moving average (EMA) using fixed‑point arithmetic. The EMA is updated using the formula:   EMA = (alpha * newValue) + ((1e18 - alpha) * previousEMA) / 1e18, where alpha = 2e18 / (period + 1). The owner can update the EMA with new data and adjust the period (and thus alpha).",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"E/email spoofing.sol": "ExponentialMovingAverage"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"E/email spoofing.sol": {
+			"keccak256": "0x15cc4cdeb917207743878cb2416013830a2953e33bf6f20df5c31c6939634757",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dd5e6b1737d24cefdedca0b507bafd8477c42496ec380c4a19a9a07c2f552b4a",
+				"dweb:/ipfs/Qmaqn4gkrJYdUfBkbJ4GKtEVFrVHN9TxcArR7bs2JRmG3Y"
+			]
+		}
+	},
+	"version": 1
+}

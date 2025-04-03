@@ -1,0 +1,327 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_epochStart",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_epochDuration",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newEpochDuration",
+						"type": "uint256"
+					}
+				],
+				"name": "EpochDurationUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newEpochStart",
+						"type": "uint256"
+					}
+				],
+				"name": "EpochStartUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "epochDuration",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "epochStart",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCurrentEpoch",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newDuration",
+						"type": "uint256"
+					}
+				],
+				"name": "updateEpochDuration",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newStart",
+						"type": "uint256"
+					}
+				],
+				"name": "updateEpochStart",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"events": {
+				"EpochDurationUpdated(uint256)": {
+					"params": {
+						"newEpochDuration": "The new epoch duration in seconds."
+					}
+				},
+				"EpochStartUpdated(uint256)": {
+					"params": {
+						"newEpochStart": "The new epoch start timestamp."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_epochDuration": "The duration of each epoch in seconds.",
+						"_epochStart": "The Unix timestamp when the epoch schedule begins."
+					}
+				},
+				"getCurrentEpoch()": {
+					"returns": {
+						"_0": "The current epoch number. Returns 0 if block.timestamp is before epochStart."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateEpochDuration(uint256)": {
+					"params": {
+						"newDuration": "The new duration of each epoch in seconds."
+					}
+				},
+				"updateEpochStart(uint256)": {
+					"params": {
+						"newStart": "The new epoch start time (Unix timestamp)."
+					}
+				}
+			},
+			"title": "EpochManager",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"EpochDurationUpdated(uint256)": {
+					"notice": "Emitted when the epoch duration is updated."
+				},
+				"EpochStartUpdated(uint256)": {
+					"notice": "Emitted when the epoch start time is updated."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Constructor sets the initial epoch start time and duration."
+				},
+				"epochDuration()": {
+					"notice": "The duration of each epoch in seconds."
+				},
+				"epochStart()": {
+					"notice": "The Unix timestamp when the epoch schedule begins."
+				},
+				"getCurrentEpoch()": {
+					"notice": "Returns the current epoch number based on block.timestamp."
+				},
+				"updateEpochDuration(uint256)": {
+					"notice": "Updates the epoch duration."
+				},
+				"updateEpochStart(uint256)": {
+					"notice": "Updates the epoch start time."
+				}
+			},
+			"notice": "This contract manages epochs defined as fixed time intervals starting from a given epochStart timestamp. The current epoch is computed dynamically. The owner can update both the epoch start time and the epoch duration.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"E/epoch.sol": "EpochManager"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"E/epoch.sol": {
+			"keccak256": "0x544c5d44d677037489742f431f356ea3147d0584bfe8062ea9a2f81582a3abe0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d32bc0e0f782ba99fb5bd97fcb43499d7d360c00b99b68d296e754382a2a451e",
+				"dweb:/ipfs/QmW6WFUSvic8He2CNeVEZcsPLNGD4hdHvxdXUamZHrzUeD"
+			]
+		}
+	},
+	"version": 1
+}
