@@ -1,0 +1,358 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_threshold",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "shardData",
+						"type": "bytes"
+					}
+				],
+				"name": "ShardAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newThreshold",
+						"type": "uint256"
+					}
+				],
+				"name": "ThresholdUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "shardData",
+						"type": "bytes"
+					}
+				],
+				"name": "addShard",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "getShard",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reconstructData",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "reconstructedData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "shards",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "threshold",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalShards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newThreshold",
+						"type": "uint256"
+					}
+				],
+				"name": "updateThreshold",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"addShard(bytes)": {
+					"params": {
+						"shardData": "The data for the shard."
+					}
+				},
+				"constructor": {
+					"params": {
+						"_threshold": "The minimum number of shards required for reconstruction."
+					}
+				},
+				"getShard(uint256)": {
+					"params": {
+						"index": "The index of the shard."
+					},
+					"returns": {
+						"_0": "The shard data."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"reconstructData()": {
+					"returns": {
+						"reconstructedData": "The concatenated data from all shards."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"totalShards()": {
+					"returns": {
+						"_0": "The total number of shards."
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updateThreshold(uint256)": {
+					"params": {
+						"newThreshold": "The new threshold value."
+					}
+				}
+			},
+			"title": "ErasureCodingDemo",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addShard(bytes)": {
+					"notice": "Adds a new data shard."
+				},
+				"constructor": {
+					"notice": "Constructor sets the initial reconstruction threshold."
+				},
+				"getShard(uint256)": {
+					"notice": "Retrieves a specific shard by index."
+				},
+				"reconstructData()": {
+					"notice": "Reconstructs the original data by concatenating all stored shards."
+				},
+				"totalShards()": {
+					"notice": "Returns the total number of shards stored."
+				},
+				"updateThreshold(uint256)": {
+					"notice": "Updates the reconstruction threshold."
+				}
+			},
+			"notice": "This contract demonstrates a simplified erasure coding mechanism by storing data shards on-chain. The owner can add shards and update the threshold (the minimum number of shards required for reconstruction). Anyone can attempt to reconstruct the original data by concatenating all stored shards if the threshold is met. Note: This is a simplified demonstration and does not implement true erasure coding error correction.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"E/erc7512.sol": "ErasureCodingDemo"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"E/erc7512.sol": {
+			"keccak256": "0xf72be263ab5590842b392e0d0db9258d90d76dbddc20ab2260bc50132cd81487",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://213548d6d846158fa7f9b8a0d7e55d96b34b62d810031191a69c89c553f08f1d",
+				"dweb:/ipfs/QmfJJwEzdur6MQj8X1RM2MJVuVzevxE7Xxwg5H1KtArkCk"
+			]
+		}
+	},
+	"version": 1
+}
