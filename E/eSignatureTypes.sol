@@ -12,11 +12,11 @@ contract ESignatureTypesDemo {
     using ECDSA for bytes32;
 
     /**
-     * @notice Verifies a standard ECDSA signature.
-     * @param messageHash The original message hash that was signed.
+     * @notice Verifies a standard ECDSA signature over a raw message hash.
+     * @param messageHash The raw message hash that was signed.
      * @param v The recovery identifier (27 or 28).
-     * @param r The r component of the signature.
-     * @param s The s component of the signature.
+     * @param r The r component of the signature (32 bytes).
+     * @param s The s component of the signature (32 bytes).
      * @return signer The address recovered from the signature.
      */
     function verifyStandardSignature(
@@ -25,12 +25,13 @@ contract ESignatureTypesDemo {
         bytes32 r,
         bytes32 s
     ) external pure returns (address signer) {
+        // Directly recover the signer from the raw messageHash
         signer = ecrecover(messageHash, v, r, s);
     }
 
     /**
-     * @notice Verifies a signature for an Ethereum Signed Message.
-     * @param messageHash The original message hash that was signed.
+     * @notice Verifies a signature where the signer signed an Ethereum Signed Message.
+     * @param messageHash The raw message hash that was signed.
      * @param v The recovery identifier (27 or 28).
      * @param r The r component of the signature.
      * @param s The s component of the signature.
@@ -42,14 +43,14 @@ contract ESignatureTypesDemo {
         bytes32 r,
         bytes32 s
     ) external pure returns (address signer) {
-        // Use the ECDSA library to compute the Ethereum Signed Message hash.
-        bytes32 ethSignedMessageHash = messageHash.toEthSignedMessageHash();
-        signer = ecrecover(ethSignedMessageHash, v, r, s);
+        // Convert the raw message hash into an Ethereum Signed Message hash
+        bytes32 ethSignedHash = messageHash.toEthSignedMessageHash();
+        signer = ecrecover(ethSignedHash, v, r, s);
     }
 
     /**
      * @notice Verifies an EIP-712 typed data signature.
-     * @param domainSeparator The domain separator as defined in EIP-712.
+     * @param domainSeparator The domain separator defined in EIP-712.
      * @param structHash The hash of the typed data structure.
      * @param v The recovery identifier (27 or 28).
      * @param r The r component of the signature.
