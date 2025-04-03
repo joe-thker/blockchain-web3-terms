@@ -1,0 +1,317 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "signatureId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "SignatureRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "signatureId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "SignatureRevoked",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "signatureId",
+						"type": "uint256"
+					}
+				],
+				"name": "getSignature",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "signer",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "messageHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "active",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct ESignature.SignatureRecord",
+						"name": "record",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "registerSignature",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "signatureId",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "signatureId",
+						"type": "uint256"
+					}
+				],
+				"name": "revokeSignature",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "signatures",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "signer",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "messageHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "active",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSignatures",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"SignatureRegistered(uint256,address,bytes32,uint256)": {
+					"params": {
+						"messageHash": "The hash of the signed message.",
+						"signatureId": "The ID assigned to the signature record.",
+						"signer": "The address that signed the message.",
+						"timestamp": "The time when the signature was registered."
+					}
+				},
+				"SignatureRevoked(uint256,address,uint256)": {
+					"params": {
+						"signatureId": "The ID of the revoked signature record.",
+						"signer": "The address that revoked the signature.",
+						"timestamp": "The time when the signature was revoked."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"getSignature(uint256)": {
+					"params": {
+						"signatureId": "The ID of the signature record."
+					},
+					"returns": {
+						"record": "A SignatureRecord struct containing the signature details."
+					}
+				},
+				"registerSignature(bytes32,uint8,bytes32,bytes32)": {
+					"details": "The user must provide a message hash along with valid ECDSA signature components (v, r, s).      The function uses ecrecover to verify that the signature matches the sender.",
+					"params": {
+						"messageHash": "The hash of the message that was signed.",
+						"r": "The r component of the signature.",
+						"s": "The s component of the signature.",
+						"v": "The recovery identifier."
+					},
+					"returns": {
+						"signatureId": "The ID assigned to the new signature record."
+					}
+				},
+				"revokeSignature(uint256)": {
+					"details": "Only the original signer can revoke their signature.",
+					"params": {
+						"signatureId": "The ID of the signature record to revoke."
+					}
+				},
+				"totalSignatures()": {
+					"returns": {
+						"_0": "The number of records stored."
+					}
+				}
+			},
+			"title": "ESignature",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"SignatureRegistered(uint256,address,bytes32,uint256)": {
+					"notice": "Emitted when a signature is successfully registered."
+				},
+				"SignatureRevoked(uint256,address,uint256)": {
+					"notice": "Emitted when a signature is revoked."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"getSignature(uint256)": {
+					"notice": "Retrieves a signature record by its ID."
+				},
+				"registerSignature(bytes32,uint8,bytes32,bytes32)": {
+					"notice": "Registers an e-signature record."
+				},
+				"revokeSignature(uint256)": {
+					"notice": "Revokes (deactivates) an existing signature record."
+				},
+				"totalSignatures()": {
+					"notice": "Returns the total number of signature records created."
+				}
+			},
+			"notice": "This contract enables users to register and revoke e-signatures on-chain. A user submits a message hash along with its signature components (v, r, s). The contract uses ECDSA via ecrecover to verify the signature and records the signature data.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"E/eSignature.sol": "ESignature"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"E/eSignature.sol": {
+			"keccak256": "0x45a56e99474770f99765efe2a3d2e834afe57baa1a9461b365efc6c6230fcee8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c8a4c0007cbbf860b49d974197946718da7dd4d24b50014891389dfcfec54d10",
+				"dweb:/ipfs/QmeRvbTk2XTZnjKJi4kjhRhPM6HFoFuy5KL1VpLNC3nB6M"
+			]
+		}
+	},
+	"version": 1
+}
