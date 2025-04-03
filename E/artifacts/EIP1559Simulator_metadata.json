@@ -1,0 +1,379 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_initialBaseFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_targetTxCount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_periodLength",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_feeRecipient",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "feePaid",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tip",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "ActionPerformed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newBaseFee",
+						"type": "uint256"
+					}
+				],
+				"name": "BaseFeeUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "baseFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "feeRecipient",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "performAction",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "periodLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "periodStart",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "targetTxCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "txCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"events": {
+				"ActionPerformed(address,uint256,uint256,uint256)": {
+					"params": {
+						"feePaid": "The base fee paid.",
+						"timestamp": "The time when the action occurred.",
+						"tip": "The tip amount paid.",
+						"user": "The user address."
+					}
+				},
+				"BaseFeeUpdated(uint256)": {
+					"params": {
+						"newBaseFee": "The new base fee after adjustment."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"_feeRecipient": "The address that receives tips (if nonzero).",
+						"_initialBaseFee": "The starting base fee in wei.",
+						"_periodLength": "The duration of each period in seconds.",
+						"_targetTxCount": "The target number of transactions per period."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"title": "EIP1559Simulator",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"ActionPerformed(address,uint256,uint256,uint256)": {
+					"notice": "Emitted when a user performs an action."
+				},
+				"BaseFeeUpdated(uint256)": {
+					"notice": "Emitted when the base fee is updated at the end of a period."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"baseFee()": {
+					"notice": "The dynamic base fee (in wei) that must be paid for each action."
+				},
+				"constructor": {
+					"notice": "Constructor sets the initial parameters."
+				},
+				"feeRecipient()": {
+					"notice": "The address that will receive any tip paid above the base fee."
+				},
+				"performAction()": {
+					"notice": "Performs an action that requires payment of a fee. The caller must send at least `baseFee` wei. The fee consists of a dynamic base fee plus an optional tip. After the action, the contract updates its transaction count and adjusts the base fee if the period has ended."
+				},
+				"periodLength()": {
+					"notice": "Duration of each period in seconds."
+				},
+				"periodStart()": {
+					"notice": "Timestamp marking the start of the current period."
+				},
+				"targetTxCount()": {
+					"notice": "The target number of transactions per period."
+				},
+				"txCount()": {
+					"notice": "The number of transactions performed in the current period."
+				}
+			},
+			"notice": "This contract simulates an EIP-1559–style fee mechanism for a DApp service. Users call performAction() and must pay a fee that includes a dynamic base fee plus an optional tip. At the end of a time period, the base fee is adjusted based on the number of actions performed relative to a target. The tip (if any) is forwarded to a designated feeRecipient.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"E/eip-1559.sol": "EIP1559Simulator"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+			"keccak256": "0xa535a5df777d44e945dd24aa43a11e44b024140fc340ad0dfe42acf4002aade1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41319e7f621f2dc3733511332c4fd032f8e32ad2aa7fd6f665c19741d9941a34",
+				"dweb:/ipfs/QmcYR3bd862GD1Bc7jwrU9bGxrhUu5na1oP964bDCu2id1"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"E/eip-1559.sol": {
+			"keccak256": "0x6ea00ab3a8cf72c84e89cf9b3ba8b4e3bfe0a4759bec921e4b9e63bf2fcb3337",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://293baa5bee0fdc35861d634b732a8513c8bb6f6d970e7f80fbb69caf0db27e54",
+				"dweb:/ipfs/QmTDK9Eu8ofc7Uvq9Vt8Botrfgf4R91jv6cw5HPGqS7kqM"
+			]
+		}
+	},
+	"version": 1
+}
