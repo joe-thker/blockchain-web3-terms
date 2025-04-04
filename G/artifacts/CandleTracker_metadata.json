@@ -1,0 +1,241 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "open",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "close",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isGreen",
+						"type": "bool"
+					}
+				],
+				"name": "CandleAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "open",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "close",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "high",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "low",
+						"type": "uint256"
+					}
+				],
+				"name": "addCandle",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "candles",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "open",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "close",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "high",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "low",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "greenCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isLastCandleGreen",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "latestCandle",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "open",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "close",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "high",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "low",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CandleTracker.Candle",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "redCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalCandles",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Green Candle Detector",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addCandle(uint256,uint256,uint256,uint256)": {
+					"notice": "Add a new candle"
+				},
+				"isLastCandleGreen()": {
+					"notice": "Check if latest candle is green"
+				},
+				"latestCandle()": {
+					"notice": "Returns latest candle info"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"G/green candle.sol": "CandleTracker"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"G/green candle.sol": {
+			"keccak256": "0x48e0db6eca48962ea412db142cd03bf4b2e3e1774521dfa6e521e01553bfb7b7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://959fc2570b9dcd21762b1c965ebce0a3ddc699ac46a5cdbc6d02490fc8c5d695",
+				"dweb:/ipfs/QmUmUJfRVWj5Tkt2mtSoCjq3c8XscLsqfseqG6eamHiLSp"
+			]
+		}
+	},
+	"version": 1
+}
