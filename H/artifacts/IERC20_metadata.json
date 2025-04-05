@@ -9,19 +9,53 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "user",
+						"name": "to",
 						"type": "address"
-					}
-				],
-				"name": "balanceOf",
-				"outputs": [
+					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -38,7 +72,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"H/Token-Weighted Voting.sol": "IERC20"
+			"H/hedgeContract.sol": "IERC20"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -52,11 +86,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"H/Token-Weighted Voting.sol": {
-			"keccak256": "0xe5fb032d5f2d7d0fefff3dc7a9da7fbd8e19f95b35313f804833260b9471d2aa",
+		"H/hedgeContract.sol": {
+			"keccak256": "0x987f4ff9d60ade659a88d18225e6415ed3842be0e112395e741503c004d06f46",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://fc6404efa827665f08f1ac14cd1c7e0ae302cc003c2608e30d25ae8eee11a7a8",
-				"dweb:/ipfs/QmXzG3fXqP697c6gEJiKKKjEyMFprPj8afqopiPbtPxfLp"
+				"bzz-raw://aadcd85a0699f80c3eb83675ab7bba95f32a447b897edb58c48b2616a009bb95",
+				"dweb:/ipfs/QmdrEbAM8iPHCn2CUwZxQZkC5R6XNMRYGe3CR3NDE696WS"
 			]
 		}
 	},
