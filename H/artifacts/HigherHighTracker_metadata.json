@@ -1,0 +1,173 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_initialHigh",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "current",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "previous",
+						"type": "uint256"
+					}
+				],
+				"name": "HigherHighConfirmed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newHigh",
+						"type": "uint256"
+					}
+				],
+				"name": "NewHigh",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getHighs",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "previous",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "current",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastHigh",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastLow",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "prevHigh",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newHigh",
+						"type": "uint256"
+					}
+				],
+				"name": "recordHigh",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Higher High Pattern Detector",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"H/higher high.sol": "HigherHighTracker"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"H/higher high.sol": {
+			"keccak256": "0xc071d798d4a6b550fe8b16fccdc65c3844b9e7ee66ff13bd48ba8015c3bf7bcb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4c28260d94114c1c2b115f1efab62a28f32f19b56fca26a36b35b14fe3ad2af1",
+				"dweb:/ipfs/QmTCfi3kpmFtduci3Vtu2BnvKYPyAUEVmm1DRFefviij7V"
+			]
+		}
+	},
+	"version": 1
+}
