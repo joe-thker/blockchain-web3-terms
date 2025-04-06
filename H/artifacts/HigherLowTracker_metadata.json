@@ -1,0 +1,164 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_initialLow",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newLow",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "previousLow",
+						"type": "uint256"
+					}
+				],
+				"name": "HigherLowConfirmed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newLow",
+						"type": "uint256"
+					}
+				],
+				"name": "NewLow",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getLows",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "previous",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "current",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastLow",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "prevLow",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newLow",
+						"type": "uint256"
+					}
+				],
+				"name": "recordLow",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Higher Low Detector",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"recordLow(uint256)": {
+					"notice": "Feed a new low and check if it qualifies as a higher low"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"H/higher low.sol": "HigherLowTracker"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"H/higher low.sol": {
+			"keccak256": "0x6791d7163e72fe8fd79a164e320d932fd1b973d7416e38ab584e4ff1ee2652ae",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://002673b342de9a936c1f74664f39f80d73ce00f508a7f9061cef55944fb7715e",
+				"dweb:/ipfs/QmdG4q4vhT7dzqeowQb7DkhPanVKirVHtYEPUtUyfH4ffu"
+			]
+		}
+	},
+	"version": 1
+}
