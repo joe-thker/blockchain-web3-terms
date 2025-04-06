@@ -1,0 +1,133 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountB",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					}
+				],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "deposits",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountB",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "FixedRatioWithdrawal",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"deposit(uint256,uint256,address,address)": {
+					"notice": "Deposit both tokens and store exact amounts"
+				},
+				"withdraw(address,address)": {
+					"notice": "Withdraw exact tokens originally deposited, regardless of pool ratio"
+				}
+			},
+			"notice": "Prevents impermanent loss by withdrawing original token ratios",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/How to prevent impermanent lost/Withdraw at Original Ratio.sol": "FixedRatioWithdrawal"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe06a3f08a987af6ad2e1c1e774405d4fe08f1694b67517438b467cecf0da0ef7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://df6f0c459663c9858b6cba2cda1d14a7d05a985bed6d2de72bd8e78c25ee79db",
+				"dweb:/ipfs/QmeTTxZ7qVk9rjEv2R4CpCwdf8UMCcRqDNMvzNxHc3Fnn9"
+			]
+		},
+		"I/How to prevent impermanent lost/Withdraw at Original Ratio.sol": {
+			"keccak256": "0xb0281cad36864c42225bca7183db73cd4d99343c7e756a2a921d31020e906f74",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b4a29a7276a3e82be48253e3505a68723f4337797885593c7a32aabf0b9a3e15",
+				"dweb:/ipfs/QmXNesXA9WYchWdcNvKPYtVHTvYNkQUpXEhSKgZ2uAPdWP"
+			]
+		}
+	},
+	"version": 1
+}
