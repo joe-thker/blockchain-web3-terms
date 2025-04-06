@@ -9,54 +9,52 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "_user",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amt",
-						"type": "uint256"
-					}
-				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "nonpayable",
-				"type": "function"
+				"type": "constructor"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
 						"name": "to",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amt",
+						"name": "amount",
 						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
-				"outputs": [
+					},
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
 					}
 				],
+				"name": "execute",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "user",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -72,7 +70,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"H/Custodial ERC20 Wallet.sol": "IERC20"
+			"H/Smart Contract Wallet.sol": "SmartContractWallet"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -86,11 +84,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"H/Custodial ERC20 Wallet.sol": {
-			"keccak256": "0x221974ec291ea5ef870d81d58191bae88bd899e7cbbc7052350ecf561625a890",
+		"H/Smart Contract Wallet.sol": {
+			"keccak256": "0x8312c8183ec1cd08185aade83e494cfcc97f6510deafa9fcfdb1c5636daa3934",
 			"urls": [
-				"bzz-raw://95024adbb77100dc53e067237bc504404a2413f454bd48b4eaa31a60ef64ea42",
-				"dweb:/ipfs/QmcT6kYKUekaoHxQZnQSEk6mfa9ueBPvRATcfzuaGkVAn7"
+				"bzz-raw://4217c2daf31e2b644b826ae14e40bee62e6d16126e93e5cc5ffdcdd7ff164b81",
+				"dweb:/ipfs/QmR4pgyMuVurr1a8wiHPiNxA3SSn78jYnaiigVegio5etZ"
 			]
 		}
 	},

@@ -9,52 +9,48 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "_user",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amt",
+						"name": "_duration",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "sessionExpires",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bool"
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amt",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
+				"inputs": [],
+				"name": "user",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "address",
 						"name": "",
-						"type": "bool"
+						"type": "address"
 					}
 				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -72,7 +68,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"H/Custodial ERC20 Wallet.sol": "IERC20"
+			"H/Session-Based Hot Wallet.sol": "SessionHotWallet"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -86,11 +82,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"H/Custodial ERC20 Wallet.sol": {
-			"keccak256": "0x221974ec291ea5ef870d81d58191bae88bd899e7cbbc7052350ecf561625a890",
+		"H/Session-Based Hot Wallet.sol": {
+			"keccak256": "0x885465e17cf5e8d4e00f72a5cb5fd5e0c3b8bde6334edef54292de383cda6bd5",
 			"urls": [
-				"bzz-raw://95024adbb77100dc53e067237bc504404a2413f454bd48b4eaa31a60ef64ea42",
-				"dweb:/ipfs/QmcT6kYKUekaoHxQZnQSEk6mfa9ueBPvRATcfzuaGkVAn7"
+				"bzz-raw://d16f33715af5a26068baa7dae86f4d81ddbf9e7020474b221763973829e5ec23",
+				"dweb:/ipfs/QmbrnmNBvb3W157usUeSbtsxLnta5EeaKXdnqK2bSzq6KL"
 			]
 		}
 	},

@@ -6,27 +6,40 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "",
 						"type": "address"
-					},
+					}
+				],
+				"name": "balances",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "amt",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "exchange",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "address",
 						"name": "",
-						"type": "bool"
+						"type": "address"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -43,20 +56,25 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "amt",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "transferBetweenUsers",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -72,7 +90,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"H/Custodial ERC20 Wallet.sol": "IERC20"
+			"H/Exchange Custodial Wallet.sol": "CustodialExchangeWallet"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -86,11 +104,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"H/Custodial ERC20 Wallet.sol": {
-			"keccak256": "0x221974ec291ea5ef870d81d58191bae88bd899e7cbbc7052350ecf561625a890",
+		"H/Exchange Custodial Wallet.sol": {
+			"keccak256": "0x2bec5f703a7a2b7394c4c518c529217e4553d2ef4d47d2af8ad4d3e6584d4d70",
 			"urls": [
-				"bzz-raw://95024adbb77100dc53e067237bc504404a2413f454bd48b4eaa31a60ef64ea42",
-				"dweb:/ipfs/QmcT6kYKUekaoHxQZnQSEk6mfa9ueBPvRATcfzuaGkVAn7"
+				"bzz-raw://d061b0cc3f6b44e4a348f47db53af271b1b0986583f4abc70997a8f7ac9b9d22",
+				"dweb:/ipfs/QmRtb71VswsV7hs8J5rb8GBpjTgK4upeiQeXpUWVdn5RAC"
 			]
 		}
 	},

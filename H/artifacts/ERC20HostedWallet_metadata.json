@@ -9,24 +9,56 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "_token",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amt",
-						"type": "uint256"
-					}
-				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "host",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -43,18 +75,32 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "amt",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
+				"name": "hostTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "contract IERC20",
 						"name": "",
-						"type": "bool"
+						"type": "address"
 					}
 				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -72,7 +118,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"H/Custodial ERC20 Wallet.sol": "IERC20"
+			"H/Custodial ERC20 Wallet.sol": "ERC20HostedWallet"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},

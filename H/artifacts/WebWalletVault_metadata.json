@@ -9,54 +9,50 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "",
 						"type": "address"
-					},
+					}
+				],
+				"name": "balances",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "amt",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBalance",
 				"outputs": [
 					{
-						"internalType": "bool",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bool"
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
-						"name": "amt",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "withdraw",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -72,7 +68,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"H/Custodial ERC20 Wallet.sol": "IERC20"
+			"H/Web-based Wallet.sol": "WebWalletVault"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -86,11 +82,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"H/Custodial ERC20 Wallet.sol": {
-			"keccak256": "0x221974ec291ea5ef870d81d58191bae88bd899e7cbbc7052350ecf561625a890",
+		"H/Web-based Wallet.sol": {
+			"keccak256": "0x98f0bff5d5cfc407f0a0adce84d5b649a72fe5d0c7131934347988d903eba924",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://95024adbb77100dc53e067237bc504404a2413f454bd48b4eaa31a60ef64ea42",
-				"dweb:/ipfs/QmcT6kYKUekaoHxQZnQSEk6mfa9ueBPvRATcfzuaGkVAn7"
+				"bzz-raw://db418a163e7a8e88bcd3ba95097ea8b683c39716b8df290e6738b9d87e59e005",
+				"dweb:/ipfs/QmYjtLms8RoCrqBTi7XYQN4sFMXHLZ6Mn4CMEHp8oLbqn3"
 			]
 		}
 	},
