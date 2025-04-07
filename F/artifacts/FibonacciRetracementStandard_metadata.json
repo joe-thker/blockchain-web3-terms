@@ -1,0 +1,84 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "high",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "low",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateLevels",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "levels",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateLevels(uint256,uint256)": {
+					"params": {
+						"high": "The high price.",
+						"low": "The low price."
+					},
+					"returns": {
+						"levels": "An array of retracement levels corresponding to the predefined percentages. For each percentage, the level is computed as:    level = high - ((high - low) * percentage) / 1000"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateLevels(uint256,uint256)": {
+					"notice": "Calculates Fibonacci retracement levels for a given high and low price."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"F/FibonacciRetracementStandard.sol": "FibonacciRetracementStandard"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"F/FibonacciRetracementStandard.sol": {
+			"keccak256": "0x6936c9a30545a7dd0f1e759b25247b60517d1ad021e6386408dc3a2ef67e2e8f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c866c728f07645f47ab244ef44f35940a58325a926639777bb0d9825a9b9d341",
+				"dweb:/ipfs/QmdH2B1ajyoyEbFicbYuPBmZqbYBTdc2pCwKpknxxK775s"
+			]
+		}
+	},
+	"version": 1
+}

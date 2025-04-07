@@ -1,0 +1,84 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "highs",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "lows",
+						"type": "uint256[]"
+					}
+				],
+				"name": "calculateMultipleLevels",
+				"outputs": [
+					{
+						"internalType": "uint256[][]",
+						"name": "levels",
+						"type": "uint256[][]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateMultipleLevels(uint256[],uint256[])": {
+					"params": {
+						"highs": "An array of high prices.",
+						"lows": "An array of low prices."
+					},
+					"returns": {
+						"levels": "A two-dimensional array where each inner array contains the retracement levels corresponding to the high/low pair at that index. For each high/low pair, each level is computed as:      level = high - ((high - low) * percentage) / 1000"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateMultipleLevels(uint256[],uint256[])": {
+					"notice": "Calculates Fibonacci retracement levels for multiple high/low pairs."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"F/FibonacciRetracementMultiple.sol": "FibonacciRetracementMultiple"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"F/FibonacciRetracementMultiple.sol": {
+			"keccak256": "0x31ab27cf80212e61e0e95b4779cd228ae3f4b86f23ea9cdf78d40d0829068ea4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e0a00edda9428859812510ca8f02d0631ce276f3939a2623da998c9174d008fe",
+				"dweb:/ipfs/Qmavj76AzcWfhob4qk6WM5PiuzdFTFNCM8NsTSmvjYQwzC"
+			]
+		}
+	},
+	"version": 1
+}

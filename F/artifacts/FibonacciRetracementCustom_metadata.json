@@ -1,0 +1,90 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "high",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "low",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "customPercentages",
+						"type": "uint256[]"
+					}
+				],
+				"name": "calculateLevels",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "levels",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateLevels(uint256,uint256,uint256[])": {
+					"params": {
+						"customPercentages": "An array of retracement percentages in basis points (per 1000).",
+						"high": "The high price.",
+						"low": "The low price."
+					},
+					"returns": {
+						"levels": "An array of retracement levels corresponding to the custom percentages. Each level is computed as:    level = high - ((high - low) * percentage) / 1000"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateLevels(uint256,uint256,uint256[])": {
+					"notice": "Calculates Fibonacci retracement levels for a given high, low, and custom percentages."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"F/FibonacciRetracementCustom.sol": "FibonacciRetracementCustom"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"F/FibonacciRetracementCustom.sol": {
+			"keccak256": "0x72695b346672df24f787e843dbdcd4e63ef90afb64a03d326bbab6d8ad997e12",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://202fa3ef4c2dc4d67b5d3b2b53fddbe942a88bab3169325c13853aa5136db011",
+				"dweb:/ipfs/QmSir2VRfsN3HrDS3yNJdRLm49byoCVNf5hQpgYdJVEDx9"
+			]
+		}
+	},
+	"version": 1
+}
