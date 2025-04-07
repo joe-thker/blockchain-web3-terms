@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MintAttackBrokenAccess is ERC20 {
+    address public admin;
+
+    constructor() ERC20("VulnToken", "VULN") {
+        admin = msg.sender;
+    }
+
+    // ❌ `tx.origin` is unsafe — can be tricked by malicious contracts
+    function mint(address to, uint256 amount) external {
+        require(tx.origin == admin, "Not admin");
+        _mint(to, amount);
+    }
+}
