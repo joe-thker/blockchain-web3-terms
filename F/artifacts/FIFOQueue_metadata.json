@@ -1,0 +1,178 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "item",
+						"type": "address"
+					}
+				],
+				"name": "Dequeued",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "item",
+						"type": "address"
+					}
+				],
+				"name": "Enqueued",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "dequeue",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "item",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "item",
+						"type": "address"
+					}
+				],
+				"name": "enqueue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isEmpty",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "peek",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "size",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A simple FIFO (First In, First Out) queue that stores addresses. The contract uses two indices: `front` and `rear` to keep track of the queue's head and tail. When an address is enqueued, it is stored at index `rear + 1` and the `rear` is incremented. When an address is dequeued, the element at `front` is removed and the `front` is incremented.",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "The constructor initializes the queue indices."
+				},
+				"dequeue()": {
+					"details": "Dequeues the first address from the queue.",
+					"returns": {
+						"item": "The dequeued address."
+					}
+				},
+				"enqueue(address)": {
+					"details": "Enqueues an address into the queue.",
+					"params": {
+						"item": "The address to enqueue."
+					}
+				},
+				"isEmpty()": {
+					"details": "Checks whether the queue is empty.",
+					"returns": {
+						"_0": "True if the queue is empty; otherwise, false."
+					}
+				},
+				"peek()": {
+					"details": "Returns the address at the front of the queue without removing it.",
+					"returns": {
+						"_0": "The address at the front of the queue."
+					}
+				},
+				"size()": {
+					"details": "Returns the number of elements in the queue.",
+					"returns": {
+						"_0": "The current size of the queue."
+					}
+				}
+			},
+			"title": "FIFOQueue",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"F/FIFOQueue.sol": "FIFOQueue"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"F/FIFOQueue.sol": {
+			"keccak256": "0x0175b2638e08b3ee0dc52b303e7d75dfc7a27fe714943c61a1e74f7bf0f2c1a8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4764b153eac5a309e7d8d75dd5daf6124213960d6ca81fb78ac34d153d2b4c0c",
+				"dweb:/ipfs/QmXqice1oazwfWvwiqQjiq6s1EDECgcHf7pPGas5AJUfVH"
+			]
+		}
+	},
+	"version": 1
+}
