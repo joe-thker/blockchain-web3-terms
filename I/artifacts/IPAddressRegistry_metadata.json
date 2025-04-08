@@ -1,0 +1,125 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "ip",
+						"type": "string"
+					}
+				],
+				"name": "IPLogged",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getUserIP",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "ip",
+						"type": "string"
+					}
+				],
+				"name": "logIP",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userIPs",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "IPAddressRegistry",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getUserIP(address)": {
+					"notice": "Get a user's last known IP"
+				},
+				"logIP(string)": {
+					"notice": "Save the IP address (passed from frontend or oracle)"
+				}
+			},
+			"notice": "Store and retrieve off-chain IP addresses for user sessions",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/ipAddress.sol": "IPAddressRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/ipAddress.sol": {
+			"keccak256": "0x8496ecceb211dda8c5088ba511580b3c2ee57577638aab51cbc9ecdc8e939543",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a3a6d859ee6ec491d74be47e501591feb5324cd4f84b264406e9380239930d77",
+				"dweb:/ipfs/QmZ9mgfbNehNDgPCS2YcNg1WSdqKxcRgHvGVVDD6TaHit5"
+			]
+		}
+	},
+	"version": 1
+}

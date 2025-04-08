@@ -1,0 +1,160 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "ip",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "geoHash",
+						"type": "string"
+					}
+				],
+				"name": "LocationSubmitted",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getLatestLocation",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "ip",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "geoHash",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ProofOfLocation.LocationLog",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "ip",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "geoHash",
+						"type": "string"
+					}
+				],
+				"name": "submitLocation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "userLocations",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "ip",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "geoHash",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "1. Proof-of-Location (PoL) IP Logging",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/ipAddressAdvancedUseCases.sol": "ProofOfLocation"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/ipAddressAdvancedUseCases.sol": {
+			"keccak256": "0x39d6a332e035cd48587d996b2b66b0639c678c2773f8c436990532a2343cc94b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1f9a8d4a498c62b3863a9310f179f62118177b3b8a02528d4b54b6b27c8f03ab",
+				"dweb:/ipfs/QmYxDgxyXN58mYm9fzb6rf8anQRbsaw33vFgfi9a2D3u11"
+			]
+		}
+	},
+	"version": 1
+}
