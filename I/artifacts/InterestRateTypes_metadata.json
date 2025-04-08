@@ -1,0 +1,213 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ratePerPeriod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "periods",
+						"type": "uint256"
+					}
+				],
+				"name": "compoundInterest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "baseRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lockDays",
+						"type": "uint256"
+					}
+				],
+				"name": "durationAdjustedRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bpsRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "daysElapsed",
+						"type": "uint256"
+					}
+				],
+				"name": "fixedInterest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "baseRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "riskTier",
+						"type": "uint8"
+					}
+				],
+				"name": "riskWeightedRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalSupplied",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalBorrowed",
+						"type": "uint256"
+					}
+				],
+				"name": "utilizationRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "utilization",
+						"type": "uint256"
+					}
+				],
+				"name": "variableInterestRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "InterestRateTypes",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"compoundInterest(uint256,uint256,uint256)": {
+					"notice": "3. Compound Interest"
+				},
+				"durationAdjustedRate(uint256,uint256)": {
+					"notice": "4. Duration-Based Rate"
+				},
+				"fixedInterest(uint256,uint256,uint256)": {
+					"notice": "1. Fixed Interest Rate (Simple Interest)"
+				},
+				"riskWeightedRate(uint256,uint8)": {
+					"notice": "5. Risk-Tiered Interest Rate"
+				},
+				"utilizationRate(uint256,uint256)": {
+					"notice": "2. Variable Interest Rate Based on Utilization"
+				}
+			},
+			"notice": "Demonstrates different types of interest rate models in Solidity",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/interestRateTypes.sol": "InterestRateTypes"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/interestRateTypes.sol": {
+			"keccak256": "0xa336d7aef4c9e77fde28cfac0a56e4080315afaa64b0700f0f71b354f6f7c044",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f32d5a123af725fec347e64c09b52716da77277684ec9cf8637ed7483307d0e5",
+				"dweb:/ipfs/QmRm8mBLCZce42S7RHKkW2tBnpdV5jnKYmwzk3uuyuN9G2"
+			]
+		}
+	},
+	"version": 1
+}

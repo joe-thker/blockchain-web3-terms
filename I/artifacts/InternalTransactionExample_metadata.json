@@ -1,0 +1,113 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "ActionCalled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "InternalTransfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "performAction",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "InternalTransactionExample",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"performAction(address)": {
+					"notice": "Public entrypoint that calls an internal function"
+				}
+			},
+			"notice": "Shows how internal calls trigger events and logic",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/internalTransaction.sol": "InternalTransactionExample"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/internalTransaction.sol": {
+			"keccak256": "0x705044c161b7559a1daebc72899acfc6c09dfccdc8b07a982f376dde8b02c58a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d8cf81812e489fe6e4ff97caa31e7f04b52a3b21df850a021d50b99da96b6b95",
+				"dweb:/ipfs/QmdVpVdwwKbpW7Eh7RUZvJ4kj9fsZoFktikfQjFKHXNtb3"
+			]
+		}
+	},
+	"version": 1
+}

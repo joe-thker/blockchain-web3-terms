@@ -1,0 +1,151 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_trustedRelayer",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "fromChain",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "payload",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "messageId",
+						"type": "bytes32"
+					}
+				],
+				"name": "MessageReceived",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "processedMessages",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "fromChain",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "payload",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "messageId",
+						"type": "bytes32"
+					}
+				],
+				"name": "receiveCrossChainMessage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "trustedRelayer",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"receiveCrossChainMessage(address,string,bytes32)": {
+					"params": {
+						"fromChain": "The address or name of the source chain",
+						"messageId": "Unique identifier (to prevent replay)",
+						"payload": "The content/message/data sent"
+					}
+				}
+			},
+			"title": "InterChainReceiver",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"receiveCrossChainMessage(address,string,bytes32)": {
+					"notice": "Receive message sent from another chain"
+				}
+			},
+			"notice": "Simulates receiving messages from other chains with relayer verification",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/inter-blockchain communication.sol": "InterChainReceiver"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/inter-blockchain communication.sol": {
+			"keccak256": "0xeb7504cecb51cfd847b1d509fff1061e1c8033589cdfeb8443dba6db140ed7c4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://56ad7f4e5265845a945029c631dfb7292e8f2eff27654171032e2ee31995d5dd",
+				"dweb:/ipfs/QmeaL7Eke4TVQqv27mKP1idmc3PZ41nqsAfGBwzVyuGNEE"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,214 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ratePerPeriod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "periods",
+						"type": "uint256"
+					}
+				],
+				"name": "compoundRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "baseRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "daysLocked",
+						"type": "uint256"
+					}
+				],
+				"name": "durationAdjustedRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bpsRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "daysElapsed",
+						"type": "uint256"
+					}
+				],
+				"name": "fixedRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "baseRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "riskTier",
+						"type": "uint8"
+					}
+				],
+				"name": "riskWeightedRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "supplied",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "borrowed",
+						"type": "uint256"
+					}
+				],
+				"name": "utilizationRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "utilization",
+						"type": "uint256"
+					}
+				],
+				"name": "variableRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"compoundRate(uint256,uint256,uint256)": {
+					"notice": "Compound interest calculator"
+				},
+				"durationAdjustedRate(uint256,uint256)": {
+					"notice": "Duration-based rate adjustment"
+				},
+				"fixedRate(uint256,uint256,uint256)": {
+					"notice": "Calculate fixed interest"
+				},
+				"riskWeightedRate(uint256,uint8)": {
+					"notice": "Risk-tiered rate (e.g. higher rate for lower risk)"
+				},
+				"utilizationRate(uint256,uint256)": {
+					"notice": "Calculate utilization = borrowed / supplied"
+				},
+				"variableRate(uint256)": {
+					"notice": "Dynamic variable rate = base + slope * utilization"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/interestRates.sol": "MultiInterestRateModel"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/interestRates.sol": {
+			"keccak256": "0x6bcc062b8add3244cb746791011c11336b4937b73f4a87e3e5fc7ea18b56f172",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e7756b8243365cc4c7ca5734a72a30bc5b4ed5142d40c8327f0e828161826c04",
+				"dweb:/ipfs/QmaRcqENhizaFm3LcsP9YM3YmTDMA98m4q3hou8VHqYswW"
+			]
+		}
+	},
+	"version": 1
+}
