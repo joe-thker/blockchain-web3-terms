@@ -1,0 +1,129 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_loanProvider",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					}
+				],
+				"name": "executeOnFlashLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "initiateFlashLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "loanProvider",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "This contract takes a flash loan and repays it with a fee in the same transaction.",
+			"kind": "dev",
+			"methods": {
+				"executeOnFlashLoan(uint256,uint256)": {
+					"details": "Called by the flash loan provider during the loan process."
+				}
+			},
+			"title": "FlashLoanBorrower",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"initiateFlashLoan(uint256)": {
+					"notice": "Initiates the flash loan process"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"F/FlashLoanBorrower.sol": "FlashLoanBorrower"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"F/FlashLoanBorrower.sol": {
+			"keccak256": "0xad6c2679cde5830070a3b76dfdd20e315a2fdcc15887462f1e8913b296a9f0a0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ee63ebdbb65c45191d88d9838dc4bb01a2c1a1628da4d6372f6d13e85ed2fff0",
+				"dweb:/ipfs/QmQgfBdKChPaUYroSgGCnRFmfbTLo9quDkapF7Y2DpNye4"
+			]
+		}
+	},
+	"version": 1
+}
