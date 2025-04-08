@@ -1,0 +1,92 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ratePerPeriod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "periods",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateCompoundInterest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateCompoundInterest(uint256,uint256,uint256)": {
+					"params": {
+						"periods": "Number of compounding periods",
+						"principal": "Initial deposit amount",
+						"ratePerPeriod": "Interest rate per period (scaled by 1e18)"
+					},
+					"returns": {
+						"amount": "Final amount after compound interest"
+					}
+				}
+			},
+			"title": "CompoundInterestCalculator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateCompoundInterest(uint256,uint256,uint256)": {
+					"notice": "Calculates compound interest"
+				}
+			},
+			"notice": "Calculates compound interest over n periods",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/Compound Interest.sol": "CompoundInterestCalculator"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/Compound Interest.sol": {
+			"keccak256": "0x07a0ca642fcddc91502d91858b07c02332c0b8af40ee30ef4bf6b90495f14697",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d0411f9075a62dd39083d4aea7c8649768d8ba241b6df022ab4488114ff89f9",
+				"dweb:/ipfs/QmeopvD1E5Z87rf3bZqMjgT9yht9S5anLorT64dCs2TGSC"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,116 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "utilization",
+						"type": "uint256"
+					}
+				],
+				"name": "getDynamicInterestRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "interestRate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalSupplied",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalBorrowed",
+						"type": "uint256"
+					}
+				],
+				"name": "getUtilizationRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "utilization",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getDynamicInterestRate(uint256)": {
+					"params": {
+						"utilization": "Utilization rate scaled to 1e18"
+					},
+					"returns": {
+						"interestRate": "Annual interest rate scaled to 1e18 (e.g., 5% = 0.05e18)"
+					}
+				},
+				"getUtilizationRate(uint256,uint256)": {
+					"params": {
+						"totalBorrowed": "Total assets borrowed from the pool",
+						"totalSupplied": "Total assets supplied to the pool"
+					},
+					"returns": {
+						"utilization": "Utilization rate scaled to 1e18 (e.g., 75% = 0.75e18)"
+					}
+				}
+			},
+			"title": "VariableInterestRateModel",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getDynamicInterestRate(uint256)": {
+					"notice": "Calculates the dynamic interest rate based on utilization"
+				},
+				"getUtilizationRate(uint256,uint256)": {
+					"notice": "Calculates the utilization rate of the lending pool"
+				}
+			},
+			"notice": "Dynamic interest rate model based on pool utilization",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/Variable Interest Rate (Utilization-Based).sol": "VariableInterestRateModel"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/Variable Interest Rate (Utilization-Based).sol": {
+			"keccak256": "0x3dc3ea297a8eabf96b5f1b931cec9816b0bd12c1a2ee1dc1fd5017b9da07c9ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2f8762bfd1de324ca8c92699e9cd056949863bdeba937f2fd5755fd9621cf719",
+				"dweb:/ipfs/QmUF1Wj56FVbnLsc6Xcv4QgzNYj34UcccgMnS1kjHwKebi"
+			]
+		}
+	},
+	"version": 1
+}

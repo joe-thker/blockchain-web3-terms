@@ -1,0 +1,92 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeInDays",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateFixedInterest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "interest",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateFixedInterest(uint256,uint256,uint256)": {
+					"params": {
+						"principal": "Amount being lent or deposited",
+						"rate": "Interest rate in basis points (1% = 100)",
+						"timeInDays": "Duration in days"
+					},
+					"returns": {
+						"interest": "Total interest accrued"
+					}
+				}
+			},
+			"title": "FixedInterestCalculator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateFixedInterest(uint256,uint256,uint256)": {
+					"notice": "Calculate fixed interest over a number of days"
+				}
+			},
+			"notice": "Calculates simple interest on a principal amount",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/Fixed Interest Rate.sol": "FixedInterestCalculator"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/Fixed Interest Rate.sol": {
+			"keccak256": "0xddc4de7c86757eca84db5983aa0ce45e01bdaa8a024e87e33bd8839d72c21d30",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a357e8721e3ac408a07823dff875c4ec9e18a4d9a92326f913bec1375eb6759e",
+				"dweb:/ipfs/QmeCdd587d1kthptNp2ZSRwCsbw1mZ1mHpzharZUnQ7Bhn"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,200 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ratePerPeriod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "periods",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateCompoundInterest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "principal",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "annualRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "daysElapsed",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateFixedInterest",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "interest",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalSupplied",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalBorrowed",
+						"type": "uint256"
+					}
+				],
+				"name": "getUtilizationRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "utilization",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "utilization",
+						"type": "uint256"
+					}
+				],
+				"name": "getVariableRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "rate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateCompoundInterest(uint256,uint256,uint256)": {
+					"params": {
+						"periods": "Number of compounding periods",
+						"principal": "Initial value",
+						"ratePerPeriod": "Interest rate per compounding period (scaled to 1e18)"
+					},
+					"returns": {
+						"amount": "Final amount after interest"
+					}
+				},
+				"calculateFixedInterest(uint256,uint256,uint256)": {
+					"params": {
+						"annualRate": "Rate in basis points (1% = 100)",
+						"daysElapsed": "Duration in days",
+						"principal": "Initial amount"
+					},
+					"returns": {
+						"interest": "Amount of interest earned"
+					}
+				},
+				"getUtilizationRate(uint256,uint256)": {
+					"params": {
+						"totalBorrowed": "Total borrowed assets",
+						"totalSupplied": "Total pool liquidity"
+					},
+					"returns": {
+						"utilization": "Scaled to 1e18 (e.g., 0.75e18 = 75%)"
+					}
+				},
+				"getVariableRate(uint256)": {
+					"params": {
+						"utilization": "Utilization rate (scaled to 1e18)"
+					},
+					"returns": {
+						"rate": "Annual rate (e.g., 5% = 0.05e18)"
+					}
+				}
+			},
+			"title": "InterestRateModel",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateCompoundInterest(uint256,uint256,uint256)": {
+					"notice": "Compound interest calculation"
+				},
+				"calculateFixedInterest(uint256,uint256,uint256)": {
+					"notice": "Calculate fixed interest (simple formula)"
+				},
+				"getUtilizationRate(uint256,uint256)": {
+					"notice": "Calculate utilization rate (borrowed / supplied)"
+				},
+				"getVariableRate(uint256)": {
+					"notice": "Calculate variable interest rate based on utilization"
+				}
+			},
+			"notice": "A general-purpose contract to calculate interest in DeFi systems",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/interestRate.sol": "InterestRateModel"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/interestRate.sol": {
+			"keccak256": "0xd754787b92147858674b72f431b3b8202ba1b29dfd52052e10f4169ccf7d089f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0133ea5dace5308871a289ff9528a34a56b7085fbd5fab7e5f0d54425cf61870",
+				"dweb:/ipfs/QmfKyC9Ew3y3oajucZ4MDHQzQYPSxh5vPBzPkSj3wrrdT8"
+			]
+		}
+	},
+	"version": 1
+}

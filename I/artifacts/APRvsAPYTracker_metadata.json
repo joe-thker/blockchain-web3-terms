@@ -1,0 +1,86 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "apr",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "compoundingPeriods",
+						"type": "uint256"
+					}
+				],
+				"name": "calculateAPY",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "apy",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateAPY(uint256,uint256)": {
+					"params": {
+						"apr": "Annual Percentage Rate (scaled by 1e18, e.g., 10% = 1e17)",
+						"compoundingPeriods": "Number of times interest compounds in a year"
+					},
+					"returns": {
+						"apy": "Annual Percentage Yield (scaled by 1e18)"
+					}
+				}
+			},
+			"title": "APR vs APY Calculator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateAPY(uint256,uint256)": {
+					"notice": "Calculate APY from APR and compounding periods"
+				}
+			},
+			"notice": "Converts APR to APY using compounding formula",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/APR vs APY Tracker.sol": "APRvsAPYTracker"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/APR vs APY Tracker.sol": {
+			"keccak256": "0x26350e4bff818a493b4a9079464b0ed4b21fcf4e1b1cdef53018b77e8bccd58b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b51029d61e4b5a10da37d5928311d1141499371b5337e2af42c0c2a583c15529",
+				"dweb:/ipfs/QmakeE8QA5hUr3159ZivVWHowvj8NMxMRcX3KrsJx1egFm"
+			]
+		}
+	},
+	"version": 1
+}
