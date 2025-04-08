@@ -1,0 +1,123 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "crashed",
+						"type": "bool"
+					}
+				],
+				"name": "PriceSimulated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "crashed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "resetPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "dropPercent",
+						"type": "uint256"
+					}
+				],
+				"name": "simulateCrash",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "simulatedPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"F/FlashCrashSimulator.sol": "FlashCrashSimulator"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"F/FlashCrashSimulator.sol": {
+			"keccak256": "0xf748d27de219935933098493e0fec6eeecd37aa2303a2c7c20bb0509c6903d3f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://788fd5804fdcf31ff4bf7984bcca6e118616c52e1f734a6d1abe1bf8954b58e0",
+				"dweb:/ipfs/QmdCGqUaAJcAY4brAo6sPRRDq4w622iT4m9dp6QyWsK2cx"
+			]
+		}
+	},
+	"version": 1
+}
