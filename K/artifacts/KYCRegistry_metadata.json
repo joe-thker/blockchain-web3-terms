@@ -1,0 +1,126 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "identityHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "KYCVerified",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "identityHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "isKYCed",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userHashes",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "identityHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "verifyKYC",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "KYC Registry using Merkle Hash Verification",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"verifyKYC(bytes32)": {
+					"notice": "Store hashed identity for KYCed user (off-chain verified)"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"K/know your customer.sol": "KYCRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"K/know your customer.sol": {
+			"keccak256": "0x9d80addff071528aa61d37c5c9a231577bd4cd60f39d19ae0800e1de16ca768f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a03288a9a1c53e0bafeb812605cc7ded92f3c2965b81ee8de674ef96ba42baa5",
+				"dweb:/ipfs/Qma9mPUjYqaswJxu8ukRjuYbdju2EKJgkyWdruxXpRg3pG"
+			]
+		}
+	},
+	"version": 1
+}

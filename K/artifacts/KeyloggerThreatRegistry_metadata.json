@@ -1,0 +1,145 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "reporter",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "enum KeyloggerThreatRegistry.KeyloggerType",
+						"name": "keyloggerType",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "notes",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "KeyloggerReported",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getUserReports",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "reporter",
+								"type": "address"
+							},
+							{
+								"internalType": "enum KeyloggerThreatRegistry.KeyloggerType",
+								"name": "keyloggerType",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "notes",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct KeyloggerThreatRegistry.Report[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum KeyloggerThreatRegistry.KeyloggerType",
+						"name": "_type",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "_notes",
+						"type": "string"
+					}
+				],
+				"name": "reportKeylogger",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Keylogger Threat Reporting Registry",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getUserReports(address)": {
+					"notice": "View all reports submitted by a user"
+				},
+				"reportKeylogger(uint8,string)": {
+					"notice": "Submit a report of a suspected keylogger activity"
+				}
+			},
+			"notice": "Simulates user-side logging of different keylogger threats (for security dashboards, user profiling, or alerts)",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"K/keyloggerTypes.sol": "KeyloggerThreatRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"K/keyloggerTypes.sol": {
+			"keccak256": "0x2962c8e79e4b1f6072e67b2e86dfaf318c210a397e7be4446109ccdb98ab6910",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eb592890083361f8adacb34d9d5f91b96d5431cf487afec4dfd71e3edbfbe635",
+				"dweb:/ipfs/QmeggVNgpFNZrk7C8vG8gLbPZZngEvUZFrzdR1M6QWugiz"
+			]
+		}
+	},
+	"version": 1
+}

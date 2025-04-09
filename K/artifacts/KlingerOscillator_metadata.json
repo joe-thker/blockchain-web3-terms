@@ -1,0 +1,152 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "volumeForce",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "klinger",
+						"type": "uint256"
+					}
+				],
+				"name": "KlingerUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getKlinger",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "klingerValue",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "longEMA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "shortEMA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "high",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "low",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "close",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "volume",
+						"type": "uint256"
+					}
+				],
+				"name": "updateKlinger",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Klinger Oscillator (Simplified On-Chain)",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Simulates basic KVO logic using fixed-point math",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"K/Klinger oscillator.sol": "KlingerOscillator"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"K/Klinger oscillator.sol": {
+			"keccak256": "0xc493afb43cabb35e2e0777d53fce5492c21f41471ac46804e0799dd025775a03",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c72a68f1631a872e9af126c4076e1b442fe8706e65a8703b2320ae8f2209af7e",
+				"dweb:/ipfs/QmV7GkKD13wAezezWU56Xhn4WhqCk5wZkMaHcT6sqJbUkw"
+			]
+		}
+	},
+	"version": 1
+}
