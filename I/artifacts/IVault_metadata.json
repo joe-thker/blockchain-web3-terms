@@ -8,48 +8,52 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "approve",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "borrow",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "collateralToken",
+				"outputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "",
 						"type": "address"
-					},
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
-				"outputs": [
+				"name": "depositCollateral",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
 					}
 				],
+				"name": "withdrawCollateral",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -67,7 +71,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"I/FlashLoanReentrancyAttack.sol": "IERC20"
+			"I/FlashLoanCollateralAttack.sol": "IVault"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -81,12 +85,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"I/FlashLoanReentrancyAttack.sol": {
-			"keccak256": "0xc91565744d2dc360f9fae18e65f4e31284251f377e598081a84314176e512b43",
+		"I/FlashLoanCollateralAttack.sol": {
+			"keccak256": "0x04e44abdb628b4e4a89526db6568e7847fd9eef0ad42509135abd3d839167bea",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://85871655d4999ef3a5e3646559060aa032308ae799fd9b97d5cf169f44096d75",
-				"dweb:/ipfs/QmVNLXkKK2bf5wutoCBw59oNQeaW7rMRYekwpb4X5XqzMt"
+				"bzz-raw://05581230f86ffe4d65d821df1dc774857cd237eb95bf2d99be18691106b8d0e9",
+				"dweb:/ipfs/QmcbHK8K5vncsELozySCpY7kZjm9f9nC6aNxHsD6DurzPz"
 			]
 		}
 	},

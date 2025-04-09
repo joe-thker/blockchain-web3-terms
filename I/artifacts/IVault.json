@@ -49,56 +49,62 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"approve(address,uint256)": "095ea7b3",
-			"transfer(address,uint256)": "a9059cbb"
+			"borrow(uint256)": "c5ebeaec",
+			"collateralToken()": "b2016bd4",
+			"depositCollateral(uint256)": "bad4a01f",
+			"withdrawCollateral(uint256)": "6112fe2e"
 		}
 	},
 	"abi": [
 		{
 			"inputs": [
 				{
-					"internalType": "address",
-					"name": "",
-					"type": "address"
-				},
-				{
 					"internalType": "uint256",
-					"name": "",
+					"name": "amount",
 					"type": "uint256"
 				}
 			],
-			"name": "approve",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
+			"name": "borrow",
+			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"
 		},
 		{
-			"inputs": [
+			"inputs": [],
+			"name": "collateralToken",
+			"outputs": [
 				{
 					"internalType": "address",
-					"name": "to",
+					"name": "",
 					"type": "address"
-				},
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
 				{
 					"internalType": "uint256",
 					"name": "amount",
 					"type": "uint256"
 				}
 			],
-			"name": "transfer",
-			"outputs": [
+			"name": "depositCollateral",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
 				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
 				}
 			],
+			"name": "withdrawCollateral",
+			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"
 		}

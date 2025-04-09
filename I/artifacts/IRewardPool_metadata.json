@@ -6,50 +6,61 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"inputs": [],
+				"name": "claimReward",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardToken",
+				"outputs": [
+					{
 						"internalType": "address",
-						"name": "to",
+						"name": "",
 						"type": "address"
-					},
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakeToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "withdraw",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -67,7 +78,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"I/FlashLoanReentrancyAttack.sol": "IERC20"
+			"I/FlashLoanRewardExploit.sol": "IRewardPool"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -81,12 +92,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"I/FlashLoanReentrancyAttack.sol": {
-			"keccak256": "0xc91565744d2dc360f9fae18e65f4e31284251f377e598081a84314176e512b43",
+		"I/FlashLoanRewardExploit.sol": {
+			"keccak256": "0xd1b2531e7df29e6e66f9c8ad8b2b6bba9c7dcf9d125febea3265a189cfa5c7d2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://85871655d4999ef3a5e3646559060aa032308ae799fd9b97d5cf169f44096d75",
-				"dweb:/ipfs/QmVNLXkKK2bf5wutoCBw59oNQeaW7rMRYekwpb4X5XqzMt"
+				"bzz-raw://db45e9e55c7ccd20915470c537cd6e76587ca19afe5c288bede9e9f73ae031f5",
+				"dweb:/ipfs/QmeoWRxLJRLr7yGSYRwKQXgWwXfxXGBLMSRoXBFEpgn6a9"
 			]
 		}
 	},

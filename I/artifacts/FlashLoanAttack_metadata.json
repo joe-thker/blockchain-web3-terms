@@ -1,0 +1,177 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_loanProvider",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_rewardPool",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "loanAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "executeAttack",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					}
+				],
+				"name": "executeOnFlashLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "loanProvider",
+				"outputs": [
+					{
+						"internalType": "contract IFlashLoanProvider",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardPool",
+				"outputs": [
+					{
+						"internalType": "contract IRewardPool",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardToken",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakeToken",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawLoot",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Simulates a flash loan attack that exploits a vulnerable reward pool.",
+			"kind": "dev",
+			"methods": {},
+			"title": "FlashLoanAttack",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"executeAttack(uint256)": {
+					"notice": "Initiates the flash loan attack."
+				},
+				"executeOnFlashLoan(uint256,uint256)": {
+					"notice": "This function is called by the FlashLoanProvider during the flash loan."
+				},
+				"withdrawLoot()": {
+					"notice": "Withdraw stolen reward tokens to attacker wallet."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/FlashLoanAttack.sol": "FlashLoanAttack"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/FlashLoanAttack.sol": {
+			"keccak256": "0x788fc3b396229f08150c90dd13d26a66457f3d9a2ecf0e2b30adb07eb93bfc4f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cd6cc8744a07d64aa7c62a0892615a3acbadc2c3a4efa06319762399b6e65828",
+				"dweb:/ipfs/Qmb4tbcchTdvuecCannmDpcVdwpXvxrx9w7qsLcNmYVF4g"
+			]
+		}
+	},
+	"version": 1
+}
