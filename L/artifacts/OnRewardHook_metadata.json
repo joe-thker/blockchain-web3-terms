@@ -9,11 +9,16 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "user",
 						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rewardAmount",
+						"type": "uint256"
 					}
 				],
-				"name": "balanceOf",
+				"name": "onRewardClaim",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -28,23 +33,17 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "user",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "percent",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "setBoost",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -52,29 +51,19 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "from",
+						"name": "",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
+					}
+				],
+				"name": "userBoost",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -86,13 +75,12 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
-			"notice": "ERC20 interface with required functions",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"L/liquidityMining.sol": "IERC20"
+			"L/OnRewardHook.sol": "OnRewardHook"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -106,12 +94,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"L/liquidityMining.sol": {
-			"keccak256": "0xc705c3cbbdcd9eeedb6d4d2a54111445d7d3d83dd231edee1baf42248e76b638",
-			"license": "MIT",
+		"L/OnRewardHook.sol": {
+			"keccak256": "0x275deb7234365975387c09c3d2d0d4ca1be23415c4a8daaf134c9d599580a85c",
 			"urls": [
-				"bzz-raw://657d406ba267435a2dba75a70acf8e0e28f0b3c80db9e301511e9a2255352353",
-				"dweb:/ipfs/QmZhKvTubLCeuPYtzgvcouK3QBncxMnnbYjNhMAgiMP7SN"
+				"bzz-raw://973ba8ff6758c03961eb56ecaa96cc6ca05a0a23fbd9e444838d1f6a5acea6a8",
+				"dweb:/ipfs/QmZnEdaUp4KWD8anJdFeRjpPGysbHzZbc4ufUqVS95YG3Y"
 			]
 		}
 	},

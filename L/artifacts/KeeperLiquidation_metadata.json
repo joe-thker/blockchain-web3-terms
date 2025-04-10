@@ -9,11 +9,11 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "balanceOf",
+				"name": "collateral",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -28,45 +28,30 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "",
 						"type": "address"
-					},
+					}
+				],
+				"name": "debt",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "from",
+						"name": "borrower",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
+				"name": "isLiquidatable",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -74,6 +59,19 @@
 						"type": "bool"
 					}
 				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "borrower",
+						"type": "address"
+					}
+				],
+				"name": "triggerLiquidation",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -86,13 +84,12 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
-			"notice": "ERC20 interface with required functions",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"L/liquidityMining.sol": "IERC20"
+			"L/Keeper-Triggered Liquidation.sol": "KeeperLiquidation"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -106,12 +103,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"L/liquidityMining.sol": {
-			"keccak256": "0xc705c3cbbdcd9eeedb6d4d2a54111445d7d3d83dd231edee1baf42248e76b638",
-			"license": "MIT",
+		"L/Keeper-Triggered Liquidation.sol": {
+			"keccak256": "0xdcae80586bce7028cc8fdea901e586ca8429e6d742f260f212b5670a4c852d16",
 			"urls": [
-				"bzz-raw://657d406ba267435a2dba75a70acf8e0e28f0b3c80db9e301511e9a2255352353",
-				"dweb:/ipfs/QmZhKvTubLCeuPYtzgvcouK3QBncxMnnbYjNhMAgiMP7SN"
+				"bzz-raw://e4867b865343e24b87955e9a6b49fc9d59b3db37daed3500c89786dd1251b657",
+				"dweb:/ipfs/QmQnU4wKLpHhqR4qh9SHGEuKDdaPyUTEF2deC4ekb6JBKj"
 			]
 		}
 	},

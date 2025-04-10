@@ -6,14 +6,8 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "account",
-						"type": "address"
-					}
-				],
-				"name": "balanceOf",
+				"inputs": [],
+				"name": "ethReserve",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -27,72 +21,70 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "ethIn",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
+				"name": "getPriceImpact",
 				"outputs": [
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "impactBps",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "ethIn",
 						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
+				"name": "simulateSwapETHToToken",
 				"outputs": [
 					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "tokenOut",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenReserve",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
+			"title": "Liquidity Depth Simulator (x*y=k pool)",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
-			"notice": "ERC20 interface with required functions",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"L/liquidityMining.sol": "IERC20"
+			"L/liquidity.sol": "LiquiditySimulator"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -106,12 +98,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"L/liquidityMining.sol": {
-			"keccak256": "0xc705c3cbbdcd9eeedb6d4d2a54111445d7d3d83dd231edee1baf42248e76b638",
+		"L/liquidity.sol": {
+			"keccak256": "0xb5b738e0347972197a5189b852c9bbcada3e72e6cb9fd5277a31b3f78f822939",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://657d406ba267435a2dba75a70acf8e0e28f0b3c80db9e301511e9a2255352353",
-				"dweb:/ipfs/QmZhKvTubLCeuPYtzgvcouK3QBncxMnnbYjNhMAgiMP7SN"
+				"bzz-raw://6c4ee8488353fe0e785950cb5d46261f6a22378eb16731542a139f70194df792",
+				"dweb:/ipfs/QmP4q6kk1ACF2uPZjiJkzUfdzdaCfPhkcX6MJHJGmALJ3s"
 			]
 		}
 	},

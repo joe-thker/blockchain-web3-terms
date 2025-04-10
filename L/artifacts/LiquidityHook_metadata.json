@@ -9,11 +9,29 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "_dao",
 						"type": "address"
 					}
 				],
-				"name": "balanceOf",
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "dao",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "feeBps",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -28,7 +46,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "user",
 						"type": "address"
 					},
 					{
@@ -37,41 +55,12 @@
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
+				"name": "onAddLiquidity",
 				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "adjustedAmount",
 						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
 					}
 				],
 				"stateMutability": "nonpayable",
@@ -81,18 +70,22 @@
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
+			"title": "Liquidity Hook – Fee-on-Add Hook",
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
-			"notice": "ERC20 interface with required functions",
+			"methods": {
+				"onAddLiquidity(address,uint256)": {
+					"notice": "Called when liquidity is added"
+				}
+			},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"L/liquidityMining.sol": "IERC20"
+			"L/Liquidity Hooks.sol": "LiquidityHook"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -106,12 +99,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"L/liquidityMining.sol": {
-			"keccak256": "0xc705c3cbbdcd9eeedb6d4d2a54111445d7d3d83dd231edee1baf42248e76b638",
+		"L/Liquidity Hooks.sol": {
+			"keccak256": "0x70d0359ff02b7b0be84b0946a85754f461fa965f45e1f77ded0ed086f3b922cb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://657d406ba267435a2dba75a70acf8e0e28f0b3c80db9e301511e9a2255352353",
-				"dweb:/ipfs/QmZhKvTubLCeuPYtzgvcouK3QBncxMnnbYjNhMAgiMP7SN"
+				"bzz-raw://d8793ae185bc8f974a4bfb2649e9c044dea857d043783c1c50b82cdbd083d21b",
+				"dweb:/ipfs/QmYNjDpJWX7hNq9DBGjq4Hcqt1S8dk365VKexFysNimdeL"
 			]
 		}
 	},

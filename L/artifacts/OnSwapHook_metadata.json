@@ -6,47 +6,35 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": false,
 						"internalType": "address",
-						"name": "account",
+						"name": "from",
 						"type": "address"
-					}
-				],
-				"name": "balanceOf",
-				"outputs": [
+					},
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
+						"indexed": false,
 						"internalType": "address",
 						"name": "to",
 						"type": "address"
 					},
 					{
+						"indexed": false,
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "amountIn",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountOut",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
+				"name": "SwapTriggered",
+				"type": "event"
 			},
 			{
 				"inputs": [
@@ -62,18 +50,17 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "inAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "outAmount",
 						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "onSwap",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -86,13 +73,12 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
-			"notice": "ERC20 interface with required functions",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"L/liquidityMining.sol": "IERC20"
+			"L/OnSwapHook.sol": "OnSwapHook"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -106,12 +92,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"L/liquidityMining.sol": {
-			"keccak256": "0xc705c3cbbdcd9eeedb6d4d2a54111445d7d3d83dd231edee1baf42248e76b638",
-			"license": "MIT",
+		"L/OnSwapHook.sol": {
+			"keccak256": "0x39f359d80794c19afbb479296a3fe3fde724a72375aba8cfdd307e6317ec9fa6",
 			"urls": [
-				"bzz-raw://657d406ba267435a2dba75a70acf8e0e28f0b3c80db9e301511e9a2255352353",
-				"dweb:/ipfs/QmZhKvTubLCeuPYtzgvcouK3QBncxMnnbYjNhMAgiMP7SN"
+				"bzz-raw://7b0343204e3343e5e44548238bf7349023c3c03559dbc6618552ff945a9b66a0",
+				"dweb:/ipfs/QmUPddcoduYR9N4KCwjeoGdkiMm4FhGspRvjw7aDTWT5pQ"
 			]
 		}
 	},

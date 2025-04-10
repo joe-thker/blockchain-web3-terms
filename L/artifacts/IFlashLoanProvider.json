@@ -49,81 +49,30 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"balanceOf(address)": "70a08231",
-			"transfer(address,uint256)": "a9059cbb",
-			"transferFrom(address,address,uint256)": "23b872dd"
+			"flashLoan(uint256,address,bytes)": "2bd94e9c"
 		}
 	},
 	"abi": [
 		{
 			"inputs": [
 				{
-					"internalType": "address",
-					"name": "account",
-					"type": "address"
-				}
-			],
-			"name": "balanceOf",
-			"outputs": [
-				{
-					"internalType": "uint256",
-					"name": "",
-					"type": "uint256"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "address",
-					"name": "to",
-					"type": "address"
-				},
-				{
 					"internalType": "uint256",
 					"name": "amount",
 					"type": "uint256"
-				}
-			],
-			"name": "transfer",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "address",
-					"name": "from",
-					"type": "address"
 				},
 				{
 					"internalType": "address",
-					"name": "to",
+					"name": "target",
 					"type": "address"
 				},
 				{
-					"internalType": "uint256",
-					"name": "amount",
-					"type": "uint256"
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
 				}
 			],
-			"name": "transferFrom",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
+			"name": "flashLoan",
+			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"
 		}

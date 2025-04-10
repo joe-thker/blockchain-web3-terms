@@ -9,11 +9,11 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "balanceOf",
+				"name": "collateral",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -28,52 +28,31 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "",
 						"type": "address"
-					},
+					}
+				],
+				"name": "debt",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "from",
+						"name": "borrower",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
 					}
 				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"name": "liquidate",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -86,13 +65,12 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {},
-			"notice": "ERC20 interface with required functions",
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"L/liquidityMining.sol": "IERC20"
+			"L/Hard Liquidation.sol": "HardLiquidation"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -106,12 +84,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"L/liquidityMining.sol": {
-			"keccak256": "0xc705c3cbbdcd9eeedb6d4d2a54111445d7d3d83dd231edee1baf42248e76b638",
-			"license": "MIT",
+		"L/Hard Liquidation.sol": {
+			"keccak256": "0xc6f9400f8c54124cf50ab469b9bef4b80213ce2b95f38d016a0b3b5a04ada2bf",
 			"urls": [
-				"bzz-raw://657d406ba267435a2dba75a70acf8e0e28f0b3c80db9e301511e9a2255352353",
-				"dweb:/ipfs/QmZhKvTubLCeuPYtzgvcouK3QBncxMnnbYjNhMAgiMP7SN"
+				"bzz-raw://6f8c81c88831109860193878876d120e226f0be5dce9f96cd91aa4d71382c9cd",
+				"dweb:/ipfs/QmNo9C9HjX6hfaxMnf4wCDSMRR1RccsD1u7ZQ4dFaBjsW2"
 			]
 		}
 	},
