@@ -65,14 +65,20 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "uint256",
-						"name": "ethAmount",
-						"type": "uint256"
+						"internalType": "enum LimitOrderBook.OrderType",
+						"name": "orderType",
+						"type": "uint8"
 					},
 					{
 						"indexed": false,
 						"internalType": "uint256",
 						"name": "tokenAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
 						"type": "uint256"
 					}
 				],
@@ -111,13 +117,18 @@
 							},
 							{
 								"internalType": "uint256",
-								"name": "ethAmount",
+								"name": "tokenAmount",
 								"type": "uint256"
 							},
 							{
 								"internalType": "uint256",
-								"name": "tokenAmount",
+								"name": "priceInWei",
 								"type": "uint256"
+							},
+							{
+								"internalType": "enum LimitOrderBook.OrderType",
+								"name": "orderType",
+								"type": "uint8"
 							},
 							{
 								"internalType": "bool",
@@ -141,9 +152,22 @@
 						"type": "uint256"
 					}
 				],
-				"name": "matchOrder",
+				"name": "matchBuy",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "orderId",
+						"type": "uint256"
+					}
+				],
+				"name": "matchSell",
+				"outputs": [],
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -163,13 +187,18 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "ethAmount",
+						"name": "tokenAmount",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "tokenAmount",
+						"name": "priceInWei",
 						"type": "uint256"
+					},
+					{
+						"internalType": "enum LimitOrderBook.OrderType",
+						"name": "orderType",
+						"type": "uint8"
 					},
 					{
 						"internalType": "bool",
@@ -186,19 +215,42 @@
 						"internalType": "uint256",
 						"name": "tokenAmount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pricePerTokenInWei",
+						"type": "uint256"
 					}
 				],
-				"name": "placeLimitOrder",
+				"name": "placeBuyOrder",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pricePerTokenInWei",
+						"type": "uint256"
+					}
+				],
+				"name": "placeSellOrder",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "tokenAddress",
+				"name": "token",
 				"outputs": [
 					{
-						"internalType": "address",
+						"internalType": "contract IERC20",
 						"name": "",
 						"type": "address"
 					}
@@ -220,7 +272,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"L/limitOrder.sol": "LimitOrderBook"
+			"L/limit order limit buy limit sell.sol": "LimitOrderBook"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -234,12 +286,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"L/limitOrder.sol": {
-			"keccak256": "0x16a01a37c56d3824dba0c3985f0a5ef902557fde8181d1fa33c667ec2034b4ef",
+		"L/limit order limit buy limit sell.sol": {
+			"keccak256": "0x4d8308750c345d31e7443a9243785f59c882714726e1ae457706c5eb82614a0b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://57647ffe80584a65de4c51bf9594a21a3a15bd05c2d4e7f6e3b4ccd9568b42e7",
-				"dweb:/ipfs/QmbNWFm38jXLRg8pE16ca5PinaTsPkiXQeYARDP7kzCPA5"
+				"bzz-raw://54a2d1f0e9e1417f8614af0f75d56b1ee12e52d7936d7df325a2153249ca3450",
+				"dweb:/ipfs/QmaAMVsTQzXNHJ1Q1TH67giEshKbqWUDYBQ5qdtU4mRkVX"
 			]
 		}
 	},

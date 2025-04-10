@@ -49,62 +49,41 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"transfer(address,uint256)": "a9059cbb",
-			"transferFrom(address,address,uint256)": "23b872dd"
+			"latestRoundData()": "feaf968c"
 		}
 	},
 	"abi": [
 		{
-			"inputs": [
+			"inputs": [],
+			"name": "latestRoundData",
+			"outputs": [
 				{
-					"internalType": "address",
-					"name": "to",
-					"type": "address"
+					"internalType": "uint80",
+					"name": "roundId",
+					"type": "uint80"
+				},
+				{
+					"internalType": "int256",
+					"name": "answer",
+					"type": "int256"
 				},
 				{
 					"internalType": "uint256",
-					"name": "amount",
+					"name": "startedAt",
 					"type": "uint256"
-				}
-			],
-			"name": "transfer",
-			"outputs": [
-				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
-				}
-			],
-			"stateMutability": "nonpayable",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "address",
-					"name": "from",
-					"type": "address"
-				},
-				{
-					"internalType": "address",
-					"name": "to",
-					"type": "address"
 				},
 				{
 					"internalType": "uint256",
-					"name": "amount",
+					"name": "updatedAt",
 					"type": "uint256"
-				}
-			],
-			"name": "transferFrom",
-			"outputs": [
+				},
 				{
-					"internalType": "bool",
-					"name": "",
-					"type": "bool"
+					"internalType": "uint80",
+					"name": "answeredInRound",
+					"type": "uint80"
 				}
 			],
-			"stateMutability": "nonpayable",
+			"stateMutability": "view",
 			"type": "function"
 		}
 	]
