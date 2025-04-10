@@ -1,0 +1,215 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_oracleA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenB",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_oracleB",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "flipper",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newMarketCap",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "flipped",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldMarketCap",
+						"type": "uint256"
+					}
+				],
+				"name": "FlippeningDetected",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "announceFlippening",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkFlippening",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "flipped",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "capA",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "capB",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IOracle",
+						"name": "oracle",
+						"type": "address"
+					}
+				],
+				"name": "getMarketCap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "oracleA",
+				"outputs": [
+					{
+						"internalType": "contract IOracle",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "oracleB",
+				"outputs": [
+					{
+						"internalType": "contract IOracle",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenA",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenB",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Tracks whether one token has surpassed another in market cap.",
+			"kind": "dev",
+			"methods": {},
+			"title": "FlippeningTracker",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"checkFlippening()": {
+					"notice": "✅ FIX: Visibility added"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"I/FlippeningTracker.sol": "FlippeningTracker"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"I/FlippeningTracker.sol": {
+			"keccak256": "0xc4c89ae1af741bf60c98ef67ca2bd2229b6dc360d320962249185c9eca18f5ab",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e8539da1ac750e244b46071615e44626acff1ef071a7d9d7db95787ce8c96511",
+				"dweb:/ipfs/QmP6PDxXvGce5vs49ozDxYgnKmnZXFEhMXmaTfuJASkPZD"
+			]
+		}
+	},
+	"version": 1
+}
