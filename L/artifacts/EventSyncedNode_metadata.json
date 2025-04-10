@@ -1,0 +1,127 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "root",
+						"type": "bytes32"
+					}
+				],
+				"name": "SyncedFromL2",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "l2Roots",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "root",
+						"type": "bytes32"
+					}
+				],
+				"name": "syncL2",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "root",
+						"type": "bytes32"
+					}
+				],
+				"name": "verifyL2Root",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "4. Event-Synced Light Node (Simulated L2)",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"L/lightningNetworkTypes.sol": "EventSyncedNode"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"L/lightningNetworkTypes.sol": {
+			"keccak256": "0xf31d2452623ad91b75fe3f44dba4c9e5c073999a4576017a3b7b671b78862f7f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://11b618a44e465ab808634ca09329241021ba67f0afff84a0c49290a6a08c679d",
+				"dweb:/ipfs/QmPTLxcJgdKpLXnfj3mcAjbKCHx9mgCuKaBzFewxoRXTqE"
+			]
+		}
+	},
+	"version": 1
+}

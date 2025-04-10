@@ -1,0 +1,177 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "node",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "peerId",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "multiAddr",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "protocol",
+						"type": "string"
+					}
+				],
+				"name": "Registered",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "node",
+						"type": "address"
+					}
+				],
+				"name": "getNode",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "peerId",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "multiAddr",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "protocol",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "registeredAt",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Libp2pRegistry.PeerInfo",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "peers",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "peerId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "multiAddr",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "protocol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "registeredAt",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "peerId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "multiAddr",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "protocol",
+						"type": "string"
+					}
+				],
+				"name": "registerNode",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "libp2p Node Identity Registry",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Registers off-chain peer IDs + metadata for on-chain identity reference",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"L/libp2p.sol": "Libp2pRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"L/libp2p.sol": {
+			"keccak256": "0x1f6ed0b0dca9949c0112355c6f2026f7df48ee950e9552be283303a00b9ff02a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0795d8b74af0ea9be89539758601eb243095b3772044b1e43a132069b29222e0",
+				"dweb:/ipfs/QmSuTxXCV8WEfRrRC8UBmjKvsbBgkidvZH3BrSEsZ2QyYH"
+			]
+		}
+	},
+	"version": 1
+}

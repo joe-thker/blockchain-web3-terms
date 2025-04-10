@@ -1,0 +1,162 @@
+{
+	"compiler": {
+		"version": "0.8.29+commit.ab55807c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newPriceRatio",
+						"type": "uint256"
+					}
+				],
+				"name": "closePosition",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "pnl",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "collateral",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "debt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "leverageRatio",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_collateral",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_leverageX",
+						"type": "uint256"
+					}
+				],
+				"name": "openPosition",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "positionSize",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Leverage Position Simulator",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"closePosition(uint256)": {
+					"notice": "Close position and calculate outcome"
+				},
+				"openPosition(uint256,uint256)": {
+					"notice": "Open a leveraged position (e.g., 3x = 300% exposure)"
+				}
+			},
+			"notice": "Simulates opening/closing leveraged long positions using borrowed funds",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"L/leverage.sol": "LeverageSimulator"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"L/leverage.sol": {
+			"keccak256": "0x0be3e34a2e6ffa49641c1ddbd4bae37889afdccdda5e8a872abdd3e87efd01b6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ba77e858ca032a94cd51b166fd4ceb0e174de2b353831a0953c65ea3ba8cf956",
+				"dweb:/ipfs/QmaXP7pVR2sdEeqAMWbSLWaRZo6VVJUpdAAufQwWUz1Fkf"
+			]
+		}
+	},
+	"version": 1
+}
