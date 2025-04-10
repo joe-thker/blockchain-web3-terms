@@ -1,0 +1,17 @@
+contract LowerLowVault {
+    uint256 public lastLow = type(uint256).max;
+    mapping(address => bool) public rewarded;
+
+    event Rewarded(address user);
+
+    function submitAndTrigger(uint256 newLow) external {
+        require(newLow < lastLow, "Not lower than last low");
+        require(!rewarded[msg.sender], "Already rewarded");
+
+        lastLow = newLow;
+        rewarded[msg.sender] = true;
+
+        emit Rewarded(msg.sender);
+        // e.g., mint a token, burn shares, or execute strategy
+    }
+}
