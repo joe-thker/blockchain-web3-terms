@@ -1,0 +1,1 @@
+here is the term: Port - made sure you are giving it types and then the attack and defense types into the solidity as well. So after you are giving the types, attack and defense then please give me the complete codes of them please into the solidity codes 
