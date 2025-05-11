@@ -1,112 +1,142 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-/// @title TipsetModule - Simulates Tipset Behavior and Security in Solidity
+/// @title TokenModule - Attack and Defense of Token-Based Mechanics in Solidity
 
 // ==============================
-// 🧱 Basic Tipset Chain Simulation
+// 🔓 Fake ERC20 Token (Malicious)
 // ==============================
-contract TipsetChain {
-    struct BlockData {
-        address miner;
-        bytes data;
+contract FakeToken {
+    string public name = "USD Coin";
+    string public symbol = "USDC";
+    uint8 public decimals = 6;
+    uint256 public totalSupply;
+
+    mapping(address => uint256) public balances;
+    mapping(address => mapping(address => uint256)) public allowance;
+
+    function mint(address to, uint256 amt) external {
+        balances[to] += amt;
+        totalSupply += amt;
     }
 
-    struct Tipset {
-        uint256 height;
-        BlockData[] blocks;
-        uint256 weight;
+    function transfer(address to, uint256 amt) external returns (bool) {
+        require(balances[msg.sender] >= amt, "Bad balance");
+        balances[msg.sender] -= amt;
+        balances[to] += amt;
+        return true;
     }
 
-    mapping(uint256 => Tipset) public tipsets; // height => tipset
-    uint256 public currentHeight;
-
-    event TipsetAdded(uint256 height, uint256 blockCount, uint256 weight);
-
-    function addTipset(BlockData[] memory newBlocks, uint256 weight) public {
-        currentHeight++;
-        Tipset storage t = tipsets[currentHeight];
-        t.height = currentHeight;
-        t.weight = weight;
-
-        for (uint256 i = 0; i < newBlocks.length; i++) {
-            t.blocks.push(newBlocks[i]);
-        }
-
-        emit TipsetAdded(currentHeight, newBlocks.length, weight);
+    function approve(address spender, uint256 amt) external returns (bool) {
+        allowance[msg.sender][spender] = amt;
+        return true;
     }
 
-    function getTipset(uint256 height) external view returns (BlockData[] memory) {
-        return tipsets[height].blocks;
+    function transferFrom(address from, address to, uint256 amt) external returns (bool) {
+        require(balances[from] >= amt && allowance[from][msg.sender] >= amt, "Not allowed");
+        balances[from] -= amt;
+        balances[to] += amt;
+        allowance[from][msg.sender] -= amt;
+        return true;
+    }
+
+    function balanceOf(address user) external view returns (uint256) {
+        return balances[user];
     }
 }
 
 // ==============================
-// 🔓 Tipset Attacker: Inserts Duplicates or Junk Tips
+// 🔓 Token Attacker (Race & Abuse)
 // ==============================
-interface ITipsetChain {
-    function addTipset(TipsetChain.BlockData[] calldata, uint256) external;
+interface IERC20Abuse {
+    function approve(address, uint256) external returns (bool);
+    function transferFrom(address, address, uint256) external returns (bool);
 }
 
-contract TipsetAttack {
-    function injectDuplicates(ITipsetChain chain) external {
-        TipsetChain.BlockData ;
-        dups[0] = TipsetChain.BlockData(msg.sender, "junk");
-        dups[1] = TipsetChain.BlockData(msg.sender, "junk"); // duplicate
-        chain.addTipset(dups, 1);
+contract TokenAttacker {
+    IERC20Abuse public target;
+
+    constructor(address _target) {
+        target = IERC20Abuse(_target);
     }
 
-    function spamTipset(ITipsetChain chain, uint256 count) external {
-        TipsetChain.BlockData[] memory blocks = new TipsetChain.BlockData[](count);
-        for (uint256 i = 0; i < count; i++) {
-            blocks[i] = TipsetChain.BlockData(msg.sender, bytes(abi.encodePacked("spam-", i)));
-        }
-        chain.addTipset(blocks, 1);
+    function raceExploit(address victim, uint256 amt) external {
+        target.transferFrom(victim, msg.sender, amt);
     }
 }
 
 // ==============================
-// 🔐 Safe Tipset Chain with Validation & Merge Rules
+// 🔐 Safe Token (ERC20 Cap + OpenZeppelin Pattern)
 // ==============================
-contract SafeTipsetChain {
-    struct BlockData {
-        address miner;
-        bytes data;
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
+}
+
+contract SafeERC20 is Context {
+    string public name = "SafeToken";
+    string public symbol = "SAFE";
+    uint8 public decimals = 18;
+    uint256 public totalSupply;
+    uint256 public immutable cap;
+
+    mapping(address => uint256) public balances;
+    mapping(address => mapping(address => uint256)) public allowance;
+
+    constructor(uint256 _cap) {
+        cap = _cap;
     }
 
-    struct Tipset {
-        uint256 height;
-        uint256 weight;
-        bytes32 tipsetHash;
-        mapping(bytes32 => bool) includedBlockHashes;
+    function mint(address to, uint256 amt) external {
+        require(totalSupply + amt <= cap, "Cap exceeded");
+        balances[to] += amt;
+        totalSupply += amt;
     }
 
-    mapping(uint256 => Tipset) public tipsets;
-    uint256 public currentHeight;
-
-    event TipsetValidated(uint256 height, bytes32 tipsetHash, uint256 weight);
-
-    function addValidatedTipset(BlockData[] calldata blocks, uint256 weight) external {
-        require(blocks.length > 0 && blocks.length <= 5, "Invalid tipset size");
-
-        currentHeight++;
-        Tipset storage t = tipsets[currentHeight];
-        t.height = currentHeight;
-        t.weight = weight;
-
-        bytes32 combined = keccak256(abi.encode(currentHeight, weight));
-        for (uint256 i = 0; i < blocks.length; i++) {
-            bytes32 bhash = keccak256(abi.encode(blocks[i].miner, blocks[i].data));
-            require(!t.includedBlockHashes[bhash], "Duplicate block");
-            t.includedBlockHashes[bhash] = true;
-            combined = keccak256(abi.encodePacked(combined, bhash));
-        }
-
-        t.tipsetHash = combined;
-        emit TipsetValidated(currentHeight, combined, weight);
+    function transfer(address to, uint256 amt) external returns (bool) {
+        require(balances[_msgSender()] >= amt, "Insufficient");
+        balances[_msgSender()] -= amt;
+        balances[to] += amt;
+        return true;
     }
 
-    function getTipsetHash(uint256 height) external view returns (bytes32) {
-        return tipsets[height].tipsetHash;
+    function approve(address spender, uint256 amt) external returns (bool) {
+        allowance[_msgSender()][spender] = amt;
+        return true;
+    }
+
+    function transferFrom(address from, address to, uint256 amt) external returns (bool) {
+        require(balances[from] >= amt && allowance[from][msg.sender] >= amt, "Not approved");
+        balances[from] -= amt;
+        balances[to] += amt;
+        allowance[from][msg.sender] -= amt;
+        return true;
+    }
+
+    function balanceOf(address user) external view returns (uint256) {
+        return balances[user];
+    }
+}
+
+// ==============================
+// 🧱 Token Validator: Symbol ↔ Address Verifier
+// ==============================
+contract TokenValidator {
+    mapping(string => address) public knownTokens;
+
+    address public admin;
+
+    constructor() {
+        admin = msg.sender;
+    }
+
+    function register(string calldata symbol, address token) external {
+        require(msg.sender == admin, "Admin only");
+        knownTokens[symbol] = token;
+    }
+
+    function verify(string calldata symbol, address token) external view returns (bool) {
+        return knownTokens[symbol] == token;
     }
 }
